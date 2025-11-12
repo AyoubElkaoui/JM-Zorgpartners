@@ -1,0 +1,430 @@
+'use client'
+
+import { useState } from 'react'
+import Header from '@/components/header'
+import Footer from '@/components/footer'
+import FadeContent from '@/components/react-bits/FadeContent'
+import { CheckCircle2, Clock, Shield, Users, Heart, Phone } from 'lucide-react'
+
+export default function OpdrachtgeversPage() {
+  const [formData, setFormData] = useState({
+    organisatie: '',
+    contactpersoon: '',
+    email: '',
+    telefoon: '',
+    functie: '',
+    locatie: '',
+    periode: '',
+    bericht: ''
+  })
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    console.log('Form submitted:', formData)
+    // TODO: Implement form submission
+  }
+
+  return (
+    <div className="min-h-screen bg-white">
+      <Header />
+      
+      {/* Hero Section met Video Background */}
+      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+        {/* Video Background */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden">
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            className="absolute w-full h-full object-cover"
+          >
+            <source src="/videos/Sales short.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-[#1C3364]/85"></div>
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
+          <FadeContent blur={true}>
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
+              Personele uitdagingen?<br />
+              <span className="text-[#F37325]">Wij hebben de oplossing!</span>
+            </h1>
+          </FadeContent>
+          
+          <FadeContent delay={200} blur={true}>
+            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed">
+              Bij JM Zorgpartners begrijpen we dat goede zorg begint met de juiste mensen. 
+              Als opdrachtgever kunt u op ons rekenen voor flexibel, betrouwbaar en gekwalificeerd personeel 
+              dat naadloos aansluit bij uw organisatie.
+            </p>
+          </FadeContent>
+          
+          <FadeContent delay={400}>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <a 
+                href="#contact-form"
+                className="px-10 py-5 bg-[#F37325] text-white font-semibold rounded-lg hover:bg-[#D86520] transition-all duration-300 text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+              >
+                Direct Contact
+              </a>
+              <a 
+                href="tel:+31612345678"
+                className="px-10 py-5 bg-white text-[#1C3364] font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center justify-center gap-2"
+              >
+                <Phone className="w-5 h-5" />
+                Bel Direct
+              </a>
+            </div>
+          </FadeContent>
+        </div>
+      </section>
+
+      {/* Wat Wij Bieden */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeContent>
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-[#1C3364]">
+              Wat wij bieden
+            </h2>
+            <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+              Ontdek hoe JM Zorgpartners uw organisatie ondersteunt met de beste zorgprofessionals
+            </p>
+          </FadeContent>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Clock,
+                title: 'Snel beschikbaar personeel',
+                description: 'Of u nu acuut personeel nodig hebt vanwege ziekte, vakantie of langdurige vacatures – wij staan klaar. Binnen 24 uur bij spoed, binnen 48 uur voor reguliere aanvragen.'
+              },
+              {
+                icon: Shield,
+                title: 'Zorgvuldig gescreend',
+                description: 'Al onze zorgprofessionals zijn gescreend op diploma\'s, VOG en referenties. U kunt erop vertrouwen dat u alleen gekwalificeerd en betrouwbaar personeel ontvangt.'
+              },
+              {
+                icon: Heart,
+                title: 'Persoonlijke matching',
+                description: 'Elke organisatie is uniek. Daarom zorgen wij voor een persoonlijke match tussen uw zorgvraag en het profiel van de zorgprofessional, zodat de samenwerking soepel verloopt.'
+              },
+              {
+                icon: Users,
+                title: 'Flexibele inzet',
+                description: 'Van één dagdienst tot langdurige plaatsing – alles is mogelijk. Personeel is beschikbaar via payroll of als zzp\'er, afhankelijk van uw wensen.'
+              },
+              {
+                icon: Phone,
+                title: '24/7 bereikbaar',
+                description: 'Voor spoedeisende situaties kunt u altijd bij ons terecht. Onze spoedlijn staat dag en nacht voor u klaar.'
+              },
+              {
+                icon: CheckCircle2,
+                title: 'Landelijke dekking',
+                description: 'Onze zorgprofessionals zijn door heel Nederland beschikbaar, van Amsterdam tot Maastricht.'
+              }
+            ].map((item, index) => (
+              <FadeContent key={index} delay={index * 100}>
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 h-full">
+                  <div className="w-16 h-16 bg-[#F37325]/10 rounded-xl flex items-center justify-center mb-6">
+                    <item.icon className="w-8 h-8 text-[#F37325]" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-[#1C3364]">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                </div>
+              </FadeContent>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Onze Werkwijze */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeContent>
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-[#1C3364]">
+              Onze werkwijze
+            </h2>
+            <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
+              In vier simpele stappen naar het perfecte personeel
+            </p>
+          </FadeContent>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                step: '1',
+                title: 'Intake',
+                description: 'We luisteren naar uw wensen en behoeften. Wat zoekt u precies? Welke functie, welke periode, en welke kwaliteiten zijn belangrijk?',
+                color: 'bg-blue-500'
+              },
+              {
+                step: '2',
+                title: 'Selectie',
+                description: 'Op basis van uw wensen selecteren wij de beste kandidaten uit ons netwerk. Wij screenen hen op kwalificaties en beschikbaarheid.',
+                color: 'bg-green-500'
+              },
+              {
+                step: '3',
+                title: 'Match',
+                description: 'U ontvangt profielen van geschikte kandidaten. Na goedkeuring regelen wij de kennismaking en opstartprocedure.',
+                color: 'bg-orange-500'
+              },
+              {
+                step: '4',
+                title: 'Opstart',
+                description: 'De zorgprofessional start bij u en wij blijven betrokken. Bij vragen of aanpassingen staan wij direct voor u klaar.',
+                color: 'bg-purple-500'
+              }
+            ].map((item, index) => (
+              <FadeContent key={index} delay={index * 100}>
+                <div className="relative">
+                  <div className={`${item.color} text-white text-3xl font-bold w-16 h-16 rounded-full flex items-center justify-center mb-6 shadow-lg`}>
+                    {item.step}
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-[#1C3364]">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                </div>
+              </FadeContent>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Video Testimonial Section */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeContent>
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-[#1C3364]">
+              Wat onze klanten zeggen
+            </h2>
+            <p className="text-xl text-gray-600 text-center mb-16">
+              Hoor van andere zorginstellingen waarom zij voor JM Zorgpartners kozen
+            </p>
+          </FadeContent>
+
+          <FadeContent delay={200}>
+            <div className="max-w-4xl mx-auto">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <video 
+                  controls
+                  className="w-full h-auto"
+                  poster="/images/client-4.png"
+                >
+                  <source src="/videos/JM Zorgpartner klant video.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </FadeContent>
+        </div>
+      </section>
+
+      {/* Waarom Kiezen Voor JM */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeContent>
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-[#1C3364]">
+              Waarom kiezen voor JM Zorgpartners?
+            </h2>
+          </FadeContent>
+
+          <div className="max-w-3xl mx-auto mt-12 space-y-6">
+            {[
+              'Jarenlange ervaring in de zorgsector',
+              'Breed netwerk van gekwalificeerde professionals',
+              'Persoonlijke begeleiding en nazorg',
+              'Transparante tarieven zonder verborgen kosten',
+              'Hoge klanttevredenheid en betrouwbaarheid'
+            ].map((item, index) => (
+              <FadeContent key={index} delay={index * 100}>
+                <div className="flex items-start gap-4 bg-gray-50 p-6 rounded-xl hover:bg-gray-100 transition-colors">
+                  <CheckCircle2 className="w-8 h-8 text-[#F37325] flex-shrink-0 mt-1" />
+                  <p className="text-xl text-gray-800">{item}</p>
+                </div>
+              </FadeContent>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeContent>
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-[#1C3364]">
+              Veelgestelde vragen
+            </h2>
+          </FadeContent>
+
+          <div className="space-y-6">
+            {[
+              {
+                q: 'Hoe snel kunnen jullie personeel leveren?',
+                a: 'Voor spoedaanvragen binnen 24 uur, voor reguliere aanvragen binnen 48 uur. Wij hebben een groot netwerk van direct beschikbare zorgprofessionals.'
+              },
+              {
+                q: 'Zijn jullie professionals gescreend?',
+                a: 'Ja, absoluut. Alle professionals worden gescreend op diploma\'s, VOG, referenties en ervaring. Kwaliteit en veiligheid staan voorop.'
+              },
+              {
+                q: 'Wat zijn de kosten?',
+                a: 'Onze tarieven zijn transparant en afhankelijk van de functie en duur van de plaatsing. Neem contact op voor een vrijblijvende offerte op maat.'
+              },
+              {
+                q: 'Wat als het personeel niet past?',
+                a: 'Wij bieden een vervangingsgarantie. Als de match niet goed is, zoeken wij direct naar een passende vervanging zonder extra kosten.'
+              }
+            ].map((faq, index) => (
+              <FadeContent key={index} delay={index * 100}>
+                <details className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                  <summary className="text-xl font-semibold text-[#1C3364] cursor-pointer hover:text-[#F37325] transition-colors">
+                    {faq.q}
+                  </summary>
+                  <p className="mt-4 text-gray-600 leading-relaxed">{faq.a}</p>
+                </details>
+              </FadeContent>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form */}
+      <section id="contact-form" className="py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeContent>
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-[#1C3364]">
+              Neem direct contact op
+            </h2>
+            <p className="text-xl text-gray-600 text-center mb-12">
+              Vul het formulier in en wij nemen binnen 24 uur contact met u op
+            </p>
+          </FadeContent>
+
+          <FadeContent delay={200}>
+            <form onSubmit={handleSubmit} className="space-y-6 bg-gray-50 p-8 rounded-2xl shadow-lg">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Naam organisatie *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.organisatie}
+                    onChange={(e) => setFormData({...formData, organisatie: e.target.value})}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Contactpersoon *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.contactpersoon}
+                    onChange={(e) => setFormData({...formData, contactpersoon: e.target.value})}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    E-mailadres *
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Telefoonnummer *
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    value={formData.telefoon}
+                    onChange={(e) => setFormData({...formData, telefoon: e.target.value})}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Functie gezocht *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Bijv. Verpleegkundige niveau 3"
+                    value={formData.functie}
+                    onChange={(e) => setFormData({...formData, functie: e.target.value})}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Locatie *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Stad of regio"
+                    value={formData.locatie}
+                    onChange={(e) => setFormData({...formData, locatie: e.target.value})}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
+                  />
+                </div>
+
+                <div className="md:col-span-2">
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Gewenste periode *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Bijv. 3 maanden vanaf volgende week"
+                    value={formData.periode}
+                    onChange={(e) => setFormData({...formData, periode: e.target.value})}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
+                  />
+                </div>
+
+                <div className="md:col-span-2">
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Aanvullende informatie
+                  </label>
+                  <textarea
+                    rows={4}
+                    value={formData.bericht}
+                    onChange={(e) => setFormData({...formData, bericht: e.target.value})}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
+                    placeholder="Vertel ons meer over uw personeelsbehoefte..."
+                  ></textarea>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full py-4 bg-[#F37325] text-white font-semibold rounded-lg hover:bg-[#D86520] transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              >
+                Verstuur aanvraag
+              </button>
+            </form>
+          </FadeContent>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  )
+}
