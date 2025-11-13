@@ -7,9 +7,6 @@ import {
   Brain, Accessibility, Baby, Globe, School, Building2, 
   MapPin, CheckCircle2, Zap, Target, HeartHandshake, Star
 } from 'lucide-react'
-// import { Button } from '@/components/ui/button'
-import Header from '@/components/header'
-import Footer from '@/components/footer'
 import FadeContent from '@/components/react-bits/FadeContent'
 import CountUp from '@/components/react-bits/CountUp'
 import GlareCard from '@/components/react-bits/GlareCard'
@@ -27,7 +24,6 @@ import { AnimatedTitle, GradientText } from '@/components/aceternity/animated-ti
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-white">
-      <Header />
       <ScrollToTop />
 
       {/* Hero - Clean & Professional */}
@@ -1018,8 +1014,6 @@ export default function HomePage() {
           </FadeContent>
         </div>
       </section>
-
-      <Footer />
     </main>
   )
 }
