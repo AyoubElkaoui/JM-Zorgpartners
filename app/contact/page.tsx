@@ -47,16 +47,16 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-32 bg-gradient-to-br from-[#1C3364]/5 via-white to-[#F37325]/5 overflow-hidden">
+      <section className="relative py-24 bg-gradient-to-br from-[#1C3364]/5 via-white to-[#F37325]/5 overflow-hidden">
         <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] -z-10" />
         
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <FadeContent>
-            <div className="text-center max-w-4xl mx-auto">
-              <AnimatedTitle className="text-5xl lg:text-7xl font-bold text-[#1C3364] mb-6">
+            <div className="text-center max-w-3xl mx-auto">
+              <h1 className="text-4xl lg:text-5xl font-bold text-[#1C3364] mb-4">
                 Neem Contact Op
-              </AnimatedTitle>
-              <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed">
+              </h1>
+              <p className="text-base text-gray-600">
                 Heb je vragen of wil je meer weten over onze diensten? We helpen je graag verder!
               </p>
             </div>
@@ -70,13 +70,13 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <FadeContent>
-              <CardSpotlight className="p-8">
-                <h2 className="text-3xl font-bold text-[#1C3364] mb-2">Stuur ons een bericht</h2>
-                <p className="text-gray-600 mb-8">
+              <CardSpotlight className="p-6">
+                <h2 className="text-2xl font-bold text-[#1C3364] mb-2">Stuur ons een bericht</h2>
+                <p className="text-sm text-gray-600 mb-6">
                   Vul het formulier in en we nemen zo snel mogelijk contact met je op.
                 </p>
                 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold text-[#1C3364] mb-2">
                       Naam *

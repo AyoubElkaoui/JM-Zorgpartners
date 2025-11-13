@@ -50,20 +50,20 @@ export default function ZorgprofessionalsPage() {
             <FadeContent>
               <div className="space-y-6">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#F37325]/10 rounded-full">
-                  <Briefcase className="h-5 w-5 text-[#F37325]" />
+                  <Briefcase className="h-4 w-4 text-[#F37325]" />
                   <span className="text-sm font-medium text-[#1C3364]">Voor Zorgprofessionals</span>
                 </div>
                 
-                <h1 className="text-5xl lg:text-6xl font-black text-[#1C3364] leading-tight">
+                <h1 className="text-4xl lg:text-5xl font-bold text-[#1C3364] leading-tight">
                   Werken via <GradientText>JM Zorgpartners</GradientText>
                 </h1>
                 
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-lg text-gray-700 leading-relaxed">
                   Ben jij een zorgprofessional met ervaring, betrokkenheid en een groot hart voor de zorg? 
                   Dan zijn wij op zoek naar jou.
                 </p>
                 
-                <p className="text-lg text-gray-600">
+                <p className="text-base text-gray-600">
                   Bij JM Zorgpartners <span className="font-semibold text-[#1C3364]">bepaal jij hoe je wilt werken</span> – 
                   losse diensten of vaste opdrachten, overdag, 's nachts of in het weekend. 
                   Wij luisteren naar jouw voorkeuren en zoeken werk dat écht bij je past – professioneel én persoonlijk.
@@ -108,10 +108,10 @@ export default function ZorgprofessionalsPage() {
       <section id="sectoren" className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
-            <AnimatedTitle>
-              In welke <GradientText>sectoren</GradientText> kun je aan de slag?
-            </AnimatedTitle>
-            <p className="text-xl text-gray-600 mt-4 max-w-3xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#1C3364] mb-4">
+              In welke <span className="text-[#F37325]">sectoren</span> kun je aan de slag?
+            </h2>
+            <p className="text-base text-gray-600 mt-4 max-w-3xl mx-auto">
               Via JM Zorgpartners kun je aan de slag in uiteenlopende zorgsectoren. 
               Of je nu korte opdrachten zoekt of langere trajecten – wij zorgen voor een plek die bij jou past.
             </p>
@@ -122,11 +122,11 @@ export default function ZorgprofessionalsPage() {
               <ScaleIn key={sector.naam} delay={idx * 0.1}>
                 <CardSpotlight className="h-full">
                   <div className="bg-white rounded-2xl p-6 h-full border border-gray-100 hover:border-[#F37325] transition-all duration-300 hover:shadow-xl">
-                    <div className="flex flex-col items-center text-center space-y-4">
-                      <div className="w-16 h-16 bg-gradient-to-br from-[#F37325] to-[#ff8c42] rounded-2xl flex items-center justify-center">
-                        <sector.icon className="h-8 w-8 text-white" />
+                    <div className="flex flex-col items-center text-center space-y-3">
+                      <div className="w-14 h-14 bg-gradient-to-br from-[#F37325] to-[#ff8c42] rounded-xl flex items-center justify-center">
+                        <sector.icon className="h-7 w-7 text-white" />
                       </div>
-                      <h3 className="text-lg font-bold text-[#1C3364]">{sector.naam}</h3>
+                      <h3 className="text-base font-bold text-[#1C3364]">{sector.naam}</h3>
                       <p className="text-sm text-gray-600">{sector.beschrijving}</p>
                     </div>
                   </div>
@@ -141,10 +141,10 @@ export default function ZorgprofessionalsPage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
-            <AnimatedTitle>
-              Wat <GradientText>vragen</GradientText> wij van jou?
-            </AnimatedTitle>
-            <p className="text-xl text-gray-600 mt-4 max-w-3xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#1C3364] mb-4">
+              Wat <span className="text-[#F37325]">vragen</span> wij van jou?
+            </h2>
+            <p className="text-base text-gray-600 mt-4 max-w-3xl mx-auto">
               Wij staan voor kwaliteit en betrouwbaarheid – dat verwachten wij van onze zorgprofessionals, 
               en dat mag jij ook van ons verwachten.
             </p>
@@ -153,12 +153,12 @@ export default function ZorgprofessionalsPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {vereisten.map((item, idx) => (
               <FadeContent key={item.titel} delay={idx * 0.1}>
-                <div className="bg-white rounded-2xl p-8 border-2 border-gray-100 hover:border-[#F37325] transition-all duration-300 hover:shadow-xl text-center">
-                  <div className="w-16 h-16 bg-[#1C3364] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <item.icon className="h-8 w-8 text-white" />
+                <div className="bg-white rounded-2xl p-6 border border-gray-200 hover:border-[#F37325] transition-all duration-300 hover:shadow-lg text-center">
+                  <div className="w-14 h-14 bg-[#1C3364] rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <item.icon className="h-7 w-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#1C3364] mb-2">{item.titel}</h3>
-                  <p className="text-gray-600">{item.tekst}</p>
+                  <h3 className="text-base font-bold text-[#1C3364] mb-2">{item.titel}</h3>
+                  <p className="text-sm text-gray-600">{item.tekst}</p>
                 </div>
               </FadeContent>
             ))}
@@ -170,9 +170,9 @@ export default function ZorgprofessionalsPage() {
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
-            <AnimatedTitle>
-              Zo <GradientText>werkt</GradientText> het
-            </AnimatedTitle>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#1C3364] mb-4">
+              Zo <span className="text-[#F37325]">werkt</span> het
+            </h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -184,12 +184,12 @@ export default function ZorgprofessionalsPage() {
             ].map((stap, idx) => (
               <ScaleIn key={stap.stap} delay={idx * 0.15}>
                 <div className="relative">
-                  <div className="bg-white rounded-2xl p-8 border-2 border-gray-100 hover:border-[#F37325] transition-all duration-300 hover:shadow-xl h-full">
-                    <div className="absolute -top-6 left-8 w-12 h-12 bg-gradient-to-br from-[#F37325] to-[#ff8c42] rounded-full flex items-center justify-center text-white font-black text-xl">
+                  <div className="bg-white rounded-2xl p-6 border border-gray-200 hover:border-[#F37325] transition-all duration-300 hover:shadow-lg h-full">
+                    <div className="absolute -top-5 left-6 w-10 h-10 bg-gradient-to-br from-[#F37325] to-[#ff8c42] rounded-full flex items-center justify-center text-white font-bold text-lg">
                       {stap.stap}
                     </div>
-                    <h3 className="text-xl font-bold text-[#1C3364] mb-3 mt-4">{stap.titel}</h3>
-                    <p className="text-gray-600 leading-relaxed">{stap.tekst}</p>
+                    <h3 className="text-base font-bold text-[#1C3364] mb-2 mt-3">{stap.titel}</h3>
+                    <p className="text-sm text-gray-600">{stap.tekst}</p>
                   </div>
                 </div>
               </ScaleIn>
@@ -215,22 +215,22 @@ export default function ZorgprofessionalsPage() {
 
             <FadeContent delay={0.2}>
               <div className="space-y-6">
-                <AnimatedTitle>
-                  Waarom werken via <GradientText>JM Zorgpartners?</GradientText>
-                </AnimatedTitle>
+                <h2 className="text-3xl lg:text-4xl font-bold text-[#1C3364]">
+                  Waarom werken via <span className="text-[#F37325]">JM Zorgpartners?</span>
+                </h2>
                 
-                <p className="text-lg text-gray-600">
+                <p className="text-base text-gray-600">
                   Bij JM Zorgpartners werk je niet alleen voor ons — je werkt <span className="font-semibold text-[#1C3364]">mét ons</span>.
                 </p>
 
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {voordelen.map((voordeel, idx) => (
                     <div
                       key={idx}
-                      className="flex items-start gap-4 p-4 bg-white rounded-xl border border-gray-100 hover:border-[#F37325] transition-all duration-300 hover:shadow-lg"
+                      className="flex items-start gap-3 p-3 bg-white rounded-lg border border-gray-200 hover:border-[#F37325] transition-all duration-300 hover:shadow-md"
                     >
-                      <CheckCircle2 className="h-6 w-6 text-[#F37325] flex-shrink-0 mt-0.5" />
-                      <p className="text-gray-700 font-medium">{voordeel}</p>
+                      <CheckCircle2 className="h-5 w-5 text-[#F37325] flex-shrink-0 mt-0.5" />
+                      <p className="text-sm text-gray-700">{voordeel}</p>
                     </div>
                   ))}
                 </div>
@@ -244,10 +244,10 @@ export default function ZorgprofessionalsPage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
-            <AnimatedTitle>
-              Actuele <GradientText>vacatures</GradientText>
-            </AnimatedTitle>
-            <p className="text-xl text-gray-600 mt-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#1C3364] mb-4">
+              Actuele <span className="text-[#F37325]">vacatures</span>
+            </h2>
+            <p className="text-base text-gray-600 mt-4">
               Bekijk onze openstaande vacatures en vind de perfecte match voor jou
             </p>
           </div>

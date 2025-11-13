@@ -561,7 +561,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
             <FadeContent blur delay={50} duration={800}>
-              <CardSpotlight className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-[#F37325] hover:shadow-lg transition-all duration-300" radius={250}>
+              <CardSpotlight className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-[#F37325] hover:shadow-lg transition-all duration-300">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-[#1C3364]/5 mb-4">
                   <Brain className="w-8 h-8 text-[#1C3364]" />
                 </div>
@@ -570,7 +570,7 @@ export default function HomePage() {
             </FadeContent>
 
             <FadeContent blur delay={100} duration={800}>
-              <CardSpotlight className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-[#F37325] hover:shadow-lg transition-all duration-300" radius={250}>
+              <CardSpotlight className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-[#F37325] hover:shadow-lg transition-all duration-300">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-[#1C3364]/5 mb-4">
                   <Accessibility className="w-8 h-8 text-[#1C3364]" />
                 </div>
@@ -579,7 +579,7 @@ export default function HomePage() {
             </FadeContent>
 
             <FadeContent blur delay={150} duration={800}>
-              <CardSpotlight className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-[#F37325] hover:shadow-lg transition-all duration-300" radius={250}>
+              <CardSpotlight className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-[#F37325] hover:shadow-lg transition-all duration-300">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-[#1C3364]/5 mb-4">
                   <Baby className="w-8 h-8 text-[#1C3364]" />
                 </div>
@@ -588,7 +588,7 @@ export default function HomePage() {
             </FadeContent>
 
             <FadeContent blur delay={200} duration={800}>
-              <CardSpotlight className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-[#F37325] hover:shadow-lg transition-all duration-300" radius={250}>
+              <CardSpotlight className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-[#F37325] hover:shadow-lg transition-all duration-300">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-[#1C3364]/5 mb-4">
                   <Heart className="w-8 h-8 text-[#1C3364]" />
                 </div>
