@@ -51,7 +51,7 @@ export default function ZorgprofessionalsPage() {
               <div className="space-y-6">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#F37325]/10 rounded-full">
                   <Stethoscope className="h-5 w-5 text-[#F37325]" />
-                  <span className="text-base font-semibold text-[#1C3364]">Voor Zorgprofessionals</span>
+                  <span className="text-lg font-semibold text-[#1C3364]">Voor Zorgprofessionals</span>
                 </div>
                 
                 <h1 className="text-4xl lg:text-5xl font-black text-[#1C3364] leading-tight">

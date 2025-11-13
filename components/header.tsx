@@ -28,7 +28,7 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
-    <Navbar className="fixed top-0">
+    <Navbar className="fixed top-0 z-50">
       {/* Desktop Navigation */}
       <NavBody>
         <Link href="/" className="relative z-20 flex items-center px-2 py-1 -my-4">

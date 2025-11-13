@@ -6,10 +6,10 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { Phone, Mail, MapPin, Send, Loader2, CheckCircle, Clock, FileText, ArrowRight, HeartHandshake, CheckCircle2, MessageSquare, Users, Zap } from 'lucide-react'
+import { Phone, Mail, MapPin, Send, Loader2, CheckCircle, Clock, FileText, ArrowRight, HeartHandshake, CheckCircle2, MessageSquare } from 'lucide-react'
+import { AnimatedTitle, GradientText } from '@/components/aceternity/animated-title'
 import { CardSpotlight } from '@/components/aceternity/card-spotlight'
 import { MovingBorder } from '@/components/aceternity/moving-border'
-import { GradientText } from '@/components/aceternity/animated-title'
 import FadeContent from '@/components/react-bits/FadeContent'
 import ScaleIn from '@/components/react-bits/ScaleIn'
 
@@ -48,42 +48,33 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section - Zoals Andere Paginas */}
-      <section className="relative py-32 bg-gradient-to-br from-[#1C3364] via-[#1C3364]/95 to-[#F37325]/30 overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-[#F37325] rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse delay-1000" />
-        </div>
+    <main className="min-h-screen bg-white pt-32">
+      {/* Hero Section - EXACT zoals Opdrachtgevers */}
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1C3364]/5 via-white to-[#F37325]/5" />
         
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <FadeContent>
               <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#F37325]/10 rounded-full backdrop-blur-sm border border-white/20">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#F37325]/10 rounded-full">
                   <MessageSquare className="h-5 w-5 text-[#F37325]" />
-                  <span className="text-base font-semibold text-white">We Helpen Je Graag</span>
+                  <span className="text-lg font-semibold text-[#1C3364]">We Helpen Je Graag</span>
                 </div>
                 
-                <h1 className="text-5xl lg:text-6xl font-black text-white leading-tight">
+                <h1 className="text-5xl lg:text-6xl font-black text-[#1C3364] leading-tight">
                   Neem <GradientText>Contact</GradientText> Op
                 </h1>
                 
-                <p className="text-xl text-gray-200 leading-relaxed">
+                <p className="text-xl text-gray-600 leading-relaxed">
                   Heb je vragen over onze diensten? Of wil je direct starten met jouw nieuwe uitdaging in de zorg? 
                   Ons team staat voor je klaar!
                 </p>
                 
-                <div className="flex flex-wrap gap-4 pt-4">
-                  <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-                    <Clock className="h-5 w-5 text-[#F37325]" />
-                    <span className="text-white font-semibold">24u Reactie</span>
-                  </div>
-                  <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-                    <Users className="h-5 w-5 text-[#F37325]" />
-                    <span className="text-white font-semibold">Persoonlijk Contact</span>
-                  </div>
+                <div className="bg-white rounded-2xl p-6 border-2 border-[#F37325]/20 shadow-lg">
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Bel ons direct of vul het formulier in. We reageren binnen <span className="font-bold text-[#1C3364]">24 uur</span> op je bericht!
+                  </p>
                 </div>
               </div>
             </FadeContent>
@@ -91,13 +82,11 @@ export default function ContactPage() {
             <FadeContent delay={0.2}>
               <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/contact-hero.jpg"
+                  src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=800"
                   alt="Contact Hero"
                   fill
                   className="object-cover"
-                  priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1C3364]/60 to-transparent" />
               </div>
             </FadeContent>
           </div>
@@ -105,27 +94,23 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+      <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
-          <FadeContent>
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#F37325]/10 rounded-full mb-4">
-                <Send className="h-5 w-5 text-[#F37325]" />
-                <span className="text-base font-semibold text-[#1C3364]">Direct Contact</span>
-              </div>
+          <div className="text-center mb-16">
+            <FadeContent>
               <h2 className="text-4xl lg:text-5xl font-black text-[#1C3364] mb-4">
                 Stuur ons een <GradientText>Bericht</GradientText>
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Vul het formulier in of bel ons direct. We reageren binnen 24 uur op je bericht!
               </p>
-            </div>
-          </FadeContent>
+            </FadeContent>
+          </div>
           
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <FadeContent>
-              <CardSpotlight className="p-8">{/* Removed duplicate title */}
+              <CardSpotlight className="p-8">
                 
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
@@ -237,12 +222,7 @@ export default function ContactPage() {
             <div className="space-y-6">
               <ScaleIn delay={0.1}>
                 <CardSpotlight className="p-8">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="h-12 w-12 rounded-xl bg-[#F37325]/10 flex items-center justify-center">
-                      <Phone className="h-6 w-6 text-[#F37325]" />
-                    </div>
-                    <h3 className="text-2xl font-black text-[#1C3364]">Contactgegevens</h3>
-                  </div>
+                  <h3 className="text-2xl font-black text-[#1C3364] mb-6">Contactgegevens</h3>
                   
                   <div className="space-y-6">
                     <div className="flex items-start gap-4">
@@ -288,27 +268,15 @@ export default function ContactPage() {
               </ScaleIn>
 
               <ScaleIn delay={0.2}>
-                <CardSpotlight className="p-8 bg-gradient-to-br from-[#F37325] to-[#F37325]/80 text-white relative overflow-hidden">
-                  {/* Background Pattern */}
-                  <div className="absolute inset-0 opacity-10">
-                    <div className="absolute top-0 right-0 w-40 h-40 bg-white rounded-full blur-3xl" />
-                  </div>
-                  
-                  <div className="relative">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="h-12 w-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                        <Zap className="h-6 w-6 text-white" />
-                      </div>
-                      <h3 className="text-2xl font-black">24/7 Spoedlijn</h3>
-                    </div>
-                    <p className="text-white/90 mb-4 text-lg">
-                      Voor acute zorgvragen buiten kantooruren
-                    </p>
-                    <p className="text-4xl font-black mb-2">06 53 474 474</p>
-                    <p className="text-base text-white/80">
-                      Direct beschikbaar voor spoedgevallen
-                    </p>
-                  </div>
+                <CardSpotlight className="p-8 bg-gradient-to-br from-[#F37325] to-[#F37325]/80 text-white">
+                  <h3 className="text-2xl font-black mb-2">24/7 Spoedlijn</h3>
+                  <p className="text-white/90 mb-4">
+                    Voor acute zorgvragen buiten kantooruren
+                  </p>
+                  <p className="text-3xl font-bold mb-2">06 53 474 474</p>
+                  <p className="text-sm text-white/80">
+                    Direct beschikbaar voor spoedgevallen
+                  </p>
                 </CardSpotlight>
               </ScaleIn>
             </div>
@@ -333,7 +301,7 @@ export default function ContactPage() {
                 <ScaleIn delay={0.2}>
                   <MovingBorder
                     duration={7000}
-                    className="bg-[#F37325] hover:bg-[#d96420] text-white px-8 py-4 font-bold text-base"
+                    className="bg-[#F37325] hover:bg-[#d96420] text-white px-8 py-4 font-bold text-lg"
                     containerClassName="w-full sm:w-auto"
                   >
                     <div className="flex items-center justify-center gap-2">
@@ -349,7 +317,7 @@ export default function ContactPage() {
                 <ScaleIn delay={0.3}>
                   <MovingBorder
                     duration={9000}
-                    className="bg-white hover:bg-gray-50 text-[#1C3364] px-8 py-4 font-bold text-base"
+                    className="bg-white hover:bg-gray-50 text-[#1C3364] px-8 py-4 font-bold text-lg border-2 border-[#1C3364]"
                     containerClassName="w-full sm:w-auto"
                   >
                     <div className="flex items-center justify-center gap-2">
@@ -361,23 +329,23 @@ export default function ContactPage() {
               </Link>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto">
-              <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
-                <Clock className="w-7 h-7 text-[#F37325] mx-auto mb-2" />
-                <p className="font-bold text-[#1C3364] text-sm">Binnen 24 uur reactie</p>
+            <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+              <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+                <Clock className="w-8 h-8 text-[#F37325] mx-auto mb-3" />
+                <p className="font-bold text-[#1C3364]">Binnen 24 uur reactie</p>
               </div>
-              <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
-                <HeartHandshake className="w-7 h-7 text-[#F37325] mx-auto mb-2" />
-                <p className="font-bold text-[#1C3364] text-sm">Persoonlijk advies</p>
+              <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+                <HeartHandshake className="w-8 h-8 text-[#F37325] mx-auto mb-3" />
+                <p className="font-bold text-[#1C3364]">Persoonlijk advies</p>
               </div>
-              <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
-                <CheckCircle2 className="w-7 h-7 text-[#F37325] mx-auto mb-2" />
-                <p className="font-bold text-[#1C3364] text-sm">Geen verplichtingen</p>
+              <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+                <CheckCircle2 className="w-8 h-8 text-[#F37325] mx-auto mb-3" />
+                <p className="font-bold text-[#1C3364]">Geen verplichtingen</p>
               </div>
             </div>
           </FadeContent>
         </div>
       </section>
-    </div>
+    </main>
   )
 }

@@ -2,11 +2,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { getBlogPosts } from '@/lib/content'
 import { Button } from '@/components/ui/button'
-import { Calendar, User, ArrowRight, Tag, Phone, FileText, Clock, HeartHandshake, CheckCircle2, BookOpen, TrendingUp, Sparkles } from 'lucide-react'
+import { Calendar, User, ArrowRight, Tag, Phone, FileText, Clock, HeartHandshake, CheckCircle2, BookOpen } from 'lucide-react'
 import { formatDate } from '@/lib/utils'
+import { AnimatedTitle, GradientText } from '@/components/aceternity/animated-title'
 import { CardSpotlight } from '@/components/aceternity/card-spotlight'
 import { MovingBorder } from '@/components/aceternity/moving-border'
-import { GradientText } from '@/components/aceternity/animated-title'
 import FadeContent from '@/components/react-bits/FadeContent'
 import ScaleIn from '@/components/react-bits/ScaleIn'
 
@@ -16,41 +16,34 @@ export default function BlogPage() {
   const other = posts.filter(p => !p.featured)
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section - Zoals Andere Paginas */}
-      <section className="relative py-32 bg-gradient-to-br from-[#1C3364] via-[#1C3364]/95 to-[#F37325]/30 overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-[#F37325] rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse delay-1000" />
-        </div>
+    <main className="min-h-screen bg-white pt-32">
+      {/* Hero Section - EXACT zoals Opdrachtgevers */}
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1C3364]/5 via-white to-[#F37325]/5" />
         
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <FadeContent>
               <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#F37325]/10 rounded-full backdrop-blur-sm border border-white/20">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#F37325]/10 rounded-full">
                   <BookOpen className="h-5 w-5 text-[#F37325]" />
-                  <span className="text-base font-semibold text-white">Kennis & Inspiratie</span>
+                  <span className="text-lg font-semibold text-[#1C3364]">Kennis & Inspiratie</span>
                 </div>
                 
-                <h1 className="text-5xl lg:text-6xl font-black text-white leading-tight">
+                <h1 className="text-5xl lg:text-6xl font-black text-[#1C3364] leading-tight">
                   Blog & <GradientText>Nieuws</GradientText>
                 </h1>
                 
-                <p className="text-xl text-gray-200 leading-relaxed">
+                <p className="text-xl text-gray-600 leading-relaxed">
                   Ontdek de laatste trends, tips en verhalen uit de zorgsector. Van praktische sollicitatietips tot inspirerende succesverhalen.
                 </p>
                 
-                <div className="flex flex-wrap gap-4 pt-4">
-                  <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-                    <TrendingUp className="h-5 w-5 text-[#F37325]" />
-                    <span className="text-white font-semibold">{posts.length} Artikelen</span>
-                  </div>
-                  <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-                    <Sparkles className="h-5 w-5 text-[#F37325]" />
-                    <span className="text-white font-semibold">Wekelijks Nieuw</span>
-                  </div>
+                <div className="bg-white rounded-2xl p-6 border-2 border-[#F37325]/20 shadow-lg">
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Blijf op de hoogte van <span className="font-bold text-[#1C3364]">carrièremogelijkheden</span>, 
+                    <span className="font-bold text-[#1C3364]"> werkgeluk</span> en 
+                    <span className="font-bold text-[#1C3364]"> ontwikkelingen</span> in de zorg.
+                  </p>
                 </div>
               </div>
             </FadeContent>
@@ -58,13 +51,11 @@ export default function BlogPage() {
             <FadeContent delay={0.2}>
               <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/blog-hero.jpg"
+                  src="https://images.unsplash.com/photo-1488998427799-e3362cec87c3?w=800"
                   alt="Blog Hero"
                   fill
                   className="object-cover"
-                  priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1C3364]/60 to-transparent" />
               </div>
             </FadeContent>
           </div>
@@ -73,22 +64,18 @@ export default function BlogPage() {
 
       {/* Featured Posts */}
       {featured.length > 0 && (
-        <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+        <section className="py-20 bg-white">
           <div className="mx-auto max-w-7xl px-6 lg:px-12">
-            <FadeContent>
-              <div className="text-center mb-16">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#F37325]/10 rounded-full mb-4">
-                  <Sparkles className="h-5 w-5 text-[#F37325]" />
-                  <span className="text-base font-semibold text-[#1C3364]">Top Artikelen</span>
-                </div>
+            <div className="text-center mb-16">
+              <FadeContent>
                 <h2 className="text-4xl lg:text-5xl font-black text-[#1C3364] mb-4">
                   Uitgelichte <GradientText>Artikelen</GradientText>
                 </h2>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                   Onze meest gelezen en waardevolle artikelen speciaal voor jou geselecteerd
                 </p>
-              </div>
-            </FadeContent>
+              </FadeContent>
+            </div>
             
             <div className="grid md:grid-cols-2 gap-8">
               {featured.map((post, index) => (
@@ -134,10 +121,10 @@ export default function BlogPage() {
       )}
 
       {/* All Posts */}
-      <section className="py-24 bg-white">
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
-          <FadeContent>
-            <div className="text-center mb-16">
+          <div className="text-center mb-16">
+            <FadeContent>
               <h2 className="text-4xl lg:text-5xl font-black text-[#1C3364] mb-4">
                 {featured.length > 0 ? (
                   <>Meer <GradientText>Artikelen</GradientText></>
@@ -145,11 +132,11 @@ export default function BlogPage() {
                   <>Alle <GradientText>Artikelen</GradientText></>
                 )}
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Blijf op de hoogte van de laatste ontwikkelingen in de zorgsector
               </p>
-            </div>
-          </FadeContent>
+            </FadeContent>
+          </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {(featured.length > 0 ? other : posts).map((post, index) => (
@@ -216,7 +203,7 @@ export default function BlogPage() {
                 <ScaleIn delay={0.2}>
                   <MovingBorder
                     duration={7000}
-                    className="bg-[#F37325] hover:bg-[#d96420] text-white px-8 py-4 font-bold text-base"
+                    className="bg-[#F37325] hover:bg-[#d96420] text-white px-8 py-4 font-bold text-lg"
                     containerClassName="w-full sm:w-auto"
                   >
                     <div className="flex items-center justify-center gap-2">
@@ -232,7 +219,7 @@ export default function BlogPage() {
                 <ScaleIn delay={0.3}>
                   <MovingBorder
                     duration={9000}
-                    className="bg-white hover:bg-gray-50 text-[#1C3364] px-8 py-4 font-bold text-base"
+                    className="bg-white hover:bg-gray-50 text-[#1C3364] px-8 py-4 font-bold text-lg border-2 border-[#1C3364]"
                     containerClassName="w-full sm:w-auto"
                   >
                     <div className="flex items-center justify-center gap-2">
@@ -244,23 +231,23 @@ export default function BlogPage() {
               </Link>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto">
-              <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
-                <Clock className="w-7 h-7 text-[#F37325] mx-auto mb-2" />
-                <p className="font-bold text-[#1C3364] text-sm">Binnen 24 uur reactie</p>
+            <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+              <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+                <Clock className="w-8 h-8 text-[#F37325] mx-auto mb-3" />
+                <p className="font-bold text-[#1C3364]">Binnen 24 uur reactie</p>
               </div>
-              <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
-                <HeartHandshake className="w-7 h-7 text-[#F37325] mx-auto mb-2" />
-                <p className="font-bold text-[#1C3364] text-sm">Persoonlijk advies</p>
+              <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+                <HeartHandshake className="w-8 h-8 text-[#F37325] mx-auto mb-3" />
+                <p className="font-bold text-[#1C3364]">Persoonlijk advies</p>
               </div>
-              <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
-                <CheckCircle2 className="w-7 h-7 text-[#F37325] mx-auto mb-2" />
-                <p className="font-bold text-[#1C3364] text-sm">Geen verplichtingen</p>
+              <div className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+                <CheckCircle2 className="w-8 h-8 text-[#F37325] mx-auto mb-3" />
+                <p className="font-bold text-[#1C3364]">Geen verplichtingen</p>
               </div>
             </div>
           </FadeContent>
         </div>
       </section>
-    </div>
+    </main>
   )
 }
