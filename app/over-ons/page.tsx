@@ -2,11 +2,12 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Heart, Target, Zap, Users, CheckCircle2, Phone, Mail, Award } from 'lucide-react'
+import { Heart, Target, Zap, Users, CheckCircle2, Phone, Mail, Award, ArrowRight, Clock, HeartHandshake } from 'lucide-react'
 import FadeContent from '@/components/react-bits/FadeContent'
 import ScaleIn from '@/components/react-bits/ScaleIn'
 import { AnimatedTitle, GradientText } from '@/components/aceternity/animated-title'
 import { MovingBorder } from '@/components/aceternity/moving-border'
+import ScrollToTop from '@/components/scroll-to-top'
 
 export default function OverOnsPage() {
   return (
@@ -38,7 +39,7 @@ export default function OverOnsPage() {
                   <span className="text-lg font-semibold text-[#1C3364]">Onze Missie</span>
                 </div>
                 
-                <h2 className="text-4xl lg:text-5xl font-black text-[#1C3364] leading-tight">
+                <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] leading-tight">
                   De <GradientText>juiste match</GradientText> maken
                 </h2>
                 
@@ -182,7 +183,7 @@ export default function OverOnsPage() {
                 <span className="text-lg font-semibold text-[#1C3364]">Ons Team</span>
               </div>
               
-              <h2 className="text-4xl lg:text-5xl font-black text-[#1C3364] leading-tight">
+              <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] leading-tight">
                 Een team dat <GradientText>voor je klaarstaat</GradientText>
               </h2>
               
@@ -227,43 +228,69 @@ export default function OverOnsPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-[#1C3364] via-[#2a4a8f] to-[#1C3364] text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djItaDJ2LTJoLTJ6bTAgNGgtMnYyaDJ2LTJ6bTAgMnYyaDJ2LTJoLTJ6bTAtNnYtMmgtMnYyaDJ6bS0yIDBoLTJ2Mmgydi0yem0yLTJ2LTJoLTJ2MmgyeiIvPjwvZz48L2c+PC9zdmc+')] opacity-10" />
-        
-        <div className="relative max-w-4xl mx-auto px-6 lg:px-12 text-center">
-          <FadeContent>
-            <div className="space-y-8">
-              <h2 className="text-4xl lg:text-5xl font-black">
-                Klaar om kennis te maken?
-              </h2>
-              
-              <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
-                Neem contact met ons op en ontdek wat JM Zorgpartners voor jou kan betekenen
-              </p>
-              
-              <div className="flex flex-wrap gap-4 justify-center pt-4">
-                <MovingBorder duration={10000}>
-                  <Link
-                    href="/contact"
-                    className="px-8 py-4 bg-[#F37325] text-white rounded-xl font-semibold hover:bg-[#d96420] transition-all inline-flex items-center gap-2"
+      {/* CTA Section - Warm en uitnodigend */}
+      {/* CTA Sectie - Neem Contact Op */}
+      <section className="py-32 bg-gradient-to-b from-white to-orange-50/30">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <FadeContent blur duration={800}>
+            <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-6">
+              Personeel nodig? <span className="text-[#F37325]">Wij helpen je direct</span>
+            </h2>
+            
+            <p className="text-xl text-gray-600 mb-12 leading-relaxed max-w-2xl mx-auto">
+              Neem contact op voor een vrijblijvend gesprek over jouw personeelsbehoefte. Binnen 24 uur hoor je van ons.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-5 justify-center mb-12">
+              <Link href="tel:0850000000">
+                <ScaleIn delay={200} duration={700}>
+                  <MovingBorder
+                    duration={7000}
+                    className="bg-[#F37325] hover:bg-[#d96420] text-white px-10 py-5 font-black text-lg"
+                    containerClassName="w-full sm:w-auto"
                   >
-                    <Mail className="h-5 w-5" />
-                    Neem contact op
-                  </Link>
-                </MovingBorder>
-                
-                <a
-                  href="tel:0333033042"
-                  className="px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white text-white rounded-xl font-semibold hover:bg-white hover:text-[#1C3364] transition-all inline-flex items-center gap-2"
-                >
-                  <Phone className="h-5 w-5" />
-                  033 303 30 42
-                </a>
+                    <div className="flex items-center justify-center gap-3">
+                      <Phone className="w-6 h-6" />
+                      <span>Bel 085 - 0000000</span>
+                      <ArrowRight className="w-5 h-5" />
+                    </div>
+                  </MovingBorder>
+                </ScaleIn>
+              </Link>
+              <Link href="/contact">
+                <ScaleIn delay={300} duration={700}>
+                  <MovingBorder
+                    duration={9000}
+                    className="bg-white hover:bg-gray-50 text-[#1C3364] px-10 py-5 font-black text-lg"
+                    containerClassName="w-full sm:w-auto"
+                  >
+                    <div className="flex items-center justify-center gap-3">
+                      <span>Stuur een bericht</span>
+                      <Mail className="w-5 h-5" />
+                    </div>
+                  </MovingBorder>
+                </ScaleIn>
+              </Link>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+              <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                <Clock className="w-8 h-8 text-[#F37325] mx-auto mb-3" />
+                <p className="font-bold text-[#1C3364]">Binnen 24 uur reactie</p>
+              </div>
+              <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                <HeartHandshake className="w-8 h-8 text-[#F37325] mx-auto mb-3" />
+                <p className="font-bold text-[#1C3364]">Persoonlijk advies</p>
+              </div>
+              <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                <CheckCircle2 className="w-8 h-8 text-[#F37325] mx-auto mb-3" />
+                <p className="font-bold text-[#1C3364]">Geen verplichtingen</p>
               </div>
             </div>
           </FadeContent>
         </div>
       </section>
+      <ScrollToTop />
     </main>
   )
 }

@@ -9,6 +9,7 @@ import {
 } from 'lucide-react'
 import FadeContent from '@/components/react-bits/FadeContent'
 import ScaleIn from '@/components/react-bits/ScaleIn'
+import ScrollToTop from '@/components/scroll-to-top'
 import { CardSpotlight } from '@/components/aceternity/card-spotlight'
 import { AnimatedTitle, GradientText } from '@/components/aceternity/animated-title'
 import { MovingBorder } from '@/components/aceternity/moving-border'
@@ -63,26 +64,37 @@ export default function ZorginstellingenPage() {
                   </p>
                 </div>
                 
-                <div className="flex flex-wrap gap-4 pt-4">
-                  <MovingBorder duration={8000}>
-                    <Link
-                      href="#contact"
-                      className="px-8 py-4 bg-[#F37325] text-white rounded-xl font-semibold hover:bg-[#d96420] transition-all inline-flex items-center gap-2"
-                    >
-                      <FileText className="h-5 w-5" />
-                      Neem contact op
-                    </Link>
-                  </MovingBorder>
-                  
-                  <a
-                    href="tel:033303304200"
-                    className="px-8 py-4 border-2 border-[#1C3364] text-[#1C3364] rounded-xl font-semibold hover:bg-[#1C3364] hover:text-white transition-all inline-flex items-center gap-2"
-                  >
-                    <Phone className="h-5 w-5" />
-                    033 303 30 42
-                  </a>
+                <div className="flex flex-col sm:flex-row gap-4 mb-10">
+                  <Link href="tel:0850000000">
+                    <ScaleIn delay={400} duration={700}>
+                      <MovingBorder
+                        duration={8000}
+                        className="bg-[#F37325] hover:bg-[#d96420] text-white px-8 py-4 font-bold"
+                        containerClassName="w-full sm:w-auto"
+                      >
+                        <div className="flex items-center justify-center gap-2">
+                          <Phone className="w-5 h-5" />
+                          <span>Bel 085 - 0000000</span>
+                        </div>
+                      </MovingBorder>
+                    </ScaleIn>
+                  </Link>
+                  <Link href="/contact">
+                    <ScaleIn delay={500} duration={700}>
+                      <MovingBorder
+                        duration={10000}
+                        className="bg-white hover:bg-orange-50 text-[#1C3364] px-8 py-4 font-bold"
+                        containerClassName="w-full sm:w-auto"
+                      >
+                        <div className="flex items-center justify-center gap-2">
+                          <span>Neem contact op</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </div>
+                      </MovingBorder>
+                    </ScaleIn>
+                  </Link>
                 </div>
-              </div>
+                  </div>
             </FadeContent>
             
             <FadeContent delay={0.2}>
@@ -118,9 +130,9 @@ export default function ZorginstellingenPage() {
               { icon: Users, titel: 'Vaste vacatures invullen', beschrijving: 'Langetermijn oplossingen voor moeilijk vervulbare posities.' },
               { icon: Shield, titel: 'Gespecialiseerde professionals', beschrijving: 'Specifieke expertise voor unieke zorgbehoeften.' },
             ].map((dienst, idx) => (
-              <ScaleIn key={dienst.titel} delay={idx * 0.1}>
-                <CardSpotlight>
-                  <div className="bg-white rounded-2xl p-8 h-full border border-gray-100 hover:border-[#F37325] transition-all duration-300 hover:shadow-xl">
+              <ScaleIn key={dienst.titel} delay={idx * 0.1} className="h-full">
+                <CardSpotlight className="h-full">
+                  <div className="bg-white rounded-2xl p-8 h-full border border-gray-100 hover:border-[#F37325] transition-all duration-300 hover:shadow-xl flex flex-col">
                     <div className="w-14 h-14 bg-gradient-to-br from-[#F37325] to-[#ff8c42] rounded-xl flex items-center justify-center mb-6">
                       <dienst.icon className="h-7 w-7 text-white" />
                     </div>
@@ -466,6 +478,7 @@ export default function ZorginstellingenPage() {
           </div>
         </div>
       </section>
+      <ScrollToTop />
     </main>
   )
 }

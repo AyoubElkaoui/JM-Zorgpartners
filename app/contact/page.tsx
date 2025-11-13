@@ -9,6 +9,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Phone, Mail, MapPin, Send, Loader2, CheckCircle, Clock, FileText, ArrowRight, HeartHandshake, CheckCircle2, MessageSquare } from 'lucide-react'
 import { AnimatedTitle, GradientText } from '@/components/aceternity/animated-title'
 import { CardSpotlight } from '@/components/aceternity/card-spotlight'
+import ScrollToTop from '@/components/scroll-to-top'
 import { MovingBorder } from '@/components/aceternity/moving-border'
 import FadeContent from '@/components/react-bits/FadeContent'
 import ScaleIn from '@/components/react-bits/ScaleIn'
@@ -98,7 +99,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <div className="text-center mb-16">
             <FadeContent>
-              <h2 className="text-4xl lg:text-5xl font-black text-[#1C3364] mb-4">
+              <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-4">
                 Stuur ons een <GradientText>Bericht</GradientText>
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -288,7 +289,7 @@ export default function ContactPage() {
       <section className="py-24 bg-gradient-to-b from-white to-orange-50/30">
         <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
           <FadeContent>
-            <h2 className="text-3xl lg:text-4xl font-black text-[#1C3364] mb-4">
+            <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-4">
               Klaar om te beginnen? <span className="text-[#F37325]">Meld je nu aan</span>
             </h2>
             
@@ -346,6 +347,7 @@ export default function ContactPage() {
           </FadeContent>
         </div>
       </section>
+      <ScrollToTop />
     </main>
   )
 }

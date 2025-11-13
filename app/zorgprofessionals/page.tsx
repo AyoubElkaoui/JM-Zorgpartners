@@ -9,6 +9,7 @@ import {
 import FadeContent from '@/components/react-bits/FadeContent'
 import ScaleIn from '@/components/react-bits/ScaleIn'
 import { CardSpotlight } from '@/components/aceternity/card-spotlight'
+import ScrollToTop from '@/components/scroll-to-top'
 import { AnimatedTitle, GradientText } from '@/components/aceternity/animated-title'
 import { MovingBorder } from '@/components/aceternity/moving-border'
 
@@ -54,7 +55,7 @@ export default function ZorgprofessionalsPage() {
                   <span className="text-lg font-semibold text-[#1C3364]">Voor Zorgprofessionals</span>
                 </div>
                 
-                <h1 className="text-4xl lg:text-5xl font-black text-[#1C3364] leading-tight">
+                <h1 className="text-5xl lg:text-6xl font-black text-[#1C3364] leading-tight">
                   Werken via <span className="text-[#F37325]">JM Zorgpartners</span>
                 </h1>
                 
@@ -108,7 +109,7 @@ export default function ZorgprofessionalsPage() {
       <section id="sectoren" className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-black text-[#1C3364] mb-4">
+            <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-4">
               In welke <span className="text-[#F37325]">sectoren</span> kun je aan de slag?
             </h2>
             <p className="text-base text-gray-600 mt-4 max-w-3xl mx-auto">
@@ -141,7 +142,7 @@ export default function ZorgprofessionalsPage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-black text-[#1C3364] mb-4">
+            <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-4">
               Wat <span className="text-[#F37325]">vragen</span> wij van jou?
             </h2>
             <p className="text-base text-gray-600 mt-4 max-w-3xl mx-auto">
@@ -170,7 +171,7 @@ export default function ZorgprofessionalsPage() {
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-black text-[#1C3364] mb-4">
+            <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-4">
               Zo <span className="text-[#F37325]">werkt</span> het
             </h2>
           </div>
@@ -215,7 +216,7 @@ export default function ZorgprofessionalsPage() {
 
             <FadeContent delay={0.2}>
               <div className="space-y-6">
-                <h2 className="text-3xl lg:text-4xl font-black text-[#1C3364]">
+                <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364]">
                   Waarom werken via <span className="text-[#F37325]">JM Zorgpartners?</span>
                 </h2>
                 
@@ -244,7 +245,7 @@ export default function ZorgprofessionalsPage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-black text-[#1C3364] mb-4">
+            <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-4">
               Actuele <span className="text-[#F37325]">vacatures</span>
             </h2>
             <p className="text-base text-gray-600 mt-4">
@@ -339,7 +340,7 @@ export default function ZorgprofessionalsPage() {
                 <FileText className="h-5 w-5 text-[#F37325]" />
                 <span className="text-lg font-semibold text-[#1C3364]">Direct Aanmelden</span>
               </div>
-              <h2 className="text-4xl lg:text-5xl font-black text-[#1C3364] mb-4">
+              <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-4">
                 Meld je <span className="text-[#F37325]">Aan</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -625,7 +626,7 @@ export default function ZorgprofessionalsPage() {
       <section className="py-24 bg-gradient-to-b from-white to-orange-50/30">
         <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
           <FadeContent>
-            <h2 className="text-3xl lg:text-4xl font-black text-[#1C3364] mb-4">
+            <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-4">
               Klaar om te beginnen? <span className="text-[#F37325]">Meld je nu aan</span>
             </h2>
             
@@ -683,6 +684,7 @@ export default function ZorgprofessionalsPage() {
           </FadeContent>
         </div>
       </section>
+      <ScrollToTop />
     </main>
   )
 }

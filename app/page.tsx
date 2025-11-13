@@ -149,7 +149,7 @@ export default function HomePage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <AnimatedTitle>
-              <h2 className="text-4xl lg:text-5xl font-black text-[#1C3364] mb-6">
+              <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-6">
                 Waarom zorginstellingen voor <GradientText>ons</GradientText> kiezen
               </h2>
             </AnimatedTitle>
@@ -221,7 +221,7 @@ export default function HomePage() {
       <section className="py-32 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeContent blur duration={800} className="text-center mb-20">
-            <h2 className="text-4xl lg:text-5xl font-black text-[#1C3364] mb-6">
+            <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-6">
               Zo snel regelen wij <span className="text-[#F37325]">jouw personeel</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -339,7 +339,7 @@ export default function HomePage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <AnimatedTitle>
-              <h2 className="text-4xl lg:text-5xl font-black text-[#1C3364] mb-6">
+              <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-6">
                 Ontdek hoe wij <GradientText>jou</GradientText> kunnen helpen
               </h2>
             </AnimatedTitle>
@@ -450,7 +450,7 @@ export default function HomePage() {
       <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeContent blur duration={800} className="text-center mb-20">
-            <h2 className="text-4xl lg:text-5xl font-black text-[#1C3364] mb-6">
+            <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-6">
               Wat u van ons mag <span className="text-[#F37325]">verwachten</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -548,7 +548,7 @@ export default function HomePage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <AnimatedTitle>
-              <h2 className="text-4xl lg:text-5xl font-black text-[#1C3364] mb-6">
+              <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-6">
                 Actief in <GradientText>alle zorgsectoren</GradientText>
               </h2>
             </AnimatedTitle>
@@ -643,7 +643,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between mb-12">
             <FadeContent blur duration={800}>
-              <h2 className="text-4xl lg:text-5xl font-black text-[#1C3364]">
+              <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364]">
                 Ontdek meer <span className="text-[#F37325]">mogelijkheden</span>
               </h2>
               <p className="text-xl text-gray-600 mt-4">
@@ -780,7 +780,7 @@ export default function HomePage() {
       <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeContent blur duration={800} className="text-center mb-20">
-            <h2 className="text-4xl lg:text-5xl font-black text-[#1C3364] mb-6">
+            <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-6">
               Succesverhalen uit de <span className="text-[#F37325]">praktijk</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -852,7 +852,7 @@ export default function HomePage() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeContent blur duration={800} className="text-center mb-20">
-            <h2 className="text-4xl lg:text-5xl font-black text-[#1C3364] mb-6">
+            <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-6">
               Wat maakt <span className="text-[#F37325]">JM Zorgpartners</span> anders?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -957,7 +957,7 @@ export default function HomePage() {
       <section className="py-32 bg-gradient-to-b from-white to-orange-50/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeContent blur duration={800}>
-            <h2 className="text-4xl lg:text-5xl font-black text-[#1C3364] mb-6">
+            <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-6">
               Personeel nodig? <span className="text-[#F37325]">Wij helpen je direct</span>
             </h2>
             

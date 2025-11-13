@@ -31,6 +31,7 @@ body {
   /* Compenseer breedte zodat het 100% blijft */
   width: 125%; /* 100% / 0.8 = 125% */
   margin-left: -12.5%; /* Centreer: (125% - 100%) / 2 */
+  overflow-x: hidden; /* Voorkom horizontale scroll */
 }
 
 /* Enhanced transitions for professional feel */
