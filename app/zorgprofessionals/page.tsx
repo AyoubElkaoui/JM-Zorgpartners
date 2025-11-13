@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { 
   Briefcase, Brain, Users, Baby, Heart, GraduationCap, Globe, 
-  Clock, CheckCircle2, FileText, UserCircle, Phone, MapPin, Shield, Award, ArrowRight, HeartHandshake, Stethoscope
+  Clock, CheckCircle2, FileText, UserCircle, Phone, MapPin, Shield, Award, ArrowRight, HeartHandshake, Stethoscope, Send
 } from 'lucide-react'
 import FadeContent from '@/components/react-bits/FadeContent'
 import ScaleIn from '@/components/react-bits/ScaleIn'
@@ -330,8 +330,299 @@ export default function ZorgprofessionalsPage() {
         </div>
       </section>
 
-      {/* CTA Section - Zoals Homepage */}
-      <section id="aanmelden" className="py-24 bg-gradient-to-b from-white to-orange-50/30">
+      {/* Aanmeldformulier Section */}
+      <section id="aanmelden" className="py-24 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-4xl mx-auto px-6 lg:px-12">
+          <FadeContent>
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#F37325]/10 rounded-full mb-4">
+                <FileText className="h-5 w-5 text-[#F37325]" />
+                <span className="text-lg font-semibold text-[#1C3364]">Direct Aanmelden</span>
+              </div>
+              <h2 className="text-4xl lg:text-5xl font-black text-[#1C3364] mb-4">
+                Meld je <span className="text-[#F37325]">Aan</span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                Vul het formulier in en upload je documenten. We nemen binnen 24 uur contact met je op!
+              </p>
+            </div>
+          </FadeContent>
+
+          <ScaleIn delay={0.2}>
+            <CardSpotlight className="p-8">
+              <form className="space-y-6">
+                {/* Persoonlijke Gegevens */}
+                <div className="space-y-4">
+                  <h3 className="text-xl font-black text-[#1C3364] border-b-2 border-[#F37325]/20 pb-2">
+                    Persoonlijke Gegevens
+                  </h3>
+                  
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-semibold text-[#1C3364] mb-2">
+                        Voornaam *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#F37325] focus:outline-none transition-colors"
+                        placeholder="Je voornaam"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-[#1C3364] mb-2">
+                        Achternaam *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#F37325] focus:outline-none transition-colors"
+                        placeholder="Je achternaam"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-semibold text-[#1C3364] mb-2">
+                        E-mailadres *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#F37325] focus:outline-none transition-colors"
+                        placeholder="je@email.nl"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-[#1C3364] mb-2">
+                        Telefoonnummer *
+                      </label>
+                      <input
+                        type="tel"
+                        required
+                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#F37325] focus:outline-none transition-colors"
+                        placeholder="+31 6 12345678"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-[#1C3364] mb-2">
+                      Functie/Specialisatie *
+                    </label>
+                    <select
+                      required
+                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#F37325] focus:outline-none transition-colors"
+                    >
+                      <option value="">Selecteer je functie</option>
+                      <option value="verpleegkundige">Verpleegkundige</option>
+                      <option value="verzorgende">Verzorgende</option>
+                      <option value="wijkverpleegkundige">Wijkverpleegkundige</option>
+                      <option value="specialist-ouderenzorg">Specialist Ouderenzorg</option>
+                      <option value="ggz">GGZ Professional</option>
+                      <option value="kraamzorg">Kraamzorg</option>
+                      <option value="kinderopvang">Kinderopvang</option>
+                      <option value="anders">Anders</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* Document Uploads */}
+                <div className="space-y-4 pt-6">
+                  <h3 className="text-xl font-black text-[#1C3364] border-b-2 border-[#F37325]/20 pb-2">
+                    Vereiste Documenten
+                  </h3>
+
+                  <div className="space-y-3">
+                    {/* CV Upload */}
+                    <div className="bg-gray-50 rounded-lg p-4 border-2 border-dashed border-gray-300 hover:border-[#F37325] transition-colors">
+                      <label className="flex items-center justify-between cursor-pointer">
+                        <div className="flex items-center gap-3">
+                          <div className="h-10 w-10 rounded-lg bg-[#F37325]/10 flex items-center justify-center">
+                            <FileText className="h-5 w-5 text-[#F37325]" />
+                          </div>
+                          <div>
+                            <p className="font-semibold text-[#1C3364]">CV/Curriculum Vitae *</p>
+                            <p className="text-sm text-gray-500">PDF, DOC, DOCX (max 5MB)</p>
+                          </div>
+                        </div>
+                        <input
+                          type="file"
+                          required
+                          accept=".pdf,.doc,.docx"
+                          className="hidden"
+                        />
+                        <button type="button" className="px-4 py-2 bg-[#1C3364] text-white rounded-lg text-sm font-semibold hover:bg-[#2a4a8f] transition-colors">
+                          Upload
+                        </button>
+                      </label>
+                    </div>
+
+                    {/* Motivatiebrief Upload */}
+                    <div className="bg-gray-50 rounded-lg p-4 border-2 border-dashed border-gray-300 hover:border-[#F37325] transition-colors">
+                      <label className="flex items-center justify-between cursor-pointer">
+                        <div className="flex items-center gap-3">
+                          <div className="h-10 w-10 rounded-lg bg-[#F37325]/10 flex items-center justify-center">
+                            <FileText className="h-5 w-5 text-[#F37325]" />
+                          </div>
+                          <div>
+                            <p className="font-semibold text-[#1C3364]">Motivatiebrief *</p>
+                            <p className="text-sm text-gray-500">PDF, DOC, DOCX (max 5MB)</p>
+                          </div>
+                        </div>
+                        <input
+                          type="file"
+                          required
+                          accept=".pdf,.doc,.docx"
+                          className="hidden"
+                        />
+                        <button type="button" className="px-4 py-2 bg-[#1C3364] text-white rounded-lg text-sm font-semibold hover:bg-[#2a4a8f] transition-colors">
+                          Upload
+                        </button>
+                      </label>
+                    </div>
+
+                    {/* VOG Upload */}
+                    <div className="bg-gray-50 rounded-lg p-4 border-2 border-dashed border-gray-300 hover:border-[#F37325] transition-colors">
+                      <label className="flex items-center justify-between cursor-pointer">
+                        <div className="flex items-center gap-3">
+                          <div className="h-10 w-10 rounded-lg bg-[#F37325]/10 flex items-center justify-center">
+                            <Shield className="h-5 w-5 text-[#F37325]" />
+                          </div>
+                          <div>
+                            <p className="font-semibold text-[#1C3364]">VOG (Verklaring Omtrent Gedrag) *</p>
+                            <p className="text-sm text-gray-500">PDF (max 5MB)</p>
+                          </div>
+                        </div>
+                        <input
+                          type="file"
+                          required
+                          accept=".pdf"
+                          className="hidden"
+                        />
+                        <button type="button" className="px-4 py-2 bg-[#1C3364] text-white rounded-lg text-sm font-semibold hover:bg-[#2a4a8f] transition-colors">
+                          Upload
+                        </button>
+                      </label>
+                    </div>
+
+                    {/* ID/Paspoort Upload */}
+                    <div className="bg-gray-50 rounded-lg p-4 border-2 border-dashed border-gray-300 hover:border-[#F37325] transition-colors">
+                      <label className="flex items-center justify-between cursor-pointer">
+                        <div className="flex items-center gap-3">
+                          <div className="h-10 w-10 rounded-lg bg-[#F37325]/10 flex items-center justify-center">
+                            <UserCircle className="h-5 w-5 text-[#F37325]" />
+                          </div>
+                          <div>
+                            <p className="font-semibold text-[#1C3364]">ID/Paspoort Kopie *</p>
+                            <p className="text-sm text-gray-500">PDF, JPG, PNG (max 5MB)</p>
+                          </div>
+                        </div>
+                        <input
+                          type="file"
+                          required
+                          accept=".pdf,.jpg,.jpeg,.png"
+                          className="hidden"
+                        />
+                        <button type="button" className="px-4 py-2 bg-[#1C3364] text-white rounded-lg text-sm font-semibold hover:bg-[#2a4a8f] transition-colors">
+                          Upload
+                        </button>
+                      </label>
+                    </div>
+
+                    {/* Diploma's Upload */}
+                    <div className="bg-gray-50 rounded-lg p-4 border-2 border-dashed border-gray-300 hover:border-[#F37325] transition-colors">
+                      <label className="flex items-center justify-between cursor-pointer">
+                        <div className="flex items-center gap-3">
+                          <div className="h-10 w-10 rounded-lg bg-[#F37325]/10 flex items-center justify-center">
+                            <GraduationCap className="h-5 w-5 text-[#F37325]" />
+                          </div>
+                          <div>
+                            <p className="font-semibold text-[#1C3364]">Diploma's/Certificaten *</p>
+                            <p className="text-sm text-gray-500">PDF, JPG, PNG (max 10MB)</p>
+                          </div>
+                        </div>
+                        <input
+                          type="file"
+                          required
+                          accept=".pdf,.jpg,.jpeg,.png"
+                          multiple
+                          className="hidden"
+                        />
+                        <button type="button" className="px-4 py-2 bg-[#1C3364] text-white rounded-lg text-sm font-semibold hover:bg-[#2a4a8f] transition-colors">
+                          Upload
+                        </button>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Extra Informatie */}
+                <div className="space-y-4 pt-6">
+                  <h3 className="text-xl font-black text-[#1C3364] border-b-2 border-[#F37325]/20 pb-2">
+                    Aanvullende Informatie
+                  </h3>
+                  
+                  <div>
+                    <label className="block text-sm font-semibold text-[#1C3364] mb-2">
+                      Beschikbaarheid
+                    </label>
+                    <textarea
+                      rows={3}
+                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#F37325] focus:outline-none transition-colors"
+                      placeholder="Wanneer ben je beschikbaar? (bijv. fulltime, parttime, weekenden...)"
+                    ></textarea>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-[#1C3364] mb-2">
+                      Opmerkingen
+                    </label>
+                    <textarea
+                      rows={4}
+                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#F37325] focus:outline-none transition-colors"
+                      placeholder="Eventuele aanvullende informatie of vragen..."
+                    ></textarea>
+                  </div>
+                </div>
+
+                {/* Privacy & Submit */}
+                <div className="space-y-4 pt-6">
+                  <label className="flex items-start gap-3 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      required
+                      className="mt-1 h-5 w-5 rounded border-gray-300 text-[#F37325] focus:ring-[#F37325]"
+                    />
+                    <span className="text-sm text-gray-600">
+                      Ik ga akkoord met de <Link href="/privacy" className="text-[#F37325] font-semibold hover:underline">privacyverklaring</Link> en 
+                      het verwerken van mijn gegevens. *
+                    </span>
+                  </label>
+
+                  <MovingBorder duration={8000} className="w-full">
+                    <button
+                      type="submit"
+                      className="w-full px-8 py-4 bg-[#F37325] text-white rounded-xl font-bold text-lg hover:bg-[#d96420] transition-all flex items-center justify-center gap-2"
+                    >
+                      <Send className="h-5 w-5" />
+                      Verstuur Aanmelding
+                    </button>
+                  </MovingBorder>
+
+                  <p className="text-center text-sm text-gray-500">
+                    * Verplichte velden
+                  </p>
+                </div>
+              </form>
+            </CardSpotlight>
+          </ScaleIn>
+        </div>
+      </section>
+
+      {/* CTA Section - Snelle Contact Opties */}
+      <section className="py-24 bg-gradient-to-b from-white to-orange-50/30">
         <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
           <FadeContent>
             <h2 className="text-3xl lg:text-4xl font-black text-[#1C3364] mb-4">
