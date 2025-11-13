@@ -4,14 +4,14 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { 
   Briefcase, Brain, Users, Baby, Heart, GraduationCap, Globe, 
-  Clock, CheckCircle2, FileText, UserCircle, Phone, MapPin, Shield, Award, ArrowRight, HeartHandshake, Stethoscope, Send
+  Clock, CheckCircle2, FileText, Phone, MapPin, Shield, ArrowRight, HeartHandshake, Stethoscope, Send
 } from 'lucide-react'
 import FadeContent from '@/components/react-bits/FadeContent'
 import ScaleIn from '@/components/react-bits/ScaleIn'
 import { CardSpotlight } from '@/components/aceternity/card-spotlight'
-import ScrollToTop from '@/components/scroll-to-top'
 import { AnimatedTitle, GradientText } from '@/components/aceternity/animated-title'
 import { MovingBorder } from '@/components/aceternity/moving-border'
+import CTASection from '@/components/cta-section'
 
 const sectoren = [
   { icon: Brain, naam: 'GGZ', beschrijving: 'Geestelijke gezondheidszorg' },
@@ -24,24 +24,22 @@ const sectoren = [
 ]
 
 const vereisten = [
-  { icon: Award, titel: 'Relevant diploma', tekst: 'Erkende opleiding in de zorg' },
-  { icon: Shield, titel: 'Geldige VOG', tekst: 'Verklaring Omtrent Gedrag' },
-  { icon: Clock, titel: '3 jaar ervaring', tekst: 'Minimaal 3 jaar werkervaring' },
-  { icon: Heart, titel: 'Betrokken houding', tekst: 'Professioneel en gemotiveerd' },
+  { icon: GraduationCap, titel: 'Een relevante diploma', tekst: 'Relevante diploma voor de zorgsector' },
+  { icon: Shield, titel: 'Een geldige VOG', tekst: 'Verklaring Omtrent Gedrag' },
+  { icon: Clock, titel: 'Minimaal 3 jaar werkervaring in de zorg', tekst: 'Ruime ervaring in de zorg' },
+  { icon: Heart, titel: 'Een professionele, betrokken houding', tekst: 'Betrokken en professioneel' },
 ]
 
 const voordelen = [
   'Jij bepaalt wanneer en waar je werkt',
   'Eerlijke en snelle uitbetaling',
   'Persoonlijke begeleiding – altijd bereikbaar',
-  'Duurzame samenwerking waarin je gehoord wordt',
-  'Diversiteit aan opdrachten en sectoren',
-  'Geen lange wachttijden – snel aan de slag',
+  'Een duurzame samenwerking waarin je gehoord wordt',
 ]
 
 export default function ZorgprofessionalsPage() {
   return (
-    <main className="min-h-screen bg-white pt-32">
+    <main className="min-h-screen  bg-white">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#1C3364]/5 via-white to-[#F37325]/5" />
@@ -56,7 +54,7 @@ export default function ZorgprofessionalsPage() {
                 </div>
                 
                 <h1 className="text-5xl lg:text-6xl font-black text-[#1C3364] leading-tight">
-                  Werken via <span className="text-[#F37325]">JM Zorgpartners</span>
+                  Werken via <GradientText>JM Zorgpartners</GradientText>
                 </h1>
                 
                 <p className="text-lg text-gray-700 leading-relaxed">
@@ -66,26 +64,42 @@ export default function ZorgprofessionalsPage() {
                 
                 <p className="text-base text-gray-600">
                   Bij JM Zorgpartners <span className="font-semibold text-[#1C3364]">bepaal jij hoe je wilt werken</span> – 
-                  losse diensten of vaste opdrachten, overdag, 's nachts of in het weekend. 
+                  losse diensten of vaste opdrachten, overdag, &apos;s nachts of in het weekend. 
                   Wij luisteren naar jouw voorkeuren en zoeken werk dat écht bij je past – professioneel én persoonlijk.
                 </p>
                 
-                <div className="flex flex-wrap gap-4 pt-4">
-                  <MovingBorder duration={8000}>
-                    <Link
-                      href="#aanmelden"
-                      className="px-8 py-4 bg-[#F37325] text-white rounded-xl font-semibold hover:bg-[#d96420] transition-all inline-flex items-center gap-2"
-                    >
-                      <FileText className="h-5 w-5" />
-                      Direct aanmelden
-                    </Link>
-                  </MovingBorder>
-                  
-                  <Link
-                    href="#sectoren"
-                    className="px-8 py-4 border-2 border-[#1C3364] text-[#1C3364] rounded-xl font-semibold hover:bg-[#1C3364] hover:text-white transition-all"
-                  >
-                    Bekijk sectoren
+                <p className="text-base text-gray-600">
+                  Samen zorgen we voor de juiste match.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4 mb-10">
+                  <Link href="tel:0850000000">
+                    <ScaleIn delay={400} duration={700}>
+                      <MovingBorder
+                        duration={8000}
+                        className="bg-[#F37325] hover:bg-[#d96420] text-white px-8 py-4 font-bold"
+                        containerClassName="w-full sm:w-auto"
+                      >
+                        <div className="flex items-center justify-center gap-2">
+                          <Phone className="w-5 h-5" />
+                          <span>Bel 033 303 30 42</span>
+                        </div>
+                      </MovingBorder>
+                    </ScaleIn>
+                  </Link>
+                  <Link href="/over-ons">
+                    <ScaleIn delay={500} duration={700}>
+                      <MovingBorder
+                        duration={10000}
+                        className="bg-white hover:bg-orange-50 text-[#1C3364] px-8 py-4 font-bold"
+                        containerClassName="w-full sm:w-auto"
+                      >
+                        <div className="flex items-center justify-center gap-2">
+                          <span>Over ons</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </div>
+                      </MovingBorder>
+                    </ScaleIn>
                   </Link>
                 </div>
               </div>
@@ -147,7 +161,7 @@ export default function ZorgprofessionalsPage() {
             </h2>
             <p className="text-base text-gray-600 mt-4 max-w-3xl mx-auto">
               Wij staan voor kwaliteit en betrouwbaarheid – dat verwachten wij van onze zorgprofessionals, 
-              en dat mag jij ook van ons verwachten.
+              en dat mag jij ook van ons verwachten. We zorgen dat alles goed geregeld is, zodat jij kunt doen waar je goed in bent.
             </p>
           </div>
 
@@ -179,7 +193,7 @@ export default function ZorgprofessionalsPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { stap: '1', titel: 'Kennismaken', tekst: 'We plannen een kort gesprek waarin we jouw ervaring, wensen en voorkeuren in kaart brengen.' },
-              { stap: '2', titel: 'Aanmelden', tekst: 'Vul ons inschrijfformulier in en upload je documenten. Liever langskomen? Dat kan natuurlijk ook.' },
+              { stap: '2', titel: 'Aanmelden', tekst: 'Ben je enthousiast? Vul dan ons inschrijfformulier in en upload je documenten. Liever langskomen? Dat kan natuurlijk ook – we maken graag tijd voor je.' },
               { stap: '3', titel: 'Juiste match', tekst: 'We zoeken opdrachten die passen bij jouw profiel. Jij kiest zelf wat bij je past.' },
               { stap: '4', titel: 'Aan de slag!', tekst: 'Ben je akkoord? Dan regelen wij de rest. Jij kunt aan het werk.' },
             ].map((stap, idx) => (
@@ -225,7 +239,12 @@ export default function ZorgprofessionalsPage() {
                 </p>
 
                 <div className="space-y-3">
-                  {voordelen.map((voordeel, idx) => (
+                  {[
+                    'Jij bepaalt wanneer en waar je werkt',
+                    'Eerlijke en snelle uitbetaling',
+                    'Persoonlijke begeleiding – altijd bereikbaar',
+                    'Duurzame samenwerking waarin je gehoord wordt',
+                  ].map((voordeel, idx) => (
                     <div
                       key={idx}
                       className="flex items-start gap-3 p-3 bg-white rounded-lg border border-gray-200 hover:border-[#F37325] transition-all duration-300 hover:shadow-md"
@@ -386,6 +405,30 @@ export default function ZorgprofessionalsPage() {
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-semibold text-[#1C3364] mb-2">
+                        Geboortedatum *
+                      </label>
+                      <input
+                        type="date"
+                        required
+                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#F37325] focus:outline-none transition-colors"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-[#1C3364] mb-2">
+                        Woonplaats *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#F37325] focus:outline-none transition-colors"
+                        placeholder="Je woonplaats"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-semibold text-[#1C3364] mb-2">
                         E-mailadres *
                       </label>
                       <input
@@ -407,75 +450,97 @@ export default function ZorgprofessionalsPage() {
                       />
                     </div>
                   </div>
+                </div>
+
+                {/* Ervaring en voorkeur */}
+                <div className="space-y-4 pt-6">
+                  <h3 className="text-xl font-black text-[#1C3364] border-b-2 border-[#F37325]/20 pb-2">
+                    Ervaring en voorkeur
+                  </h3>
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-semibold text-[#1C3364] mb-2">
+                        Opleidingsniveau *
+                      </label>
+                      <select
+                        required
+                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#F37325] focus:outline-none transition-colors"
+                      >
+                        <option value="">Selecteer je opleidingsniveau</option>
+                        <option value="helpende">Helpende</option>
+                        <option value="verzorgende-ig">Verzorgende IG</option>
+                        <option value="verpleegkundige">Verpleegkundige</option>
+                        <option value="anders">Anders…</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-[#1C3364] mb-2">
+                        Aantal jaren werkervaring *
+                      </label>
+                      <select
+                        required
+                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#F37325] focus:outline-none transition-colors"
+                      >
+                        <option value="">Selecteer werkervaring</option>
+                        <option value="0-2">0–2 jaar</option>
+                        <option value="3-5">3–5 jaar</option>
+                        <option value="6-10">6–10 jaar</option>
+                        <option value="10+">10+ jaar</option>
+                      </select>
+                    </div>
+                  </div>
 
                   <div>
                     <label className="block text-sm font-semibold text-[#1C3364] mb-2">
-                      Functie/Specialisatie *
+                      Sectoren waarin je wilt werken *
                     </label>
-                    <select
-                      required
-                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#F37325] focus:outline-none transition-colors"
-                    >
-                      <option value="">Selecteer je functie</option>
-                      <option value="verpleegkundige">Verpleegkundige</option>
-                      <option value="verzorgende">Verzorgende</option>
-                      <option value="wijkverpleegkundige">Wijkverpleegkundige</option>
-                      <option value="specialist-ouderenzorg">Specialist Ouderenzorg</option>
-                      <option value="ggz">GGZ Professional</option>
-                      <option value="kraamzorg">Kraamzorg</option>
-                      <option value="kinderopvang">Kinderopvang</option>
-                      <option value="anders">Anders</option>
-                    </select>
+                    <div className="grid md:grid-cols-2 gap-3">
+                      {[
+                        'Ouderenzorg',
+                        'GGZ',
+                        'Jeugdzorg',
+                        'Kinderopvang',
+                        'Speciaal onderwijs',
+                        'Vluchtelingenopvang',
+                        'Gehandicaptenzorg'
+                      ].map((sector) => (
+                        <label key={sector} className="flex items-center gap-3 cursor-pointer">
+                          <input
+                            type="checkbox"
+                            className="h-5 w-5 rounded border-gray-300 text-[#F37325] focus:ring-[#F37325]"
+                          />
+                          <span className="text-sm text-gray-700">{sector}</span>
+                        </label>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
-                {/* Document Uploads */}
+                {/* Documenten uploaden */}
                 <div className="space-y-4 pt-6">
                   <h3 className="text-xl font-black text-[#1C3364] border-b-2 border-[#F37325]/20 pb-2">
-                    Vereiste Documenten
+                    Documenten uploaden
                   </h3>
 
                   <div className="space-y-3">
-                    {/* CV Upload */}
+                    {/* Diploma's Upload */}
                     <div className="bg-gray-50 rounded-lg p-4 border-2 border-dashed border-gray-300 hover:border-[#F37325] transition-colors">
                       <label className="flex items-center justify-between cursor-pointer">
                         <div className="flex items-center gap-3">
                           <div className="h-10 w-10 rounded-lg bg-[#F37325]/10 flex items-center justify-center">
-                            <FileText className="h-5 w-5 text-[#F37325]" />
+                            <GraduationCap className="h-5 w-5 text-[#F37325]" />
                           </div>
                           <div>
-                            <p className="font-semibold text-[#1C3364]">CV/Curriculum Vitae *</p>
-                            <p className="text-sm text-gray-500">PDF, DOC, DOCX (max 5MB)</p>
+                            <p className="font-semibold text-[#1C3364]">Diploma&apos;s *</p>
+                            <p className="text-sm text-gray-500">PDF, JPG, PNG (max 10MB)</p>
                           </div>
                         </div>
                         <input
                           type="file"
                           required
-                          accept=".pdf,.doc,.docx"
-                          className="hidden"
-                        />
-                        <button type="button" className="px-4 py-2 bg-[#1C3364] text-white rounded-lg text-sm font-semibold hover:bg-[#2a4a8f] transition-colors">
-                          Upload
-                        </button>
-                      </label>
-                    </div>
-
-                    {/* Motivatiebrief Upload */}
-                    <div className="bg-gray-50 rounded-lg p-4 border-2 border-dashed border-gray-300 hover:border-[#F37325] transition-colors">
-                      <label className="flex items-center justify-between cursor-pointer">
-                        <div className="flex items-center gap-3">
-                          <div className="h-10 w-10 rounded-lg bg-[#F37325]/10 flex items-center justify-center">
-                            <FileText className="h-5 w-5 text-[#F37325]" />
-                          </div>
-                          <div>
-                            <p className="font-semibold text-[#1C3364]">Motivatiebrief *</p>
-                            <p className="text-sm text-gray-500">PDF, DOC, DOCX (max 5MB)</p>
-                          </div>
-                        </div>
-                        <input
-                          type="file"
-                          required
-                          accept=".pdf,.doc,.docx"
+                          accept=".pdf,.jpg,.jpeg,.png"
+                          multiple
                           className="hidden"
                         />
                         <button type="button" className="px-4 py-2 bg-[#1C3364] text-white rounded-lg text-sm font-semibold hover:bg-[#2a4a8f] transition-colors">
@@ -508,47 +573,22 @@ export default function ZorgprofessionalsPage() {
                       </label>
                     </div>
 
-                    {/* ID/Paspoort Upload */}
+                    {/* CV Upload */}
                     <div className="bg-gray-50 rounded-lg p-4 border-2 border-dashed border-gray-300 hover:border-[#F37325] transition-colors">
                       <label className="flex items-center justify-between cursor-pointer">
                         <div className="flex items-center gap-3">
                           <div className="h-10 w-10 rounded-lg bg-[#F37325]/10 flex items-center justify-center">
-                            <UserCircle className="h-5 w-5 text-[#F37325]" />
+                            <FileText className="h-5 w-5 text-[#F37325]" />
                           </div>
                           <div>
-                            <p className="font-semibold text-[#1C3364]">ID/Paspoort Kopie *</p>
-                            <p className="text-sm text-gray-500">PDF, JPG, PNG (max 5MB)</p>
+                            <p className="font-semibold text-[#1C3364]">CV *</p>
+                            <p className="text-sm text-gray-500">PDF, DOC, DOCX (max 5MB)</p>
                           </div>
                         </div>
                         <input
                           type="file"
                           required
-                          accept=".pdf,.jpg,.jpeg,.png"
-                          className="hidden"
-                        />
-                        <button type="button" className="px-4 py-2 bg-[#1C3364] text-white rounded-lg text-sm font-semibold hover:bg-[#2a4a8f] transition-colors">
-                          Upload
-                        </button>
-                      </label>
-                    </div>
-
-                    {/* Diploma's Upload */}
-                    <div className="bg-gray-50 rounded-lg p-4 border-2 border-dashed border-gray-300 hover:border-[#F37325] transition-colors">
-                      <label className="flex items-center justify-between cursor-pointer">
-                        <div className="flex items-center gap-3">
-                          <div className="h-10 w-10 rounded-lg bg-[#F37325]/10 flex items-center justify-center">
-                            <GraduationCap className="h-5 w-5 text-[#F37325]" />
-                          </div>
-                          <div>
-                            <p className="font-semibold text-[#1C3364]">Diploma's/Certificaten *</p>
-                            <p className="text-sm text-gray-500">PDF, JPG, PNG (max 10MB)</p>
-                          </div>
-                        </div>
-                        <input
-                          type="file"
-                          required
-                          accept=".pdf,.jpg,.jpeg,.png"
-                          multiple
+                          accept=".pdf,.doc,.docx"
                           className="hidden"
                         />
                         <button type="button" className="px-4 py-2 bg-[#1C3364] text-white rounded-lg text-sm font-semibold hover:bg-[#2a4a8f] transition-colors">
@@ -559,31 +599,20 @@ export default function ZorgprofessionalsPage() {
                   </div>
                 </div>
 
-                {/* Extra Informatie */}
+                {/* Toelichting */}
                 <div className="space-y-4 pt-6">
                   <h3 className="text-xl font-black text-[#1C3364] border-b-2 border-[#F37325]/20 pb-2">
-                    Aanvullende Informatie
+                    Toelichting (optioneel)
                   </h3>
                   
                   <div>
                     <label className="block text-sm font-semibold text-[#1C3364] mb-2">
-                      Beschikbaarheid
-                    </label>
-                    <textarea
-                      rows={3}
-                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#F37325] focus:outline-none transition-colors"
-                      placeholder="Wanneer ben je beschikbaar? (bijv. fulltime, parttime, weekenden...)"
-                    ></textarea>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-[#1C3364] mb-2">
-                      Opmerkingen
+                      Vertel iets over jezelf of geef je voorkeuren aan
                     </label>
                     <textarea
                       rows={4}
                       className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-[#F37325] focus:outline-none transition-colors"
-                      placeholder="Eventuele aanvullende informatie of vragen..."
+                      placeholder="Vertel iets over jezelf of geef je voorkeuren aan..."
                     ></textarea>
                   </div>
                 </div>
@@ -602,7 +631,11 @@ export default function ZorgprofessionalsPage() {
                     </span>
                   </label>
 
-                  <MovingBorder duration={8000} className="w-full">
+                  <MovingBorder 
+                    duration={8000}   
+                    className="bg-[#F37325] hover:bg-[#d96420] text-white px-2 py-1 font-bold"
+                      containerClassName="w-full sm:w-auto"
+                      >
                     <button
                       type="submit"
                       className="w-full px-8 py-4 bg-[#F37325] text-white rounded-xl font-bold text-lg hover:bg-[#d96420] transition-all flex items-center justify-center gap-2"
@@ -622,69 +655,10 @@ export default function ZorgprofessionalsPage() {
         </div>
       </section>
 
-      {/* CTA Section - Snelle Contact Opties */}
-      <section className="py-24 bg-gradient-to-b from-white to-orange-50/30">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
-          <FadeContent>
-            <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-4">
-              Klaar om te beginnen? <span className="text-[#F37325]">Meld je nu aan</span>
-            </h2>
-            
-            <p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
-              Meld je eenvoudig aan via ons formulier. Binnen 24 uur hoor je van ons.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-                <Link href="/contact">
-                  <ScaleIn delay={200}>
-                    <MovingBorder
-                      duration={7000}
-                      className="bg-[#F37325] hover:bg-[#d96420] text-white px-8 py-4 font-bold text-base"
-                      containerClassName="w-full sm:w-auto"
-                    >
-                      <div className="flex items-center justify-center gap-2">
-                        <FileText className="w-5 h-5" />
-                        <span>Open aanmeldformulier</span>
-                        <ArrowRight className="w-4 h-4" />
-                      </div>
-                    </MovingBorder>
-                  </ScaleIn>
-                </Link>
-                
-                <Link href="tel:0653474474">
-                  <ScaleIn delay={300}>
-                    <MovingBorder
-                      duration={9000}
-                      className="bg-white hover:bg-gray-50 text-[#1C3364] px-8 py-4 font-bold text-base"
-                      containerClassName="w-full sm:w-auto"
-                    >
-                      <div className="flex items-center justify-center gap-2">
-                        <Phone className="w-5 h-5" />
-                        <span>Bel 06 53 474 474</span>
-                      </div>
-                    </MovingBorder>
-                  </ScaleIn>
-                </Link>
-              </div>
+      
 
-            <div className="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto">
-              <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
-                <Clock className="w-7 h-7 text-[#F37325] mx-auto mb-2" />
-                <p className="font-bold text-[#1C3364] text-sm">Binnen 24 uur reactie</p>
-              </div>
-              <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
-                <HeartHandshake className="w-7 h-7 text-[#F37325] mx-auto mb-2" />
-                <p className="font-bold text-[#1C3364] text-sm">Persoonlijk advies</p>
-              </div>
-              <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
-                <CheckCircle2 className="w-7 h-7 text-[#F37325] mx-auto mb-2" />
-                <p className="font-bold text-[#1C3364] text-sm">Geen verplichtingen</p>
-              </div>
-            </div>
-          </FadeContent>
-        </div>
-      </section>
-      <ScrollToTop />
+      {/* CTA Section */}
+      <CTASection />
     </main>
   )
 }

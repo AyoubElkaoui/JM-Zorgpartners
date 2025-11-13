@@ -1,9 +1,4 @@
-'use client'
-
-import { useState } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { Phone } from 'lucide-react'
+"use client";
 import {
   Navbar,
   NavBody,
@@ -13,93 +8,85 @@ import {
   MobileNavHeader,
   MobileNavToggle,
   MobileNavMenu,
-} from '@/components/ui/resizable-navbar'
+} from "@/components/ui/resizable-navbar";
+import Image from "next/image";
+import { useState } from "react";
 
-const navigation = [
-  { name: 'Home', link: '/' },
-  { name: 'Zorgprofessionals', link: '/zorgprofessionals' },
-  { name: 'Zorginstellingen', link: '/opdrachtgevers' },
-  { name: 'Over Ons', link: '/over-ons' },
-  { name: 'Blog', link: '/blog' },
-  { name: 'Contact', link: '/contact' },
-]
+const navItems = [
+  { name: "Home", link: "/" },
+  { name: "Zorgprofessionals", link: "/zorgprofessionals" },
+  { name: "Zorginstellingen", link: "/werkgevers" },
+  { name: "Over Ons", link: "/over-ons" },
+  { name: "Blog", link: "/blog" },
+  { name: "Contact", link: "/contact" },
+];
 
 export default function Header() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
-    <Navbar className="sticky top-0 z-50">
-      {/* Desktop Navigation */}
-      <NavBody>
-        <Link href="/" className="relative z-20 flex items-center px-2 py-1 -my-4">
+    <Navbar className="!h-24">
+      <NavBody className="!h-24">
+        {/* Custom Logo */}
+        <a href="/" className="flex items-center mr-6 select-none">
           <Image
             src="/logo/logo-color.png"
             alt="JM Zorgpartners"
-            width={350}
-            height={100}
-            className="h-20 lg:h-24 xl:h-28 w-auto"
+            width={80}
+            height={80}
+            className="h-20 w-auto"
             priority
           />
-        </Link>
-        <NavItems items={navigation} className="flex-1" />
-        <div className="flex items-center gap-2 flex-shrink-0">
-          <NavbarButton 
-            href="/contact" 
-            as={Link}
-            className="bg-gradient-to-r from-[#F37325] to-[#ff8c42] text-white shadow-lg hover:shadow-xl hover:shadow-[#F37325]/30 hover:-translate-y-0.5 transition-all duration-300 font-semibold text-sm whitespace-nowrap"
+        </a>
+        <NavItems items={navItems} />
+        <div className="flex items-center gap-4">
+          <NavbarButton
+            href="/contact"
+            className="!bg-gradient-to-r !from-[#F37325] !to-[#ff8c42] !text-white !px-8 !py-4 !rounded-xl !text-lg !shadow-lg hover:scale-105 transition"
           >
-            <Phone className="mr-2 h-4 w-4 inline-block" />
             Contact
           </NavbarButton>
         </div>
       </NavBody>
-
-      {/* Mobile Navigation */}
       <MobileNav>
         <MobileNavHeader>
-          <Link href="/" className="relative z-20 flex items-center px-2 py-1">
+          <a href="/" className="flex items-center mr-6 select-none">
             <Image
               src="/logo/logo-color.png"
               alt="JM Zorgpartners"
-              width={200}
+              width={60}
               height={60}
-              className="h-12 sm:h-14 w-auto"
+              className="h-14 w-auto"
               priority
             />
-          </Link>
+          </a>
           <MobileNavToggle
             isOpen={isMobileMenuOpen}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           />
         </MobileNavHeader>
-
         <MobileNavMenu
           isOpen={isMobileMenuOpen}
           onClose={() => setIsMobileMenuOpen(false)}
         >
-          {navigation.map((item, idx) => (
-            <Link
-              key={`mobile-link-${idx}`}
+          {navItems.map((item, idx) => (
+            <a
+              key={idx}
               href={item.link}
+              className="block w-full px-4 py-2 text-neutral-600"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="relative text-neutral-600 dark:text-neutral-300 hover:text-[#F37325] transition-colors"
             >
-              <span className="block">{item.name}</span>
-            </Link>
+              {item.name}
+            </a>
           ))}
-          <div className="flex w-full flex-col gap-4 mt-4">
-            <NavbarButton
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="w-full bg-gradient-to-r from-[#F37325] to-[#ff8c42] text-white shadow-lg hover:shadow-xl font-semibold"
-              href="/contact"
-              as={Link}
-            >
-              <Phone className="mr-2 h-4 w-4 inline-block" />
-              Contact
-            </NavbarButton>
-          </div>
+          <a
+            href="/contact"
+            className="block w-full px-4 py-2 text-[#F37325] font-bold"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Contact
+          </a>
         </MobileNavMenu>
       </MobileNav>
     </Navbar>
-  )
+  );
 }

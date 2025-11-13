@@ -7,30 +7,16 @@ import FadeContent from '@/components/react-bits/FadeContent'
 import ScaleIn from '@/components/react-bits/ScaleIn'
 import { AnimatedTitle, GradientText } from '@/components/aceternity/animated-title'
 import { MovingBorder } from '@/components/aceternity/moving-border'
-import ScrollToTop from '@/components/scroll-to-top'
+import CTASection from '@/components/cta-section'
 
 export default function OverOnsPage() {
   return (
-    <main className="min-h-screen bg-white pt-32">
+    <main className="min-h-screen bg-white">
+      {/* Hero Section - Mission */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#1C3364]/5 via-white to-[#F37325]/5" />
         
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="text-center max-w-4xl mx-auto">
-            <FadeContent>
-              <h1 className="text-5xl lg:text-6xl font-black text-[#1C3364] leading-tight mb-6">
-                Over <GradientText>JM Zorgpartners</GradientText>
-              </h1>
-              <p className="text-2xl text-gray-600 leading-relaxed">
-                Jouw partner in de zorg – voor professionals én zorginstellingen
-              </p>
-            </FadeContent>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <FadeContent>
               <div className="space-y-6">
@@ -39,26 +25,53 @@ export default function OverOnsPage() {
                   <span className="text-lg font-semibold text-[#1C3364]">Onze Missie</span>
                 </div>
                 
-                <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] leading-tight">
-                  De <GradientText>juiste match</GradientText> maken
-                </h2>
+                <h1 className="text-5xl lg:text-6xl font-black text-[#1C3364] leading-tight">
+                  Zorg die <GradientText>werkt</GradientText>
+                </h1>
                 
                 <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
                   <p>
-                    Bij JM Zorgpartners draait alles om <span className="font-bold text-[#1C3364]">de juiste match</span>. 
-                    Wij verbinden zorgprofessionals met zorginstellingen op een manier die verder gaat dan alleen papier en procedures.
+                    Wij geloven in zorg die werkt. Dat begint met snelheid en betrouwbaarheid — maar het gaat verder dan dat.
                   </p>
                   
                   <p>
-                    Wij begrijpen dat goede zorg begint bij gedreven en betrokken mensen. Daarom staan wij voor 
-                    <span className="font-bold text-[#1C3364]"> kwaliteit, vertrouwen en persoonlijk contact</span> – 
-                    omdat dat het verschil maakt.
+                    Wij willen dat zorginstellingen voelen: er wordt met ons meegedacht. En dat zorgprofessionals denken: hier kan ik iets betekenen.
                   </p>
                   
                   <p>
-                    Of je nu een zorgprofessional bent op zoek naar werk dat bij je past, of een instelling die 
-                    betrouwbaar personeel nodig heeft – wij helpen je verder.
+                    Ons doel: mensen bij elkaar brengen die elkaar versterken. Zodat de zorg vooruit kan — ook als het even tegenzit.
                   </p>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4 mb-10">
+                  <Link href="/contact">
+                    <ScaleIn delay={400} duration={700}>
+                      <MovingBorder
+                        duration={8000}
+                        className="bg-[#F37325] hover:bg-[#d96420] text-white px-8 py-4 font-bold"
+                        containerClassName="w-full sm:w-auto"
+                      >
+                        <div className="flex items-center justify-center gap-2">
+                          <Phone className="w-5 h-5" />
+                          <span>Neem contact op</span>
+                        </div>
+                      </MovingBorder>
+                    </ScaleIn>
+                  </Link>
+                  <Link href="/zorgprofessionals">
+                    <ScaleIn delay={500} duration={700}>
+                      <MovingBorder
+                        duration={10000}
+                        className="bg-white hover:bg-orange-50 text-[#1C3364] px-8 py-4 font-bold"
+                        containerClassName="w-full sm:w-auto"
+                      >
+                        <div className="flex items-center justify-center gap-2">
+                          <span>Voor zorgprofessionals</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </div>
+                      </MovingBorder>
+                    </ScaleIn>
+                  </Link>
                 </div>
               </div>
             </FadeContent>
@@ -77,49 +90,43 @@ export default function OverOnsPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      {/* The Power of the Right Match */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
-            <AnimatedTitle>
-              Waar wij voor <GradientText>staan</GradientText>
+            <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-4">
+             <AnimatedTitle>
+              De kracht van de <GradientText>juiste match</GradientText>
             </AnimatedTitle>
-            <p className="text-xl text-gray-600 mt-4">
-              Drie kernwaarden die ons werk definiëren
+            </h2>
+            <p className="text-xl text-gray-600 mt-4 max-w-3xl mx-auto">
+              Goede zorg vraagt om de juiste mensen op de juiste plek.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Award,
-                titel: 'Betrouwbaarheid',
-                tekst: 'We doen wat we beloven. Zorgprofessionals én zorginstellingen kunnen op ons rekenen – altijd.'
-              },
-              {
-                icon: Zap,
-                titel: 'Snelheid',
-                tekst: 'Of je nu snel personeel nodig hebt of direct aan de slag wilt – wij zorgen ervoor dat het gebeurt.'
-              },
-              {
-                icon: CheckCircle2,
-                titel: 'Kwaliteit',
-                tekst: 'We gaan nooit voor snelheid ten koste van kwaliteit. Alleen gescreende professionals, altijd gedegen matches.'
-              },
-            ].map((waarde, idx) => (
-              <ScaleIn key={waarde.titel} delay={idx * 0.1}>
-                <div className="bg-white rounded-2xl p-8 border-2 border-gray-100 hover:border-[#F37325] transition-all duration-300 hover:shadow-xl h-full">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#1C3364] to-[#2a4a8f] rounded-2xl flex items-center justify-center mb-6">
-                    <waarde.icon className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-[#1C3364] mb-4">{waarde.titel}</h3>
-                  <p className="text-gray-600 leading-relaxed text-lg">{waarde.tekst}</p>
-                </div>
-              </ScaleIn>
-            ))}
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+              <p>
+                Bij JM Zorgpartners draait het om één ding: <span className="font-bold text-[#1C3364]">de juiste match</span>.
+              </p>
+              
+              <p>
+                Een goede match is meer dan een vinkje achter diploma&apos;s of ervaring. Het gaat om mensen die passen bij de organisatie, het team en de zorgsituatie.
+              </p>
+              
+              <p>
+                Daarom luisteren we, schakelen we snel en denken we actief mee. We vullen geen gaten, we versterken.
+              </p>
+              
+              <p>
+                Met de juiste match ontstaat rust, vertrouwen en ruimte voor betere zorg.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
+      {/* What Distinguishes Us */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -143,20 +150,20 @@ export default function OverOnsPage() {
                 <div className="space-y-4">
                   {[
                     {
-                      titel: 'Persoonlijke benadering',
-                      tekst: 'Je bent geen nummer. Wij kennen jouw naam, jouw situatie en jouw wensen. Elk contact is persoonlijk.'
+                      titel: 'We begrijpen wat er speelt – aan beide kanten van de lijn',
+                      tekst: 'We kennen de uitdagingen van zorginstellingen én de wensen van zorgprofessionals. Deze dubbele expertise maakt ons uniek.'
                     },
                     {
-                      titel: 'Jarenlange ervaring in de zorg',
-                      tekst: 'We kennen de sector van binnen en van buiten. Dat maakt ons snel, efficiënt en betrouwbaar.'
+                      titel: 'We schakelen snel zonder in te leveren op kwaliteit',
+                      tekst: 'Snelheid is belangrijk, maar nooit ten koste van zorgvuldigheid. We combineren efficiëntie met grondige screening.'
                     },
                     {
-                      titel: 'Landelijke dekking',
-                      tekst: 'Van Amsterdam tot Maastricht – we werken door heel Nederland met een groot netwerk.'
+                      titel: 'We leveren alleen mensen waar we zelf volledig achter staan',
+                      tekst: 'Elke professional die we voorstellen is door ons persoonlijk gescreend. We staan garant voor kwaliteit en betrouwbaarheid.'
                     },
                     {
-                      titel: 'Zorgvuldig gescreend personeel',
-                      tekst: 'Alle professionals die via ons werken zijn gescreend op diplomas, VOG, referenties en ervaring.'
+                      titel: 'We zoeken versterking, niet alleen opvulling',
+                      tekst: 'We kijken verder dan alleen het invullen van een vacature. We versterken teams met mensen die écht bijdragen aan betere zorg.'
                     },
                   ].map((punt, idx) => (
                     <div
@@ -168,129 +175,146 @@ export default function OverOnsPage() {
                     </div>
                   ))}
                 </div>
+                
+                <div className="mt-8 p-6 bg-gradient-to-r from-[#1C3364]/5 to-[#F37325]/5 rounded-2xl border-l-4 border-[#F37325]">
+                  <p className="text-gray-700 leading-relaxed">
+                    <span className="font-bold text-[#1C3364]">Zorginstellingen</span> waarderen onze betrokkenheid en de mensen die écht passen.<br />
+                    <span className="font-bold text-[#1C3364]">Zorgprofessionals</span> waarderen onze duidelijke communicatie, eerlijke aanpak en het gevoel dat we er ook voor hen zijn.
+                  </p>
+                </div>
               </div>
             </FadeContent>
           </div>
         </div>
       </section>
 
+      {/* Our Values */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="text-center mb-16">
+            <AnimatedTitle>
+              Waar wij voor <GradientText>staan</GradientText>
+            </AnimatedTitle>
+            <p className="text-xl text-gray-600 mt-4">
+              Drie kernwaarden die ons werk definiëren
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Award,
+                titel: 'Betrouwbaarheid',
+                tekst: 'Wij komen onze afspraken na — helder, eerlijk en op tijd. Wat we beloven, maken we waar.'
+              },
+              {
+                icon: Zap,
+                titel: 'Snelheid',
+                tekst: 'Een aanvraag vandaag? Dan schakelen wij vandaag. We begrijpen dat tijd cruciaal is in de zorg.'
+              },
+              {
+                icon: CheckCircle2,
+                titel: 'Kwaliteit',
+                tekst: 'We selecteren zorgvuldig en leveren uitsluitend professionals die voldoen aan onze hoge kwaliteitsnormen.'
+              },
+            ].map((waarde, idx) => (
+              <ScaleIn key={waarde.titel} delay={idx * 0.1}>
+                <div className="bg-white rounded-2xl p-8 border-2 border-gray-100 hover:border-[#F37325] transition-all duration-300 hover:shadow-xl h-full">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#1C3364] to-[#2a4a8f] rounded-2xl flex items-center justify-center mb-6">
+                    <waarde.icon className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#1C3364] mb-4">{waarde.titel}</h3>
+                  <p className="text-gray-600 leading-relaxed text-lg">{waarde.tekst}</p>
+                </div>
+              </ScaleIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Collaboration Section */}
       <section className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
           <FadeContent>
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#F37325]/10 rounded-full">
                 <Users className="h-5 w-5 text-[#F37325]" />
-                <span className="text-lg font-semibold text-[#1C3364]">Ons Team</span>
+                <span className="text-lg font-semibold text-[#1C3364]">Samen werken = samen sterker</span>
               </div>
               
               <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] leading-tight">
-                Een team dat <GradientText>voor je klaarstaat</GradientText>
+                Of u nu opdrachtgever bent of <GradientText>zorgprofessional</GradientText>
               </h2>
               
               <p className="text-xl text-gray-700 leading-relaxed">
-                Achter JM Zorgpartners staat een gedreven team met passie voor de zorg en oog voor mensen. 
-                Wij zijn bereikbaar, betrokken en altijd bereid om mee te denken.
+                wij geloven in duurzame samenwerking, duidelijke communicatie en echte betrokkenheid.
               </p>
               
               <p className="text-xl text-gray-700 leading-relaxed">
-                Of je belt voor een spoedvraag of langskomt voor een kennismakingsgesprek – 
-                je bent altijd welkom. Want goede zorg begint met écht contact.
+                We denken mee, kijken vooruit en doen wat we beloven. Zo bouwen we samen aan iets wat werkt — voor iedereen.
               </p>
-            </div>
-          </FadeContent>
-
-          <FadeContent delay={0.3}>
-            <div className="mt-12 grid md:grid-cols-3 gap-8">
-              {[
-                { naam: 'Jesse Mulder', functie: 'Medeoprichter', image: '/images/team-1.png' },
-                { naam: 'Mohamed El Amrani', functie: 'Medeoprichter', image: '/images/team-2.png' },
-                { naam: 'Ons Team', functie: 'Recruitment & Support', image: '/images/team-3.png' },
-              ].map((persoon, idx) => (
-                <ScaleIn key={persoon.naam} delay={idx * 0.1}>
-                  <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
-                    <div className="relative h-64">
-                      <Image
-                        src={persoon.image}
-                        alt={persoon.naam}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="p-6 text-center">
-                      <h3 className="text-xl font-bold text-[#1C3364] mb-1">{persoon.naam}</h3>
-                      <p className="text-[#F37325] font-semibold">{persoon.functie}</p>
-                    </div>
+              
+              <div className="mt-12 grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#1C3364] to-[#2a4a8f] rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                    <Heart className="h-8 w-8 text-white" />
                   </div>
-                </ScaleIn>
-              ))}
-            </div>
-          </FadeContent>
-        </div>
-      </section>
-
-      {/* CTA Section - Warm en uitnodigend */}
-      {/* CTA Sectie - Neem Contact Op */}
-      <section className="py-32 bg-gradient-to-b from-white to-orange-50/30">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <FadeContent blur duration={800}>
-            <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-6">
-              Personeel nodig? <span className="text-[#F37325]">Wij helpen je direct</span>
-            </h2>
-            
-            <p className="text-xl text-gray-600 mb-12 leading-relaxed max-w-2xl mx-auto">
-              Neem contact op voor een vrijblijvend gesprek over jouw personeelsbehoefte. Binnen 24 uur hoor je van ons.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-5 justify-center mb-12">
-              <Link href="tel:0850000000">
-                <ScaleIn delay={200} duration={700}>
-                  <MovingBorder
-                    duration={7000}
-                    className="bg-[#F37325] hover:bg-[#d96420] text-white px-10 py-5 font-black text-lg"
-                    containerClassName="w-full sm:w-auto"
-                  >
-                    <div className="flex items-center justify-center gap-3">
-                      <Phone className="w-6 h-6" />
-                      <span>Bel 085 - 0000000</span>
-                      <ArrowRight className="w-5 h-5" />
-                    </div>
-                  </MovingBorder>
-                </ScaleIn>
-              </Link>
-              <Link href="/contact">
-                <ScaleIn delay={300} duration={700}>
-                  <MovingBorder
-                    duration={9000}
-                    className="bg-white hover:bg-gray-50 text-[#1C3364] px-10 py-5 font-black text-lg"
-                    containerClassName="w-full sm:w-auto"
-                  >
-                    <div className="flex items-center justify-center gap-3">
-                      <span>Stuur een bericht</span>
-                      <Mail className="w-5 h-5" />
-                    </div>
-                  </MovingBorder>
-                </ScaleIn>
-              </Link>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-              <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <Clock className="w-8 h-8 text-[#F37325] mx-auto mb-3" />
-                <p className="font-bold text-[#1C3364]">Binnen 24 uur reactie</p>
-              </div>
-              <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <HeartHandshake className="w-8 h-8 text-[#F37325] mx-auto mb-3" />
-                <p className="font-bold text-[#1C3364]">Persoonlijk advies</p>
-              </div>
-              <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <CheckCircle2 className="w-8 h-8 text-[#F37325] mx-auto mb-3" />
-                <p className="font-bold text-[#1C3364]">Geen verplichtingen</p>
+                  <h3 className="text-2xl font-bold text-[#1C3364] mb-4">Voor opdrachtgevers</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Betrouwbare partners die meedenken over uw personeelsbehoeften. Van tijdelijke ondersteuning tot structurele oplossingen.
+                  </p>
+                  <div className="mt-6">
+                    <Link href="/werkgevers">
+                      <ScaleIn delay={600} duration={700}>
+                        <MovingBorder
+                          duration={8000}
+                          className="bg-[#1C3364] hover:bg-[#2a4a8f] text-white px-6 py-3 font-bold w-full"
+                          containerClassName="w-full"
+                        >
+                          <div className="flex items-center justify-center gap-2">
+                            <span>Meer informatie</span>
+                            <ArrowRight className="w-4 h-4" />
+                          </div>
+                        </MovingBorder>
+                      </ScaleIn>
+                    </Link>
+                  </div>
+                </div>
+                
+                <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#F37325] to-[#d96420] rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                    <HeartHandshake className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#1C3364] mb-4">Voor zorgprofessionals</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Een partner die uw carrière serieus neemt. We luisteren naar uw wensen en vinden de perfecte werkplek voor u.
+                  </p>
+                  <br />
+                  <div className="mt-6">
+                    <Link href="/zorgprofessionals">
+                      <ScaleIn delay={700} duration={700}>
+                        <MovingBorder
+                          duration={10000}
+                          className="bg-[#F37325] hover:bg-[#d96420] text-white px-6 py-3 font-bold w-full"
+                          containerClassName="w-full"
+                        >
+                          <div className="flex items-center justify-center gap-2">
+                            <span>Meer informatie</span>
+                            <ArrowRight className="w-4 h-4" />
+                          </div>
+                        </MovingBorder>
+                      </ScaleIn>
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           </FadeContent>
         </div>
       </section>
-      <ScrollToTop />
+
+      {/* CTA Section */}
+      <CTASection />
     </main>
   )
 }

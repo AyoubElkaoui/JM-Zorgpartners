@@ -9,7 +9,6 @@ import { Textarea } from '@/components/ui/textarea'
 import { Phone, Mail, MapPin, Send, Loader2, CheckCircle, Clock, FileText, ArrowRight, HeartHandshake, CheckCircle2, MessageSquare } from 'lucide-react'
 import { AnimatedTitle, GradientText } from '@/components/aceternity/animated-title'
 import { CardSpotlight } from '@/components/aceternity/card-spotlight'
-import ScrollToTop from '@/components/scroll-to-top'
 import { MovingBorder } from '@/components/aceternity/moving-border'
 import FadeContent from '@/components/react-bits/FadeContent'
 import ScaleIn from '@/components/react-bits/ScaleIn'
@@ -49,7 +48,7 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="min-h-screen bg-white pt-32">
+    <main className="min-h-screen  bg-white">
       {/* Hero Section - EXACT zoals Opdrachtgevers */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#1C3364]/5 via-white to-[#F37325]/5" />
@@ -232,7 +231,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h4 className="font-semibold text-[#1C3364] mb-1">Telefoon</h4>
-                        <p className="text-gray-600 font-medium">+31 (0) 123 456 789</p>
+                        <p className="text-gray-600 font-medium">+31 (0) 33 303 30 42</p>
                         <p className="text-sm text-gray-500 flex items-center gap-1 mt-1">
                           <Clock className="h-3 w-3" />
                           Ma-Vr: 08:00 - 18:00
@@ -258,8 +257,8 @@ export default function ContactPage() {
                       <div>
                         <h4 className="font-semibold text-[#1C3364] mb-1">Adres</h4>
                         <p className="text-gray-600">
-                          Straatnaam 123<br />
-                          1234 AB Amsterdam<br />
+                          De Windturbine 7<br />
+                          3815KP Amersfoort<br />
                           Nederland
                         </p>
                       </div>
@@ -347,7 +346,6 @@ export default function ContactPage() {
           </FadeContent>
         </div>
       </section>
-      <ScrollToTop />
     </main>
   )
 }

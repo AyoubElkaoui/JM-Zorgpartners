@@ -9,7 +9,6 @@ import { CardSpotlight } from '@/components/aceternity/card-spotlight'
 import { MovingBorder } from '@/components/aceternity/moving-border'
 import FadeContent from '@/components/react-bits/FadeContent'
 import ScaleIn from '@/components/react-bits/ScaleIn'
-import ScrollToTop from '@/components/scroll-to-top'
 
 export default function BlogPage() {
   const posts = getBlogPosts()
@@ -17,7 +16,7 @@ export default function BlogPage() {
   const other = posts.filter(p => !p.featured)
 
   return (
-    <main className="min-h-screen bg-white pt-32">
+    <main className="min-h-screen  bg-white">
       {/* Hero Section - EXACT zoals Opdrachtgevers */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#1C3364]/5 via-white to-[#F37325]/5" />
@@ -249,7 +248,6 @@ export default function BlogPage() {
           </FadeContent>
         </div>
       </section>
-      <ScrollToTop />
     </main>
   )
 }

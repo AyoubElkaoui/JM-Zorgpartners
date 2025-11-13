@@ -46,7 +46,7 @@
 ### Configuratie
 - [ ] Email instellingen configureren (.env.local aanmaken uit .env.example)
 - [ ] Email domein opzetten (DKIM, SPF records)
-- [ ] Echte telefoonnummers vervangen (nu: 06 123 456 78)
+- [ ] Echte telefoonnummers vervangen (nu: 033 303 30 42)
 - [ ] Echte email adressen toevoegen
 
 ### Content
@@ -241,7 +241,7 @@ npm run lint
 ## 📞 Contact Info te Vervangen
 
 Alle instances van placeholder data:
-- Telefoon: `06 123 456 78` → echte nummer
+- Telefoon: `033 303 30 42` → echte nummer
 - Email: `info@jmzorgpartners.nl` → geverifieerd email
 - Statistieken: `500+`, `98%`, `50+` → echte cijfers indien anders
 

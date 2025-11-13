@@ -1,328 +1,527 @@
+'use client'
+
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { FadeIn, SlideIn, ScaleIn } from '@/components/animations'
-import { 
-  Building2, 
-  UserCheck, 
-  Clock, 
-  Shield,
-  TrendingUp,
-  CheckCircle,
-  ArrowRight,
-  Phone
+import Image from 'next/image'
+import { useState } from 'react'
+import {
+  Building2, Users, Clock, TrendingUp, Shield, CheckCircle2,
+  Phone, Mail, MapPin, FileText, ArrowRight
 } from 'lucide-react'
+import FadeContent from '@/components/react-bits/FadeContent'
+import ScaleIn from '@/components/react-bits/ScaleIn'
+import { CardSpotlight } from '@/components/aceternity/card-spotlight'
+import { AnimatedTitle, GradientText } from '@/components/aceternity/animated-title'
+import { MovingBorder } from '@/components/aceternity/moving-border'
+import CTASection from '@/components/cta-section'
 
-export default function WerkgeversPage() {
+export default function ZorginstellingenPage() {
+  const [formData, setFormData] = useState({
+    voornaam: '',
+    achternaam: '',
+    functie: '',
+    organisatie: '',
+    vestigingsplaats: '',
+    telefoon: '',
+    email: '',
+    voorkeur: 'email',
+    toelichting: ''
+  })
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: new FormData(e.target as HTMLFormElement),
+      })
+      
+      if (response.ok) {
+        alert('Bedankt voor uw aanvraag! Wij nemen binnen 24 uur contact met u op.')
+        setFormData({
+          voornaam: '',
+          achternaam: '',
+          functie: '',
+          organisatie: '',
+          vestigingsplaats: '',
+          telefoon: '',
+          email: '',
+          voorkeur: 'email',
+          toelichting: ''
+        })
+      } else {
+        alert('Er ging iets mis bij het versturen. Probeer het opnieuw of neem telefonisch contact op.')
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      alert('Er ging iets mis bij het versturen. Probeer het opnieuw of neem telefonisch contact op.')
+    }
+  }
+
   return (
-    <div className="min-h-screen pt-20">
-      {/* Hero */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 via-white to-secondary/5">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-white ">
+      {/* Hero Section */}
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1C3364]/5 via-white to-[#F37325]/5" />
+        
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <FadeIn>
-              <div>
-                <div className="inline-flex items-center space-x-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-6">
-                  <Building2 className="h-4 w-4" />
-                  <span>Voor Werkgevers</span>
+            <FadeContent>
+              <div className="space-y-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#F37325]/10 rounded-full">
+                  <Building2 className="h-5 w-5 text-[#F37325]" />
+                  <span className="text-lg font-semibold text-[#1C3364]">Voor Zorginstellingen</span>
                 </div>
-                <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-                  Vind de Perfecte Zorgprofessional
+                
+                <h1 className="text-5xl lg:text-6xl font-black text-[#1C3364] leading-tight">
+                  Op zoek naar <GradientText>gekwalificeerd</GradientText> zorgpersoneel?
                 </h1>
-                <p className="text-xl text-gray-600 mb-8">
-                  Wij begrijpen de uitdagingen in de zorg. Laat ons jouw partner zijn in het vinden 
-                  van gekwalificeerd en gemotiveerd zorgpersoneel.
+                
+                <p className="text-xl text-gray-600 leading-relaxed">
+                  Bij JM Zorgpartners leveren wij flexibel, betrouwbaar en deskundig personeel dat naadloos aansluit bij uw organisatie.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" asChild>
-                    <Link href="/contact">
-                      Bespreek je Behoefte
-                      <ArrowRight className="ml-2 h-5 w-5" />
-                    </Link>
-                  </Button>
-                  <Button size="lg" variant="outline" asChild>
-                    <a href="tel:+31123456789">
-                      <Phone className="mr-2 h-5 w-5" />
-                      Bel Direct
-                    </a>
-                  </Button>
+                
+                <div className="bg-white rounded-2xl p-6 border-2 border-[#F37325]/20 shadow-lg">
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Of het nu gaat om <span className="font-bold text-[#1C3364]">tijdelijke vervanging</span>, 
+                    <span className="font-bold text-[#1C3364]"> piekbelasting</span> of 
+                    <span className="font-bold text-[#1C3364]"> langdurige vacatures</span> – wij staan voor u klaar.
+                  </p>
+                </div>
+                
+               <div className="flex flex-col sm:flex-row gap-4 mb-10">
+                  <Link href="tel:0850000000">
+                    <ScaleIn delay={400} duration={700}>
+                      <MovingBorder
+                        duration={8000}
+                        className="bg-[#F37325] hover:bg-[#d96420] text-white px-8 py-4 font-bold"
+                        containerClassName="w-full sm:w-auto"
+                      >
+                        <div className="flex items-center justify-center gap-2">
+                          <Phone className="w-5 h-5" />
+                          <span>Bel 033 303 30 42</span>
+                        </div>
+                      </MovingBorder>
+                    </ScaleIn>
+                  </Link>
+                  <Link href="/contact">
+                    <ScaleIn delay={500} duration={700}>
+                      <MovingBorder
+                        duration={10000}
+                        className="bg-white hover:bg-orange-50 text-[#1C3364] px-8 py-4 font-bold"
+                        containerClassName="w-full sm:w-auto"
+                      >
+                        <div className="flex items-center justify-center gap-2">
+                          <span>Neem contact op</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </div>
+                      </MovingBorder>
+                    </ScaleIn>
+                  </Link>
                 </div>
               </div>
-            </FadeIn>
-
-            <SlideIn direction="right">
-              <div className="relative h-[500px]">
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-primary/20 rounded-3xl transform rotate-3" />
-                <div className="relative h-full w-full bg-white rounded-3xl shadow-2xl overflow-hidden flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <Building2 className="h-32 w-32 text-primary mx-auto mb-4 animate-float" />
-                    <p className="text-2xl font-semibold text-gray-800">Jouw Partner in Zorg</p>
-                  </div>
-                </div>
+            </FadeContent>
+            
+            <FadeContent delay={0.2}>
+              <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+                <Image
+                  src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800"
+                  alt="Professioneel zorgteam"
+                  fill
+                  className="object-cover"
+                />
               </div>
-            </SlideIn>
+            </FadeContent>
           </div>
         </div>
       </section>
 
-      {/* Onze Diensten */}
-      <section className="py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-                Onze Diensten
-              </h2>
-              <p className="text-xl text-gray-600">
-                Complete HR-oplossingen voor de zorgsector
-              </p>
-            </div>
-          </FadeIn>
+      {/* Diensten Section */}
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="text-center mb-16">
+            <AnimatedTitle>
+              Onze <GradientText>diensten</GradientText> voor zorginstellingen
+            </AnimatedTitle>
+            <p className="text-xl text-gray-600 mt-4">
+              Flexibele oplossingen voor al uw personeelsbehoeften
+            </p>
+          </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              {
-                icon: UserCheck,
-                title: 'Werving & Selectie',
-                description: 'Wij vinden de perfecte kandidaat voor jouw organisatie. Van screening tot plaatsing.',
-                features: [
-                  'Uitgebreide kandidaatscreening',
-                  'Referentiecheck',
-                  'Skill assessment',
-                  'Persoonlijke matching',
-                ],
-              },
-              {
-                icon: Clock,
-                title: 'Flexibele Detachering',
-                description: 'Tijdelijk personeel voor elke situatie. Van enkele dagen tot langdurige opdrachten.',
-                features: [
-                  'Korte en lange termijn',
-                  'Vervanging bij ziekte',
-                  'Piekbelasting opvangen',
-                  'Snelle plaatsing mogelijk',
-                ],
-              },
-              {
-                icon: Shield,
-                title: '24/7 Spoedlijn',
-                description: 'Voor acute personeelstekorten kun je altijd op ons rekenen, dag en nacht.',
-                features: [
-                  'Direct beschikbaar personeel',
-                  'Kwaliteit gegarandeerd',
-                  'Binnen 4 uur reactie',
-                  'Weekend en feestdagen',
-                ],
-              },
-            ].map((service, index) => (
-              <ScaleIn key={service.title} delay={index * 0.1}>
-                <Card className="h-full hover:shadow-xl transition-shadow">
-                  <CardHeader>
-                    <div className="h-14 w-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center mb-4">
-                      <service.icon className="h-7 w-7 text-white" />
+              { icon: Clock, titel: 'Tijdelijke vervanging', beschrijving: 'Ziekte, zwangerschapsverlof of vakantie? Wij zorgen voor continuïteit.' },
+              { icon: TrendingUp, titel: 'Piekbelasting opvangen', beschrijving: 'Extra personeel bij drukte of onverwachte situaties.' },
+              { icon: Users, titel: 'Vaste vacatures invullen', beschrijving: 'Langetermijn oplossingen voor moeilijk vervulbare posities.' },
+              { icon: Shield, titel: 'Gespecialiseerde professionals', beschrijving: 'Specifieke expertise voor unieke zorgbehoeften.' },
+            ].map((dienst, idx) => (
+              <ScaleIn key={dienst.titel} delay={idx * 0.1}>
+                <CardSpotlight>
+                  <div className="bg-white rounded-2xl p-8 h-full border border-gray-100 hover:border-[#F37325] transition-all duration-300 hover:shadow-xl">
+                    <div className="w-14 h-14 bg-gradient-to-br from-[#F37325] to-[#ff8c42] rounded-xl flex items-center justify-center mb-6">
+                      <dienst.icon className="h-7 w-7 text-white" />
                     </div>
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
-                    <CardDescription className="text-base">{service.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2">
-                      {service.features.map((feature) => (
-                        <li key={feature} className="flex items-start space-x-2">
-                          <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-gray-600">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
+                    <h3 className="text-xl font-bold text-[#1C3364] mb-3">{dienst.titel}</h3>
+                    <p className="text-gray-600 leading-relaxed">{dienst.beschrijving}</p>
+                  </div>
+                </CardSpotlight>
               </ScaleIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Waarom Ons */}
-      <section className="py-20 bg-gray-50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-                Waarom Kiezen voor JM Zorgpartners?
-              </h2>
-            </div>
-          </FadeIn>
+      {/* Werkwijze Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="text-center mb-16">
+            <AnimatedTitle>
+              Hoe <GradientText>werkt</GradientText> het?
+            </AnimatedTitle>
+            <p className="text-xl text-gray-600 mt-4">
+              In vier eenvoudige stappen naar de juiste zorgprofessional
+            </p>
+          </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <SlideIn direction="left">
-              <div className="space-y-8">
-                {[
-                  {
-                    icon: TrendingUp,
-                    title: 'Snel & Efficiënt',
-                    description: 'We begrijpen de urgentie. Onze gemiddelde tijd van aanvraag tot plaatsing is 48 uur.',
-                  },
-                  {
-                    icon: Shield,
-                    title: 'Kwaliteitsgarantie',
-                    description: 'Alle kandidaten zijn gescreend, BIG-geregistreerd en beschikken over actuele referenties.',
-                  },
-                  {
-                    icon: UserCheck,
-                    title: 'Persoonlijke Aanpak',
-                    description: 'Vaste contactpersoon die jouw organisatie kent en begrijpt wat jullie nodig hebben.',
-                  },
-                  {
-                    icon: CheckCircle,
-                    title: 'Geen Zorgen Garantie',
-                    description: 'Niet tevreden? We bieden vervangingsgarantie zonder extra kosten.',
-                  },
-                ].map((item) => (
-                  <div key={item.title} className="flex items-start space-x-4">
-                    <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <item.icon className="h-6 w-6 text-primary" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                stap: '1',
+                titel: 'Intake & analyse',
+                tekst: 'We luisteren naar uw personeelsbehoefte. Welke functie, welke eisen, welke periode? We maken een volledig profiel.'
+              },
+              {
+                stap: '2',
+                titel: 'Zoeken & selecteren',
+                tekst: 'Uit ons netwerk selecteren we professionals die passen bij uw organisatie. We screenen op kwalificaties en beschikbaarheid.'
+              },
+              {
+                stap: '3',
+                titel: 'Presenteren & matchen',
+                tekst: 'U ontvangt kandidaatprofielen. Na goedkeuring regelen wij de kennismaking en contractafspraken.'
+              },
+              {
+                stap: '4',
+                titel: 'Plaatsing & begeleiding',
+                tekst: 'De zorgprofessional start bij u. Wij blijven betrokken voor nazorg en eventuele aanpassingen.'
+              },
+            ].map((stap, idx) => (
+              <ScaleIn key={stap.stap} delay={idx * 0.15}>
+                <div className="relative">
+                  <div className="bg-white rounded-2xl p-8 border-2 border-gray-100 hover:border-[#F37325] transition-all duration-300 hover:shadow-xl h-full">
+                    <div className="absolute -top-6 left-8 w-12 h-12 bg-gradient-to-br from-[#1C3364] to-[#2a4a8f] rounded-full flex items-center justify-center text-white font-black text-xl">
+                      {stap.stap}
                     </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                      <p className="text-gray-600">{item.description}</p>
-                    </div>
+                    <h3 className="text-xl font-bold text-[#1C3364] mb-3 mt-4">{stap.titel}</h3>
+                    <p className="text-gray-600 leading-relaxed">{stap.tekst}</p>
                   </div>
-                ))}
-              </div>
-            </SlideIn>
+                </div>
+              </ScaleIn>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <SlideIn direction="right">
-              <Card className="bg-gradient-to-br from-primary to-primary/80 text-white">
-                <CardHeader>
-                  <CardTitle className="text-2xl text-white">Onze Aanpak</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
+      {/* Waarom Kiezen Section */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <FadeContent>
+              <div className="space-y-6">
+                <AnimatedTitle>
+                  Waarom kiezen voor <GradientText>JM Zorgpartners?</GradientText>
+                </AnimatedTitle>
+                
+                <div className="space-y-4">
                   {[
-                    {
-                      step: '1',
-                      title: 'Kennismaken',
-                      description: 'We leren jouw organisatie en specifieke behoeften kennen.',
-                    },
-                    {
-                      step: '2',
-                      title: 'Profiel Opstellen',
-                      description: 'Samen bepalen we het ideale kandidaatprofiel.',
-                    },
-                    {
-                      step: '3',
-                      title: 'Zoeken & Selecteren',
-                      description: 'Wij zoeken en screenen geschikte kandidaten uit ons netwerk.',
-                    },
-                    {
-                      step: '4',
-                      title: 'Presentatie',
-                      description: 'Je krijgt een shortlist met de beste matches.',
-                    },
-                    {
-                      step: '5',
-                      title: 'Begeleiding',
-                      description: 'We begeleiden het hele proces tot succesvolle plaatsing.',
-                    },
-                  ].map((step) => (
-                    <div key={step.step} className="flex items-start space-x-4">
-                      <div className="h-10 w-10 rounded-full bg-white text-primary flex items-center justify-center flex-shrink-0 font-bold">
-                        {step.step}
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-1 text-white">{step.title}</h4>
-                        <p className="text-sm text-white/80">{step.description}</p>
-                      </div>
+                    'Snel beschikbaar (binnen 24-48 uur bij spoed)',
+                    'Zorgvuldig gescreend op diploma, VOG en ervaring',
+                    'Persoonlijke matching met uw organisatiecultuur',
+                    'Flexibele inzet: van dagdienst tot langdurige plaatsing',
+                    '24/7 bereikbaar voor spoedvragen',
+                    'Landelijke dekking in heel Nederland',
+                  ].map((punt, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-start gap-4 p-4 bg-white rounded-xl border border-gray-100 hover:border-[#F37325] transition-all duration-300 hover:shadow-lg"
+                    >
+                      <CheckCircle2 className="h-6 w-6 text-[#F37325] flex-shrink-0 mt-0.5" />
+                      <p className="text-gray-700 font-medium">{punt}</p>
                     </div>
                   ))}
-                </CardContent>
-              </Card>
-            </SlideIn>
-          </div>
-        </div>
-      </section>
-
-      {/* Tarieven */}
-      <section className="py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-                Transparante Tarieven
-              </h2>
-              <p className="text-xl text-gray-600">
-                Eerlijke prijzen zonder verborgen kosten
-              </p>
-            </div>
-          </FadeIn>
-
-          <div className="max-w-3xl mx-auto">
-            <Card>
-              <CardContent className="p-8">
-                <ul className="space-y-4">
-                  {[
-                    'Geen vooruitbetaling of inschrijfkosten',
-                    'Concurrerende uurtarieven',
-                    'Maatwerk in facturatie mogelijk',
-                    'Volume kortingen beschikbaar',
-                    'Vervangingsgarantie inbegrepen',
-                    'Transparante kostopbouw',
-                  ].map((item) => (
-                    <li key={item} className="flex items-center space-x-3">
-                      <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0" />
-                      <span className="text-lg">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-8 pt-8 border-t text-center">
-                  <p className="text-gray-600 mb-4">
-                    Wil je een offerte op maat? Neem contact met ons op.
-                  </p>
-                  <Button size="lg" asChild>
-                    <Link href="/contact">
-                      Vraag Offerte Aan
-                      <ArrowRight className="ml-2 h-5 w-5" />
-                    </Link>
-                  </Button>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </FadeContent>
+
+            <FadeContent delay={0.2}>
+              <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+                <Image
+                  src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800"
+                  alt="Professioneel zorgteam aan het werk"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </FadeContent>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-gradient-to-br from-primary to-primary/80 text-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                Klaar om de Beste Zorgprofessionals te Vinden?
-              </h2>
-              <p className="text-xl mb-8 text-white/90">
-                Neem vandaag nog contact op en ervaar het verschil van persoonlijke service.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" variant="secondary" asChild>
-                  <Link href="/contact">
-                    Plan een Gesprek
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  className="bg-transparent border-white text-white hover:bg-white hover:text-primary"
-                  asChild
-                >
-                  <a href="tel:+31123456789">
-                    <Phone className="mr-2 h-5 w-5" />
-                    +31 (0) 123 456 789
-                  </a>
-                </Button>
+      {/* FAQ Section */}
+      <section className="py-20">
+        <div className="max-w-4xl mx-auto px-6 lg:px-12">
+          <div className="text-center mb-16">
+            <AnimatedTitle>
+              Veelgestelde <GradientText>vragen</GradientText>
+            </AnimatedTitle>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                vraag: 'Hoe snel kunnen jullie personeel leveren?',
+                antwoord: 'Voor spoedaanvragen binnen 24 uur, voor reguliere aanvragen binnen 48 uur. Ons grote netwerk van direct beschikbare zorgprofessionals maakt dit mogelijk.'
+              },
+              {
+                vraag: 'Zijn jullie professionals gescreend?',
+                antwoord: 'Ja, absoluut. Alle professionals worden gescreend op diploma&apos;s, VOG, referenties en ervaring. Kwaliteit en veiligheid staan voorop.'
+              },
+              {
+                vraag: 'Wat zijn de kosten?',
+                antwoord: 'Onze tarieven zijn transparant en afhankelijk van de functie en duur van de plaatsing. Neem contact op voor een vrijblijvende offerte op maat.'
+              },
+              {
+                vraag: 'Wat als het personeel niet past?',
+                antwoord: 'Wij bieden een vervangingsgarantie. Als de match niet goed is, zoeken wij direct naar een passende vervanging zonder extra kosten.'
+              },
+            ].map((faq, idx) => (
+              <FadeContent key={idx} delay={idx * 0.1}>
+                <details className="bg-white rounded-xl p-6 border-2 border-gray-100 hover:border-[#F37325] transition-all duration-300 hover:shadow-lg">
+                  <summary className="text-lg font-bold text-[#1C3364] cursor-pointer hover:text-[#F37325] transition-colors flex items-center justify-between">
+                    {faq.vraag}
+                    <ArrowRight className="h-5 w-5 transition-transform group-open:rotate-90" />
+                  </summary>
+                  <p className="mt-4 text-gray-600 leading-relaxed">{faq.antwoord}</p>
+                </details>
+              </FadeContent>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section id="contact" className="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-4xl mx-auto px-6 lg:px-12">
+          <div className="text-center mb-12">
+            <AnimatedTitle>
+              Neem <GradientText>contact</GradientText> met ons op
+            </AnimatedTitle>
+            <p className="text-xl text-gray-600 mt-4">
+              Vul het formulier in en wij nemen binnen 24 uur contact met u op
+            </p>
+          </div>
+
+          <FadeContent delay={0.2}>
+            <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
+              {/* Hidden fields for API compatibility */}
+              <input type="hidden" name="name" value={`${formData.voornaam} ${formData.achternaam}`} />
+              <input type="hidden" name="subject" value={`Aanvraag zorginstelling: ${formData.organisatie}`} />
+              <input type="hidden" name="message" value={`
+Organisatie: ${formData.organisatie}
+Vestigingsplaats: ${formData.vestigingsplaats}
+Functie contactpersoon: ${formData.functie}
+Telefoon: ${formData.telefoon}
+Voorkeur contact: ${formData.voorkeur}
+
+Toelichting:
+${formData.toelichting}
+              `.trim()} />
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Voornaam *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.voornaam}
+                    onChange={(e) => setFormData({...formData, voornaam: e.target.value})}
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Achternaam *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.achternaam}
+                    onChange={(e) => setFormData({...formData, achternaam: e.target.value})}
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Functie *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.functie}
+                    onChange={(e) => setFormData({...formData, functie: e.target.value})}
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Naam organisatie *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.organisatie}
+                    onChange={(e) => setFormData({...formData, organisatie: e.target.value})}
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Vestigingsplaats *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.vestigingsplaats}
+                    onChange={(e) => setFormData({...formData, vestigingsplaats: e.target.value})}
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Telefoonnummer *
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    required
+                    value={formData.telefoon}
+                    onChange={(e) => setFormData({...formData, telefoon: e.target.value})}
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
+                  />
+                </div>
+
+                <div className="md:col-span-2">
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    E-mailadres *
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
+                  />
+                </div>
+
+                <div className="md:col-span-2">
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Contact voorkeur *
+                  </label>
+                  <div className="flex gap-6">
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="voorkeur"
+                        value="email"
+                        checked={formData.voorkeur === 'email'}
+                        onChange={(e) => setFormData({...formData, voorkeur: e.target.value})}
+                        className="w-5 h-5 text-[#F37325] focus:ring-[#F37325]"
+                      />
+                      <span className="text-gray-700">E-mail</span>
+                    </label>
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="voorkeur"
+                        value="telefoon"
+                        checked={formData.voorkeur === 'telefoon'}
+                        onChange={(e) => setFormData({...formData, voorkeur: e.target.value})}
+                        className="w-5 h-5 text-[#F37325] focus:ring-[#F37325]"
+                      />
+                      <span className="text-gray-700">Telefoon</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div className="md:col-span-2">
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Toelichting
+                  </label>
+                  <textarea
+                    rows={4}
+                    value={formData.toelichting}
+                    onChange={(e) => setFormData({...formData, toelichting: e.target.value})}
+                    placeholder="Vertel ons meer over uw personeelsbehoefte..."
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
+                  />
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full mt-8 px-8 py-4 bg-gradient-to-r from-[#F37325] to-[#ff8c42] text-white rounded-xl font-semibold hover:from-[#d96420] hover:to-[#F37325] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-2"
+              >
+                <FileText className="h-5 w-5" />
+                Verstuur aanvraag
+              </button>
+            </form>
+          </FadeContent>
+
+          <div className="mt-12 grid md:grid-cols-3 gap-6 text-center">
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-12 h-12 bg-[#F37325]/10 rounded-full flex items-center justify-center">
+                <Phone className="h-6 w-6 text-[#F37325]" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-600 mb-1">Telefoon</p>
+                <p className="font-semibold text-[#1C3364]">033 303 30 42</p>
               </div>
             </div>
-          </FadeIn>
+
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-12 h-12 bg-[#F37325]/10 rounded-full flex items-center justify-center">
+                <Mail className="h-6 w-6 text-[#F37325]" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-600 mb-1">E-mail</p>
+                <p className="font-semibold text-[#1C3364]">info@jmzorgpartners.nl</p>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-12 h-12 bg-[#F37325]/10 rounded-full flex items-center justify-center">
+                <MapPin className="h-6 w-6 text-[#F37325]" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-600 mb-1">Adres</p>
+                <p className="font-semibold text-[#1C3364]">De Windturbine 7</p>
+                <p className="font-semibold text-[#1C3364]">3815KP Amersfoort</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-    </div>
+
+      {/* CTA Section */}
+      <CTASection />
+    </main>
   )
 }

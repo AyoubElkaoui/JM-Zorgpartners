@@ -142,8 +142,8 @@ export default function Footer() {
                 transition={{ duration: 0.2 }}
               >
                 <Phone className="h-5 w-5 flex-shrink-0 mt-0.5 text-[#F37325]" />
-                <a href="tel:0850000000" className="text-white/80 hover:text-white transition-colors">
-                  085 - 0000000
+                <a href="tel:0333033042" className="text-white/80 hover:text-white transition-colors">
+                  033 303 30 42
                 </a>
               </motion.li>
               <motion.li 
@@ -164,7 +164,7 @@ export default function Footer() {
                 viewport={{ once: true }}
               >
                 <MapPin className="h-5 w-5 flex-shrink-0 mt-0.5 text-[#F37325]" />
-                <span className="text-white/80">Amsterdam, Nederland</span>
+                <span className="text-white/80">Amersfoort, Nederland</span>
               </motion.li>
             </ul>
           </motion.div>

@@ -11,7 +11,6 @@ import FadeContent from '@/components/react-bits/FadeContent'
 import CountUp from '@/components/react-bits/CountUp'
 import GlareCard from '@/components/react-bits/GlareCard'
 import ScaleIn from '@/components/react-bits/ScaleIn'
-import ScrollToTop from '@/components/scroll-to-top'
 import { Spotlight } from '@/components/aceternity/spotlight'
 import { CardSpotlight } from '@/components/aceternity/card-spotlight'
 import { TiltCard } from '@/components/aceternity/tilt-card'
@@ -20,14 +19,15 @@ import { BackgroundGrid, AnimatedBeam } from '@/components/aceternity/background
 import { MovingBorder } from '@/components/aceternity/moving-border'
 import { HoverCard } from '@/components/aceternity/hover-card'
 import { AnimatedTitle, GradientText } from '@/components/aceternity/animated-title'
+import CTASection from '@/components/cta-section'
+import ZorgprofessionalsForm from '@/components/zorgprofessionals-form'
 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-white">
-      <ScrollToTop />
 
       {/* Hero - Clean & Professional */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative py-20 overflow-hidden">
         {/* Advanced Background */}
         <BackgroundGrid dotSize={1.5} gap={30} />
         <Spotlight className="top-0 left-0 md:left-60 md:top-10" fill="#F37325" />
@@ -44,12 +44,16 @@ export default function HomePage() {
             <FadeContent blur duration={1000}>
               <div>
                 <TextReveal 
-                  text="Gekwalificeerd zorgpersoneel, binnen 24 uur"
-                  className="text-5xl lg:text-6xl font-black mb-6 leading-tight text-[#1C3364]"
+                  text="De juiste match in de zorg."
+                  className="text-5xl lg:text-6xl font-black mb-6 leading-tight text-[#ff8c4d]"
+                />
+                <TextReveal 
+                  text="snel inzetbaar én zorgvuldig geselecteerd."
+                  className="text-2xl lg:text-3xl font-black mb-6 leading-tight text-[#1C3364]"
                 />
                 
                 <p className="text-xl mb-10 text-gray-600 leading-relaxed">
-                  Van verpleegkundigen tot verzorgenden - wij leveren gescreende professionals die direct inzetbaar zijn voor jouw zorgorganisatie.
+                  Heeft u direct zorgpersoneel nodig, of zoekt u betrouwbare versterking voor de langere termijn? Bij JM Zorgpartners draait alles om één ding: de juiste persoon op de juiste plek. <br /> <br /> Wij denken met u mee en leveren zorgprofessionals die echt iets toevoegen. Snel geregeld, zorgvuldig gekozen en altijd passend.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 mb-10">
@@ -62,7 +66,7 @@ export default function HomePage() {
                       >
                         <div className="flex items-center justify-center gap-2">
                           <Phone className="w-5 h-5" />
-                          <span>Bel 085 - 0000000</span>
+                          <span>Bel 033 303 30 42</span>
                         </div>
                       </MovingBorder>
                     </ScaleIn>
@@ -90,8 +94,8 @@ export default function HomePage() {
                       <Clock className="w-5 h-5 text-[#F37325]" />
                     </div>
                     <div>
-                      <p className="font-black text-[#1C3364]">24 uur</p>
-                      <p className="text-sm text-gray-600">Reactietijd</p>
+                      <p className="font-black text-[#1C3364]">Binnen 24 uur</p>
+                      <p className="text-sm text-gray-600">inzetbaar</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -99,8 +103,8 @@ export default function HomePage() {
                       <Shield className="w-5 h-5 text-[#F37325]" />
                     </div>
                     <div>
-                      <p className="font-black text-[#1C3364]">100%</p>
-                      <p className="text-sm text-gray-600">Gescreend</p>
+                      <p className="font-black text-[#1C3364]">Gekwalificeerd</p>
+                      <p className="text-sm text-gray-600">personeel met ervaring en VOG</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -108,8 +112,8 @@ export default function HomePage() {
                       <Users className="w-5 h-5 text-[#F37325]" />
                     </div>
                     <div>
-                      <p className="font-black text-[#1C3364]">500+</p>
-                      <p className="text-sm text-gray-600">Professionals</p>
+                      <p className="font-black text-[#1C3364]">Eén vast</p>
+                      <p className="text-sm text-gray-600">aanspreekpunt</p>
                     </div>
                   </div>
                 </div>
@@ -155,7 +159,7 @@ export default function HomePage() {
             </AnimatedTitle>
             <FadeContent blur duration={800}>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Meer dan alleen personeel - echte partners in zorg
+                Wij leveren geen &apos;opvulling&apos;, maar versterking. Dat betekent: zorgprofessionals die passen bij uw organisatie, doelgroep en teamcultuur. Wij schakelen snel, communiceren helder en blijven betrokken — ook na plaatsing. Samenwerking moet goed voelen. En goed werken.
               </p>
             </FadeContent>
           </div>
@@ -496,41 +500,43 @@ export default function HomePage() {
             </FadeContent>
           </div>
 
-          {/* Extra Garanties Grid */}
-          <FadeContent blur delay={400} duration={1000}>
-            <div className="bg-gradient-to-br from-gray-50 to-orange-50/30 rounded-3xl p-8 md:p-12">
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div className="flex items-start gap-4">
-                  <CheckCircle2 className="w-6 h-6 text-[#F37325] flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-black text-[#1C3364] mb-1">Payroll of ZZP</h4>
-                    <p className="text-sm text-gray-600">Flexibel inzetbaar</p>
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  <div className="flex items-start gap-4">
+                    <CheckCircle2 className="w-6 h-6 text-[#F37325] flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-black text-[#1C3364] mb-1">Gescreend op VOG, diploma&apos;s en ervaring</h4>
+                      <p className="text-sm text-gray-600"></p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <CheckCircle2 className="w-6 h-6 text-[#F37325] flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-black text-[#1C3364] mb-1">Beschikbaar via payroll of als zzp&apos;er</h4>
+                      <p className="text-sm text-gray-600"></p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <CheckCircle2 className="w-6 h-6 text-[#F37325] flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-black text-[#1C3364] mb-1">Flexibel inzetbaar — kort of langdurig</h4>
+                      <p className="text-sm text-gray-600"></p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <CheckCircle2 className="w-6 h-6 text-[#F37325] flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-black text-[#1C3364] mb-1">Landelijke dekking</h4>
+                      <p className="text-sm text-gray-600"></p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <CheckCircle2 className="w-6 h-6 text-[#F37325] flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-black text-[#1C3364] mb-1">24/7 bereikbaar bij spoed</h4>
+                      <p className="text-sm text-gray-600"></p>
+                    </div>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <CheckCircle2 className="w-6 h-6 text-[#F37325] flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-black text-[#1C3364] mb-1">Landelijke dekking</h4>
-                    <p className="text-sm text-gray-600">Door heel Nederland</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <CheckCircle2 className="w-6 h-6 text-[#F37325] flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-black text-[#1C3364] mb-1">24/7 bereikbaar</h4>
-                    <p className="text-sm text-gray-600">Ook bij spoed</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <CheckCircle2 className="w-6 h-6 text-[#F37325] flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-black text-[#1C3364] mb-1">Korte & lange termijn</h4>
-                    <p className="text-sm text-gray-600">Tijdelijk of vast</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </FadeContent>
         </div>
       </section>
 
@@ -635,6 +641,24 @@ export default function HomePage() {
               </Link>
             </FadeContent>
           </div>
+        </div>
+      </section>
+
+      {/* Zorgprofessionals Registratie Formulier */}
+      <section className="py-32 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeContent blur duration={800} className="text-center mb-16">
+            <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-6">
+              Start je carrière bij <span className="text-[#F37325]">JM Zorgpartners</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Meld je aan als zorgprofessional en ontdek nieuwe kansen in de zorgsector
+            </p>
+          </FadeContent>
+
+          <FadeContent blur delay={200} duration={1000}>
+            <ZorgprofessionalsForm />
+          </FadeContent>
         </div>
       </section>
 
@@ -797,16 +821,15 @@ export default function HomePage() {
                   ))}
                 </div>
                 <p className="text-gray-700 text-xl leading-relaxed mb-8 font-medium">
-                  &quot;Binnen 24 uur hadden we twee verzorgenden op locatie. Snel, professioneel en prettig in de samenwerking. Ze begrijpen echt wat er nodig is.&quot;
+                  &quot;Binnen 24 uur hadden we twee verzorgenden op locatie. Snel, professioneel en prettig in de samenwerking.&quot;
                 </p>
                 <div className="flex items-start gap-4">
                   <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#1C3364] to-[#1C3364]/80 flex items-center justify-center flex-shrink-0">
                     <Building2 className="w-7 h-7 text-white" />
                   </div>
                   <div>
-                    <p className="text-[#1C3364] font-black text-lg">Maria van den Berg</p>
-                    <p className="text-gray-600">Zorgmanager Ouderenzorg</p>
-                    <p className="text-gray-500 text-sm mt-1">Breda</p>
+                    <p className="text-[#1C3364] font-black text-lg">Zorgmanager</p>
+                    <p className="text-gray-600">Ouderenzorginstelling Breda</p>
                   </div>
                 </div>
               </div>
@@ -820,16 +843,15 @@ export default function HomePage() {
                   ))}
                 </div>
                 <p className="text-gray-700 text-xl leading-relaxed mb-8 font-medium">
-                  &quot;JM kijkt echt mee met onze zorgvraag. Niet alleen leveren, maar ook meedenken over de beste match. Dat maakt het verschil.&quot;
+                  &quot;JM Zorgpartners heeft ons geholpen met het vinden van gekwalificeerd personeel tijdens een drukke periode. Ze denken mee en bieden flexibele oplossingen.&quot;
                 </p>
                 <div className="flex items-start gap-4">
                   <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#F37325] to-[#F37325]/80 flex items-center justify-center flex-shrink-0">
                     <Building2 className="w-7 h-7 text-white" />
                   </div>
                   <div>
-                    <p className="text-[#1C3364] font-black text-lg">Pieter Jansen</p>
-                    <p className="text-gray-600">Regiocoördinator Jeugdzorg</p>
-                    <p className="text-gray-500 text-sm mt-1">Rotterdam</p>
+                    <p className="text-[#1C3364] font-black text-lg">Directeur Zorginstelling</p>
+                    <p className="text-gray-600">Amsterdam</p>
                   </div>
                 </div>
               </div>
@@ -929,7 +951,7 @@ export default function HomePage() {
                     <div className="space-y-3 mb-6">
                       <div className="flex items-center gap-3 text-gray-700">
                         <Phone className="w-5 h-5 text-[#F37325]" />
-                        <span className="font-medium">085 - 0000000</span>
+                        <span className="font-medium">033 303 30 42</span>
                       </div>
                       <div className="flex items-center gap-3 text-gray-700">
                         <Mail className="w-5 h-5 text-[#F37325]" />
@@ -954,66 +976,7 @@ export default function HomePage() {
 
       {/* CTA Section - Warm en uitnodigend */}
       {/* CTA Sectie - Neem Contact Op */}
-      <section className="py-32 bg-gradient-to-b from-white to-orange-50/30">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <FadeContent blur duration={800}>
-            <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-6">
-              Personeel nodig? <span className="text-[#F37325]">Wij helpen je direct</span>
-            </h2>
-            
-            <p className="text-xl text-gray-600 mb-12 leading-relaxed max-w-2xl mx-auto">
-              Neem contact op voor een vrijblijvend gesprek over jouw personeelsbehoefte. Binnen 24 uur hoor je van ons.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-5 justify-center mb-12">
-              <Link href="tel:0850000000">
-                <ScaleIn delay={200} duration={700}>
-                  <MovingBorder
-                    duration={7000}
-                    className="bg-[#F37325] hover:bg-[#d96420] text-white px-10 py-5 font-black text-lg"
-                    containerClassName="w-full sm:w-auto"
-                  >
-                    <div className="flex items-center justify-center gap-3">
-                      <Phone className="w-6 h-6" />
-                      <span>Bel 085 - 0000000</span>
-                      <ArrowRight className="w-5 h-5" />
-                    </div>
-                  </MovingBorder>
-                </ScaleIn>
-              </Link>
-              <Link href="/contact">
-                <ScaleIn delay={300} duration={700}>
-                  <MovingBorder
-                    duration={9000}
-                    className="bg-white hover:bg-gray-50 text-[#1C3364] px-10 py-5 font-black text-lg"
-                    containerClassName="w-full sm:w-auto"
-                  >
-                    <div className="flex items-center justify-center gap-3">
-                      <span>Stuur een bericht</span>
-                      <Mail className="w-5 h-5" />
-                    </div>
-                  </MovingBorder>
-                </ScaleIn>
-              </Link>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-              <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <Clock className="w-8 h-8 text-[#F37325] mx-auto mb-3" />
-                <p className="font-bold text-[#1C3364]">Binnen 24 uur reactie</p>
-              </div>
-              <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <HeartHandshake className="w-8 h-8 text-[#F37325] mx-auto mb-3" />
-                <p className="font-bold text-[#1C3364]">Persoonlijk advies</p>
-              </div>
-              <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <CheckCircle2 className="w-8 h-8 text-[#F37325] mx-auto mb-3" />
-                <p className="font-bold text-[#1C3364]">Geen verplichtingen</p>
-              </div>
-            </div>
-          </FadeContent>
-        </div>
-      </section>
+      <CTASection />
     </main>
   )
 }

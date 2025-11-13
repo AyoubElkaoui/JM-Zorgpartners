@@ -25,7 +25,7 @@ const faqs: FAQItem[] = [
   {
     category: 'algemeen',
     question: 'Hoe kan ik contact opnemen?',
-    answer: 'Je kunt ons bereiken via telefoon op 06 123 456 78, per email via info@jmzorgpartners.nl, of via ons contactformulier. Voor spoedgevallen hebben we een 24/7 spoedlijn beschikbaar.',
+    answer: 'Je kunt ons bereiken via telefoon op 033 303 30 42, per email via info@jmzorgpartners.nl, of via ons contactformulier. Voor spoedgevallen hebben we een 24/7 spoedlijn beschikbaar.',
   },
   {
     category: 'zorgprofessionals',

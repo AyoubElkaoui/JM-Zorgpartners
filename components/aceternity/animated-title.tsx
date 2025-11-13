@@ -8,15 +8,19 @@ type AnimatedTitleProps = {
   children: React.ReactNode
   className?: string
   delay?: number
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 }
 
 export const AnimatedTitle = ({
   children,
   className = '',
-  delay = 0
+  delay = 0,
+  as = 'h2'
 }: AnimatedTitleProps) => {
+  const Component = motion[as] as any
+  
   return (
-    <motion.div
+    <Component
       initial={{ opacity: 0, y: 30, scale: 0.95 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, margin: '-50px' }}
@@ -25,7 +29,7 @@ export const AnimatedTitle = ({
         delay: delay,
         ease: [0.25, 0.46, 0.45, 0.94]
       }}
-      className={cn('relative', className)}
+      className={cn('relative text-4xl lg:text-5xl font-black text-[#1C3364] mb-6', className)}
     >
       {/* Animated underline */}
       <motion.div
@@ -40,7 +44,7 @@ export const AnimatedTitle = ({
         }}
       />
       {children}
-    </motion.div>
+    </Component>
   )
 }
 

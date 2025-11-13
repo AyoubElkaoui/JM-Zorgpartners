@@ -9,7 +9,6 @@ import {
 } from 'lucide-react'
 import FadeContent from '@/components/react-bits/FadeContent'
 import ScaleIn from '@/components/react-bits/ScaleIn'
-import ScrollToTop from '@/components/scroll-to-top'
 import { CardSpotlight } from '@/components/aceternity/card-spotlight'
 import { AnimatedTitle, GradientText } from '@/components/aceternity/animated-title'
 import { MovingBorder } from '@/components/aceternity/moving-border'
@@ -23,7 +22,7 @@ export default function ZorginstellingenPage() {
     vestigingsplaats: '',
     telefoon: '',
     email: '',
-    voorkeur: 'email',
+    voorkeur: 'geen',
     toelichting: ''
   })
 
@@ -49,52 +48,41 @@ export default function ZorginstellingenPage() {
                 </div>
                 
                 <h1 className="text-5xl lg:text-6xl font-black text-[#1C3364] leading-tight">
-                  Op zoek naar <GradientText>gekwalificeerd</GradientText> zorgpersoneel?
+                  Flexibel en betrouwbaar <GradientText>zorgpersoneel</GradientText> – afgestemd op uw vraag
                 </h1>
                 
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Bij JM Zorgpartners leveren wij flexibel, betrouwbaar en deskundig personeel dat naadloos aansluit bij uw organisatie.
+                  Bij JM Zorgpartners begrijpen we hoe belangrijk het is om snel te kunnen schakelen in de zorg.
+                  Iedere dag brengt nieuwe uitdagingen — wij zorgen voor de juiste mensen op het juiste moment.
                 </p>
                 
                 <div className="bg-white rounded-2xl p-6 border-2 border-[#F37325]/20 shadow-lg">
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    Of het nu gaat om <span className="font-bold text-[#1C3364]">tijdelijke vervanging</span>, 
-                    <span className="font-bold text-[#1C3364]"> piekbelasting</span> of 
-                    <span className="font-bold text-[#1C3364]"> langdurige vacatures</span> – wij staan voor u klaar.
+                    Onze professionals zijn <span className="font-bold text-[#1C3364]">gekwalificeerd, ervaren en zorgvuldig geselecteerd</span>.
+                    Van functie en beschikbaarheid tot persoonlijkheid en teamaansluiting: de juiste match.
                   </p>
                 </div>
                 
-                <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                  <Link href="tel:0850000000">
-                    <ScaleIn delay={400} duration={700}>
-                      <MovingBorder
-                        duration={8000}
-                        className="bg-[#F37325] hover:bg-[#d96420] text-white px-8 py-4 font-bold"
-                        containerClassName="w-full sm:w-auto"
-                      >
-                        <div className="flex items-center justify-center gap-2">
-                          <Phone className="w-5 h-5" />
-                          <span>Bel 085 - 0000000</span>
-                        </div>
-                      </MovingBorder>
-                    </ScaleIn>
-                  </Link>
-                  <Link href="/contact">
-                    <ScaleIn delay={500} duration={700}>
-                      <MovingBorder
-                        duration={10000}
-                        className="bg-white hover:bg-orange-50 text-[#1C3364] px-8 py-4 font-bold"
-                        containerClassName="w-full sm:w-auto"
-                      >
-                        <div className="flex items-center justify-center gap-2">
-                          <span>Neem contact op</span>
-                          <ArrowRight className="w-4 h-4" />
-                        </div>
-                      </MovingBorder>
-                    </ScaleIn>
-                  </Link>
+                <div className="flex flex-wrap gap-4 pt-4">
+                  <MovingBorder duration={8000}>
+                    <Link
+                      href="#contact"
+                      className="px-8 py-4 bg-[#F37325] text-white rounded-xl font-semibold hover:bg-[#d96420] transition-all inline-flex items-center gap-2"
+                    >
+                      <FileText className="h-5 w-5" />
+                      Neem contact op
+                    </Link>
+                  </MovingBorder>
+                  
+                  <a
+                    href="tel:033303304200"
+                    className="px-8 py-4 border-2 border-[#1C3364] text-[#1C3364] rounded-xl font-semibold hover:bg-[#1C3364] hover:text-white transition-all inline-flex items-center gap-2"
+                  >
+                    <Phone className="h-5 w-5" />
+                    033 303 30 42
+                  </a>
                 </div>
-                  </div>
+              </div>
             </FadeContent>
             
             <FadeContent delay={0.2}>
@@ -111,28 +99,30 @@ export default function ZorginstellingenPage() {
         </div>
       </section>
 
-      {/* Diensten Section */}
+      {/* Wat Wij Bieden Section */}
       <section className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
             <AnimatedTitle>
-              Onze <GradientText>diensten</GradientText> voor zorginstellingen
+              Wat wij <GradientText>bieden</GradientText>
             </AnimatedTitle>
             <p className="text-xl text-gray-600 mt-4">
               Flexibele oplossingen voor al uw personeelsbehoeften
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: Clock, titel: 'Tijdelijke vervanging', beschrijving: 'Ziekte, zwangerschapsverlof of vakantie? Wij zorgen voor continuïteit.' },
-              { icon: TrendingUp, titel: 'Piekbelasting opvangen', beschrijving: 'Extra personeel bij drukte of onverwachte situaties.' },
-              { icon: Users, titel: 'Vaste vacatures invullen', beschrijving: 'Langetermijn oplossingen voor moeilijk vervulbare posities.' },
-              { icon: Shield, titel: 'Gespecialiseerde professionals', beschrijving: 'Specifieke expertise voor unieke zorgbehoeften.' },
+              { icon: Users, titel: 'Zorgprofessionals voor verschillende functies en niveaus', beschrijving: 'Van helpende tot specialist, wij hebben de juiste professional voor uw zorgvraag.' },
+              { icon: Clock, titel: 'Inzetbaar op korte én langdurige opdrachten', beschrijving: 'Van enkele dagen tot maandenlang, flexibel inzetbaar naar uw behoefte.' },
+              { icon: TrendingUp, titel: 'Dag-, nacht- of weekenddiensten', beschrijving: '24/7 beschikbaarheid voor alle diensten die uw organisatie nodig heeft.' },
+              { icon: Shield, titel: 'Oplossingen bij ziekte, piekdrukte of verlof', beschrijving: 'Directe vervanging bij onverwachte situaties of geplande afwezigheid.' },
+              { icon: FileText, titel: 'Inzetbaar via payroll of als zzp\'er', beschrijving: 'Keuze uit verschillende contractvormen die passen bij uw organisatie.' },
+              { icon: CheckCircle2, titel: 'Snel inzetbaar, zorgvuldig geselecteerd', beschrijving: 'Professionele screening en snelle plaatsing voor optimale zorgcontinuïteit.' },
             ].map((dienst, idx) => (
-              <ScaleIn key={dienst.titel} delay={idx * 0.1} className="h-full">
-                <CardSpotlight className="h-full">
-                  <div className="bg-white rounded-2xl p-8 h-full border border-gray-100 hover:border-[#F37325] transition-all duration-300 hover:shadow-xl flex flex-col">
+              <ScaleIn key={dienst.titel} delay={idx * 0.1}>
+                <CardSpotlight>
+                  <div className="bg-white rounded-2xl p-8 h-full border border-gray-100 hover:border-[#F37325] transition-all duration-300 hover:shadow-xl">
                     <div className="w-14 h-14 bg-gradient-to-br from-[#F37325] to-[#ff8c42] rounded-xl flex items-center justify-center mb-6">
                       <dienst.icon className="h-7 w-7 text-white" />
                     </div>
@@ -142,6 +132,13 @@ export default function ZorginstellingenPage() {
                 </CardSpotlight>
               </ScaleIn>
             ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-[#F37325]/10 rounded-full">
+              <Clock className="h-5 w-5 text-[#F37325]" />
+              <span className="text-lg font-semibold text-[#1C3364]">24/7 bereikbaar voor spoedaanvragen</span>
+            </div>
           </div>
         </div>
       </section>
@@ -162,23 +159,23 @@ export default function ZorginstellingenPage() {
             {[
               {
                 stap: '1',
-                titel: 'Intake & analyse',
-                tekst: 'We luisteren naar uw personeelsbehoefte. Welke functie, welke eisen, welke periode? We maken een volledig profiel.'
+                titel: 'U doet een aanvraag',
+                tekst: 'Vertel ons wat u nodig heeft — type functie, dagen/tijden, duur, enz.'
               },
               {
                 stap: '2',
-                titel: 'Zoeken & selecteren',
-                tekst: 'Uit ons netwerk selecteren we professionals die passen bij uw organisatie. We screenen op kwalificaties en beschikbaarheid.'
+                titel: 'Wij zoeken de juiste match',
+                tekst: 'Binnen ons netwerk zoeken we gericht naar iemand die bij uw team en doelgroep past.'
               },
               {
                 stap: '3',
-                titel: 'Presenteren & matchen',
-                tekst: 'U ontvangt kandidaatprofielen. Na goedkeuring regelen wij de kennismaking en contractafspraken.'
+                titel: 'U ontvangt een voorstel',
+                tekst: 'U ontvangt een overzicht met één of meerdere kandidaten: inclusief profiel, ervaring en beschikbaarheid.'
               },
               {
                 stap: '4',
-                titel: 'Plaatsing & begeleiding',
-                tekst: 'De zorgprofessional start bij u. Wij blijven betrokken voor nazorg en eventuele aanpassingen.'
+                titel: 'Start van de samenwerking',
+                tekst: 'Na akkoord regelen wij alles rondom de plaatsing. U heeft er geen omkijken naar.'
               },
             ].map((stap, idx) => (
               <ScaleIn key={stap.stap} delay={idx * 0.15}>
@@ -209,12 +206,10 @@ export default function ZorginstellingenPage() {
                 
                 <div className="space-y-4">
                   {[
-                    'Snel beschikbaar (binnen 24-48 uur bij spoed)',
-                    'Zorgvuldig gescreend op diploma, VOG en ervaring',
-                    'Persoonlijke matching met uw organisatiecultuur',
-                    'Flexibele inzet: van dagdienst tot langdurige plaatsing',
-                    '24/7 bereikbaar voor spoedvragen',
-                    'Landelijke dekking in heel Nederland',
+                    'Gekwalificeerd personeel met diploma\'s, ervaring en VOG',
+                    'Snelle inzet, óók bij spoed',
+                    'Heldere communicatie – één vast aanspreekpunt',
+                    'Zowel payroll als zzp mogelijk',
                   ].map((punt, idx) => (
                     <div
                       key={idx}
@@ -224,6 +219,15 @@ export default function ZorginstellingenPage() {
                       <p className="text-gray-700 font-medium">{punt}</p>
                     </div>
                   ))}
+                </div>
+
+                <div className="mt-8 p-6 bg-gradient-to-r from-[#F37325]/10 to-[#1C3364]/10 rounded-2xl border border-[#F37325]/20">
+                  <p className="text-lg text-[#1C3364] font-semibold text-center">
+                    Transparantie en betrokkenheid
+                  </p>
+                  <p className="text-center text-gray-600 mt-2">
+                    Wij stellen alleen professionals voor waar we volledig achter staan.
+                  </p>
                 </div>
               </div>
             </FadeContent>
@@ -254,20 +258,20 @@ export default function ZorginstellingenPage() {
           <div className="space-y-4">
             {[
               {
-                vraag: 'Hoe snel kunnen jullie personeel leveren?',
-                antwoord: 'Voor spoedaanvragen binnen 24 uur, voor reguliere aanvragen binnen 48 uur. Ons grote netwerk van direct beschikbare zorgprofessionals maakt dit mogelijk.'
+                vraag: 'Hoe snel kunnen jullie leveren?',
+                antwoord: 'Vaak al binnen 24 uur, afhankelijk van de aanvraag.'
               },
               {
-                vraag: 'Zijn jullie professionals gescreend?',
-                antwoord: 'Ja, absoluut. Alle professionals worden gescreend op diploma&apos;s, VOG, referenties en ervaring. Kwaliteit en veiligheid staan voorop.'
+                vraag: 'Werken jullie alleen met personeel in loondienst?',
+                antwoord: 'Nee, wij leveren zowel payroll-krachten als zelfstandigen.'
               },
               {
-                vraag: 'Wat zijn de kosten?',
-                antwoord: 'Onze tarieven zijn transparant en afhankelijk van de functie en duur van de plaatsing. Neem contact op voor een vrijblijvende offerte op maat.'
+                vraag: 'Kan ik zelf iemand kiezen uit meerdere profielen?',
+                antwoord: 'Ja, u ontvangt altijd een voorstel met één of meerdere passende profielen.'
               },
               {
-                vraag: 'Wat als het personeel niet past?',
-                antwoord: 'Wij bieden een vervangingsgarantie. Als de match niet goed is, zoeken wij direct naar een passende vervanging zonder extra kosten.'
+                vraag: 'Hoe weten we of iemand geschikt is?',
+                antwoord: 'Wij werken uitsluitend met gekwalificeerde zorgprofessionals — mét ervaring, diploma\'s en VOG.'
               },
             ].map((faq, idx) => (
               <FadeContent key={idx} delay={idx * 0.1}>
@@ -289,140 +293,185 @@ export default function ZorginstellingenPage() {
         <div className="max-w-4xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-12">
             <AnimatedTitle>
-              Neem <GradientText>contact</GradientText> met ons op
+              Klaar om <GradientText>kennis</GradientText> te maken?
             </AnimatedTitle>
-            <p className="text-xl text-gray-600 mt-4">
-              Vul het formulier in en wij nemen binnen 24 uur contact met u op
+            <p className="text-xl text-gray-600 mt-4 max-w-2xl mx-auto">
+              Heeft u een personele zorgvraag of wilt u kennismaken met JM Zorgpartners?
+              Laat uw gegevens achter via ons contactformulier — wij nemen snel contact met u op.
             </p>
+            <div className="mt-6 p-4 bg-[#F37325]/10 rounded-xl border border-[#F37325]/20">
+              <p className="text-lg text-[#1C3364] font-semibold">
+                📌 Bij spoed kunt u ons ook direct bellen: 06 53 474 474
+              </p>
+            </div>
           </div>
 
           <FadeContent delay={0.2}>
             <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Voornaam *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.voornaam}
-                    onChange={(e) => setFormData({...formData, voornaam: e.target.value})}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Achternaam *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.achternaam}
-                    onChange={(e) => setFormData({...formData, achternaam: e.target.value})}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Functie *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.functie}
-                    onChange={(e) => setFormData({...formData, functie: e.target.value})}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Naam organisatie *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.organisatie}
-                    onChange={(e) => setFormData({...formData, organisatie: e.target.value})}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Vestigingsplaats *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.vestigingsplaats}
-                    onChange={(e) => setFormData({...formData, vestigingsplaats: e.target.value})}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Telefoonnummer *
-                  </label>
-                  <input
-                    type="tel"
-                    required
-                    value={formData.telefoon}
-                    onChange={(e) => setFormData({...formData, telefoon: e.target.value})}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
-                  />
-                </div>
-
-                <div className="md:col-span-2">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    E-mailadres *
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
-                  />
-                </div>
-
-                <div className="md:col-span-2">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Contact voorkeur *
-                  </label>
-                  <div className="flex gap-6">
-                    <label className="flex items-center gap-2 cursor-pointer">
-                      <input
-                        type="radio"
-                        name="voorkeur"
-                        value="email"
-                        checked={formData.voorkeur === 'email'}
-                        onChange={(e) => setFormData({...formData, voorkeur: e.target.value})}
-                        className="w-5 h-5 text-[#F37325] focus:ring-[#F37325]"
-                      />
-                      <span className="text-gray-700">E-mail</span>
+              {/* Contactpersoon */}
+              <div className="mb-8">
+                <h3 className="text-xl font-black text-[#1C3364] border-b-2 border-[#F37325]/20 pb-2 mb-6">
+                  Contactpersoon
+                </h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Voornaam *
                     </label>
-                    <label className="flex items-center gap-2 cursor-pointer">
-                      <input
-                        type="radio"
-                        name="voorkeur"
-                        value="telefoon"
-                        checked={formData.voorkeur === 'telefoon'}
-                        onChange={(e) => setFormData({...formData, voorkeur: e.target.value})}
-                        className="w-5 h-5 text-[#F37325] focus:ring-[#F37325]"
-                      />
-                      <span className="text-gray-700">Telefoon</span>
+                    <input
+                      type="text"
+                      required
+                      value={formData.voornaam}
+                      onChange={(e) => setFormData({...formData, voornaam: e.target.value})}
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Achternaam *
                     </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.achternaam}
+                      onChange={(e) => setFormData({...formData, achternaam: e.target.value})}
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
+                    />
+                  </div>
+
+                  <div className="md:col-span-2">
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Functie *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.functie}
+                      onChange={(e) => setFormData({...formData, functie: e.target.value})}
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
+                    />
                   </div>
                 </div>
+              </div>
 
-                <div className="md:col-span-2">
+              {/* Organisatiegegevens */}
+              <div className="mb-8">
+                <h3 className="text-xl font-black text-[#1C3364] border-b-2 border-[#F37325]/20 pb-2 mb-6">
+                  Organisatiegegevens
+                </h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Naam organisatie *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.organisatie}
+                      onChange={(e) => setFormData({...formData, organisatie: e.target.value})}
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Vestigingsplaats
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.vestigingsplaats}
+                      onChange={(e) => setFormData({...formData, vestigingsplaats: e.target.value})}
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Contactinformatie */}
+              <div className="mb-8">
+                <h3 className="text-xl font-black text-[#1C3364] border-b-2 border-[#F37325]/20 pb-2 mb-6">
+                  Contactinformatie
+                </h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Telefoonnummer *
+                    </label>
+                    <input
+                      type="tel"
+                      required
+                      value={formData.telefoon}
+                      onChange={(e) => setFormData({...formData, telefoon: e.target.value})}
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      E-mailadres *
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#F37325] focus:border-transparent transition-all"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Contactvoorkeur */}
+              <div className="mb-8">
+                <h3 className="text-xl font-black text-[#1C3364] border-b-2 border-[#F37325]/20 pb-2 mb-6">
+                  Contactvoorkeur
+                </h3>
+                <div className="flex gap-6">
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="voorkeur"
+                      value="telefoon"
+                      checked={formData.voorkeur === 'telefoon'}
+                      onChange={(e) => setFormData({...formData, voorkeur: e.target.value})}
+                      className="w-5 h-5 text-[#F37325] focus:ring-[#F37325]"
+                    />
+                    <span className="text-gray-700">Bel mij terug</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="voorkeur"
+                      value="email"
+                      checked={formData.voorkeur === 'email'}
+                      onChange={(e) => setFormData({...formData, voorkeur: e.target.value})}
+                      className="w-5 h-5 text-[#F37325] focus:ring-[#F37325]"
+                    />
+                    <span className="text-gray-700">Stuur mij een e-mail</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="voorkeur"
+                      value="geen"
+                      checked={formData.voorkeur === 'geen'}
+                      onChange={(e) => setFormData({...formData, voorkeur: e.target.value})}
+                      className="w-5 h-5 text-[#F37325] focus:ring-[#F37325]"
+                    />
+                    <span className="text-gray-700">Geen voorkeur</span>
+                  </label>
+                </div>
+              </div>
+
+              {/* Toelichting */}
+              <div className="mb-8">
+                <h3 className="text-xl font-black text-[#1C3364] border-b-2 border-[#F37325]/20 pb-2 mb-6">
+                  Toelichting
+                </h3>
+                <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Toelichting
+                    Waarmee kunnen we u helpen? Of wat wilt u bespreken?
                   </label>
                   <textarea
                     rows={4}
@@ -451,7 +500,8 @@ export default function ZorginstellingenPage() {
               </div>
               <div>
                 <p className="text-sm text-gray-600 mb-1">Telefoon</p>
-                <p className="font-semibold text-[#1C3364]">033 303 30 42</p>
+                <p className="font-semibold text-[#1C3364]">06 53 474 474</p>
+                <p className="text-xs text-gray-500">24/7 spoedlijn</p>
               </div>
             </div>
 
@@ -478,7 +528,6 @@ export default function ZorginstellingenPage() {
           </div>
         </div>
       </section>
-      <ScrollToTop />
     </main>
   )
 }
