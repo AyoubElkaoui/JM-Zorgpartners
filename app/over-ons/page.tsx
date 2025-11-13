@@ -35,7 +35,7 @@ export default function OverOnsPage() {
               <div className="space-y-6">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#F37325]/10 rounded-full">
                   <Target className="h-5 w-5 text-[#F37325]" />
-                  <span className="text-sm font-medium text-[#1C3364]">Onze Missie</span>
+                  <span className="text-base font-semibold text-[#1C3364]">Onze Missie</span>
                 </div>
                 
                 <h2 className="text-4xl lg:text-5xl font-black text-[#1C3364] leading-tight">
@@ -179,7 +179,7 @@ export default function OverOnsPage() {
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#F37325]/10 rounded-full">
                 <Users className="h-5 w-5 text-[#F37325]" />
-                <span className="text-sm font-medium text-[#1C3364]">Ons Team</span>
+                <span className="text-base font-semibold text-[#1C3364]">Ons Team</span>
               </div>
               
               <h2 className="text-4xl lg:text-5xl font-black text-[#1C3364] leading-tight">

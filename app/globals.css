@@ -24,6 +24,16 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  /* Echte 80% zoom effect - alles wordt proportioneel kleiner */
+  zoom: 0.8;
+  /* Voor browsers die zoom niet ondersteunen */
+  transform: scale(0.8);
+  transform-origin: 0 0;
+  -moz-transform: scale(0.8);
+  -moz-transform-origin: 0 0;
+}
+
 /* Enhanced transitions for professional feel */
 * {
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;

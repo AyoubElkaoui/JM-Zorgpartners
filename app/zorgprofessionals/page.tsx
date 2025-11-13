@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { 
   Briefcase, Brain, Users, Baby, Heart, GraduationCap, Globe, 
-  Clock, CheckCircle2, FileText, UserCircle, Phone, MapPin, Shield, Award
+  Clock, CheckCircle2, FileText, UserCircle, Phone, MapPin, Shield, Award, ArrowRight, HeartHandshake, Stethoscope
 } from 'lucide-react'
 import FadeContent from '@/components/react-bits/FadeContent'
 import ScaleIn from '@/components/react-bits/ScaleIn'
@@ -50,12 +50,12 @@ export default function ZorgprofessionalsPage() {
             <FadeContent>
               <div className="space-y-6">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#F37325]/10 rounded-full">
-                  <Briefcase className="h-4 w-4 text-[#F37325]" />
-                  <span className="text-sm font-medium text-[#1C3364]">Voor Zorgprofessionals</span>
+                  <Stethoscope className="h-5 w-5 text-[#F37325]" />
+                  <span className="text-base font-semibold text-[#1C3364]">Voor Zorgprofessionals</span>
                 </div>
                 
-                <h1 className="text-4xl lg:text-5xl font-bold text-[#1C3364] leading-tight">
-                  Werken via <GradientText>JM Zorgpartners</GradientText>
+                <h1 className="text-4xl lg:text-5xl font-black text-[#1C3364] leading-tight">
+                  Werken via <span className="text-[#F37325]">JM Zorgpartners</span>
                 </h1>
                 
                 <p className="text-lg text-gray-700 leading-relaxed">
@@ -108,7 +108,7 @@ export default function ZorgprofessionalsPage() {
       <section id="sectoren" className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#1C3364] mb-4">
+            <h2 className="text-3xl lg:text-4xl font-black text-[#1C3364] mb-4">
               In welke <span className="text-[#F37325]">sectoren</span> kun je aan de slag?
             </h2>
             <p className="text-base text-gray-600 mt-4 max-w-3xl mx-auto">
@@ -141,7 +141,7 @@ export default function ZorgprofessionalsPage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#1C3364] mb-4">
+            <h2 className="text-3xl lg:text-4xl font-black text-[#1C3364] mb-4">
               Wat <span className="text-[#F37325]">vragen</span> wij van jou?
             </h2>
             <p className="text-base text-gray-600 mt-4 max-w-3xl mx-auto">
@@ -170,7 +170,7 @@ export default function ZorgprofessionalsPage() {
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#1C3364] mb-4">
+            <h2 className="text-3xl lg:text-4xl font-black text-[#1C3364] mb-4">
               Zo <span className="text-[#F37325]">werkt</span> het
             </h2>
           </div>
@@ -215,7 +215,7 @@ export default function ZorgprofessionalsPage() {
 
             <FadeContent delay={0.2}>
               <div className="space-y-6">
-                <h2 className="text-3xl lg:text-4xl font-bold text-[#1C3364]">
+                <h2 className="text-3xl lg:text-4xl font-black text-[#1C3364]">
                   Waarom werken via <span className="text-[#F37325]">JM Zorgpartners?</span>
                 </h2>
                 
@@ -244,7 +244,7 @@ export default function ZorgprofessionalsPage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#1C3364] mb-4">
+            <h2 className="text-3xl lg:text-4xl font-black text-[#1C3364] mb-4">
               Actuele <span className="text-[#F37325]">vacatures</span>
             </h2>
             <p className="text-base text-gray-600 mt-4">
@@ -330,50 +330,64 @@ export default function ZorgprofessionalsPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section id="aanmelden" className="py-20 bg-gradient-to-br from-[#1C3364] via-[#2a4a8f] to-[#1C3364] text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djItaDJ2LTJoLTJ6bTAgNGgtMnYyaDJ2LTJ6bTAgMnYyaDJ2LTJoLTJ6bTAtNnYtMmgtMnYyaDJ6bS0yIDBoLTJ2Mmgydi0yem0yLTJ2LTJoLTJ2MmgyeiIvPjwvZz48L2c+PC9zdmc+')] opacity-10" />
-        
-        <div className="relative max-w-4xl mx-auto px-6 lg:px-12 text-center">
+      {/* CTA Section - Zoals Homepage */}
+      <section id="aanmelden" className="py-24 bg-gradient-to-b from-white to-orange-50/30">
+        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
           <FadeContent>
-            <div className="space-y-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full">
-                <UserCircle className="h-5 w-5" />
-                <span className="text-sm font-medium">Klaar om te beginnen?</span>
-              </div>
-              
-              <h2 className="text-4xl lg:text-5xl font-black">
-                Meld je aan als zorgprofessional
-              </h2>
-              
-              <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
-                Wil je via JM Zorgpartners aan de slag als zorgprofessional? 
-                Meld je eenvoudig aan via ons formulier – wij nemen snel contact met je op.
+            <h2 className="text-3xl lg:text-4xl font-black text-[#1C3364] mb-4">
+              Klaar om te beginnen? <span className="text-[#F37325]">Meld je nu aan</span>
+            </h2>
+            
+            <p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
+              Meld je eenvoudig aan via ons formulier. Binnen 24 uur hoor je van ons.
               </p>
               
-              <div className="flex flex-wrap gap-4 justify-center pt-4">
-                <MovingBorder duration={10000}>
-                  <Link
-                    href="/contact"
-                    className="px-8 py-4 bg-[#F37325] text-white rounded-xl font-semibold hover:bg-[#d96420] transition-all inline-flex items-center gap-2"
-                  >
-                    <FileText className="h-5 w-5" />
-                    Open aanmeldformulier
-                  </Link>
-                </MovingBorder>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+                <Link href="/contact">
+                  <ScaleIn delay={200}>
+                    <MovingBorder
+                      duration={7000}
+                      className="bg-[#F37325] hover:bg-[#d96420] text-white px-8 py-4 font-bold text-base"
+                      containerClassName="w-full sm:w-auto"
+                    >
+                      <div className="flex items-center justify-center gap-2">
+                        <FileText className="w-5 h-5" />
+                        <span>Open aanmeldformulier</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </div>
+                    </MovingBorder>
+                  </ScaleIn>
+                </Link>
                 
-                <a
-                  href="tel:0653474474"
-                  className="px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white text-white rounded-xl font-semibold hover:bg-white hover:text-[#1C3364] transition-all inline-flex items-center gap-2"
-                >
-                  <Phone className="h-5 w-5" />
-                  06 53 474 474
-                </a>
+                <Link href="tel:0653474474">
+                  <ScaleIn delay={300}>
+                    <MovingBorder
+                      duration={9000}
+                      className="bg-white hover:bg-gray-50 text-[#1C3364] px-8 py-4 font-bold text-base"
+                      containerClassName="w-full sm:w-auto"
+                    >
+                      <div className="flex items-center justify-center gap-2">
+                        <Phone className="w-5 h-5" />
+                        <span>Bel 06 53 474 474</span>
+                      </div>
+                    </MovingBorder>
+                  </ScaleIn>
+                </Link>
               </div>
-              
-              <p className="text-white/80 text-sm">
-                Liever persoonlijk kennismaken? Je bent altijd welkom bij ons op kantoor.
-              </p>
+
+            <div className="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+              <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+                <Clock className="w-7 h-7 text-[#F37325] mx-auto mb-2" />
+                <p className="font-bold text-[#1C3364] text-sm">Binnen 24 uur reactie</p>
+              </div>
+              <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+                <HeartHandshake className="w-7 h-7 text-[#F37325] mx-auto mb-2" />
+                <p className="font-bold text-[#1C3364] text-sm">Persoonlijk advies</p>
+              </div>
+              <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+                <CheckCircle2 className="w-7 h-7 text-[#F37325] mx-auto mb-2" />
+                <p className="font-bold text-[#1C3364] text-sm">Geen verplichtingen</p>
+              </div>
             </div>
           </FadeContent>
         </div>
