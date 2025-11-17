@@ -10,9 +10,9 @@ type MovingBorderProps = {
   className?: string
   containerClassName?: string
   borderRadius?: string
-  as?: any
+  as?: React.ElementType
   borderClassName?: string
-}
+} & React.ButtonHTMLAttributes<HTMLButtonElement>
 
 export const MovingBorder = ({
   children,
@@ -21,7 +21,8 @@ export const MovingBorder = ({
   containerClassName = '',
   borderRadius = '1.75rem',
   as: Component = 'button',
-  borderClassName = ''
+  borderClassName = '',
+  ...props
 }: MovingBorderProps) => {
   return (
     <Component
@@ -32,6 +33,7 @@ export const MovingBorder = ({
       style={{
         borderRadius: borderRadius
       }}
+      {...props}
     >
       <div
         className="absolute inset-0"

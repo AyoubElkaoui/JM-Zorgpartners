@@ -13,28 +13,11 @@ import { AnimatedTitle, GradientText } from '@/components/aceternity/animated-ti
 import { MovingBorder } from '@/components/aceternity/moving-border'
 import CTASection from '@/components/cta-section'
 
-const sectoren = [
-  { icon: Brain, naam: 'GGZ', beschrijving: 'Geestelijke gezondheidszorg' },
-  { icon: Users, naam: 'Gehandicaptenzorg', beschrijving: 'Begeleiding en ondersteuning' },
-  { icon: Baby, naam: 'Jeugdzorg', beschrijving: 'Zorg voor kinderen en jongeren' },
-  { icon: Heart, naam: 'Ouderenzorg', beschrijving: 'Woon- en thuiszorg' },
-  { icon: Globe, naam: 'Vluchtelingenopvang', beschrijving: 'Begeleiding en opvang' },
-  { icon: Baby, naam: 'Kinderopvang', beschrijving: 'Dagopvang en BSO' },
-  { icon: GraduationCap, naam: 'Speciaal onderwijs', beschrijving: 'Onderwijsondersteuning' },
-]
-
 const vereisten = [
   { icon: GraduationCap, titel: 'Een relevante diploma', tekst: 'Relevante diploma voor de zorgsector' },
   { icon: Shield, titel: 'Een geldige VOG', tekst: 'Verklaring Omtrent Gedrag' },
   { icon: Clock, titel: 'Minimaal 3 jaar werkervaring in de zorg', tekst: 'Ruime ervaring in de zorg' },
   { icon: Heart, titel: 'Een professionele, betrokken houding', tekst: 'Betrokken en professioneel' },
-]
-
-const voordelen = [
-  'Jij bepaalt wanneer en waar je werkt',
-  'Eerlijke en snelle uitbetaling',
-  'Persoonlijke begeleiding – altijd bereikbaar',
-  'Een duurzame samenwerking waarin je gehoord wordt',
 ]
 
 export default function ZorgprofessionalsPage() {
@@ -120,8 +103,16 @@ export default function ZorgprofessionalsPage() {
       </section>
 
       {/* Sectoren Section */}
-      <section id="sectoren" className="py-20 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section id="sectoren" className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.02]">
+          <Image
+            src="/images/hero-zorg.png"
+            alt=""
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
             <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-4">
               In welke <span className="text-[#F37325]">sectoren</span> kun je aan de slag?
@@ -133,13 +124,21 @@ export default function ZorgprofessionalsPage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {sectoren.map((sector, idx) => (
+            {[
+              { icon: Brain, naam: 'GGZ', beschrijving: 'Geestelijke gezondheidszorg', image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=300&q=80' },
+              { icon: Users, naam: 'Gehandicaptenzorg', beschrijving: 'Begeleiding en ondersteuning', image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=300&q=80' },
+              { icon: Baby, naam: 'Jeugdzorg', beschrijving: 'Zorg voor kinderen en jongeren', image: 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=300&q=80' },
+              { icon: Heart, naam: 'Ouderenzorg', beschrijving: 'Woon- en thuiszorg', image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=300&q=80' },
+              { icon: Globe, naam: 'Vluchtelingenopvang', beschrijving: 'Begeleiding en opvang', image: 'https://images.unsplash.com/photo-1593113598332-cd288d649433?w=300&q=80' },
+              { icon: Baby, naam: 'Kinderopvang', beschrijving: 'Dagopvang en BSO', image: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=300&q=80' },
+              { icon: GraduationCap, naam: 'Speciaal onderwijs', beschrijving: 'Onderwijsondersteuning', image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=300&q=80' },
+            ].map((sector, idx) => (
               <ScaleIn key={sector.naam} delay={idx * 0.1}>
                 <CardSpotlight className="h-full">
                   <div className="bg-white rounded-2xl p-6 h-full border border-gray-100 hover:border-[#F37325] transition-all duration-300 hover:shadow-xl">
                     <div className="flex flex-col items-center text-center space-y-3">
-                      <div className="w-14 h-14 bg-gradient-to-br from-[#F37325] to-[#ff8c42] rounded-xl flex items-center justify-center">
-                        <sector.icon className="h-7 w-7 text-white" />
+                      <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-[#1C3364]/5">
+                        <sector.icon className="h-8 w-8 text-[#1C3364]" />
                       </div>
                       <h3 className="text-base font-bold text-[#1C3364]">{sector.naam}</h3>
                       <p className="text-sm text-gray-600">{sector.beschrijving}</p>
@@ -181,13 +180,37 @@ export default function ZorgprofessionalsPage() {
         </div>
       </section>
 
-      {/* Werkwijze Section */}
+      {/* Werkwijze Section met Video */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
             <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-4">
               Zo <span className="text-[#F37325]">werkt</span> het
             </h2>
+            <p className="text-base text-gray-600 mt-4 max-w-3xl mx-auto">
+              Bekijk onze recruitment video om te zien hoe wij zorgprofessionals helpen bij het vinden van de juiste baan
+            </p>
+          </div>
+
+          {/* Video Section */}
+          <div className="mb-16">
+            <FadeContent>
+              <div className="max-w-4xl mx-auto">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-black">
+                  <video
+                    controls
+                    className="w-full h-auto"
+                    poster="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800"
+                  >
+                    <source src="/videos/JM Zorgpartners recruitment video .mp4" type="video/mp4" />
+                    Uw browser ondersteunt deze video niet.
+                  </video>
+                </div>
+                <p className="text-center text-gray-600 mt-4 text-sm">
+                  Ontdek hoe wij jou helpen bij het vinden van de perfecte zorgbaan
+                </p>
+              </div>
+            </FadeContent>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -261,8 +284,16 @@ export default function ZorgprofessionalsPage() {
       </section>
 
       {/* Vacatures Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-20 bg-gray-50 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.02]">
+          <Image
+            src="/images/zorg-professional.png"
+            alt=""
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
             <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-4">
               Actuele <span className="text-[#F37325]">vacatures</span>
@@ -279,21 +310,24 @@ export default function ZorgprofessionalsPage() {
                 locatie: 'Amsterdam',
                 type: 'Fulltime / Parttime',
                 uren: '24-36 uur p/w',
-                beschrijving: 'Werk als verpleegkundige in de thuiszorg of woonzorg in Amsterdam en omgeving.'
+                beschrijving: 'Werk als verpleegkundige in de thuiszorg of woonzorg in Amsterdam en omgeving.',
+                image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&q=80'
               },
               {
                 titel: 'Verzorgende IG Rotterdam',
                 locatie: 'Rotterdam',
                 type: 'Fulltime',
                 uren: '32-40 uur p/w',
-                beschrijving: 'Zorg voor ouderen in een verpleeghuis of woonzorgcentrum in Rotterdam.'
+                beschrijving: 'Zorg voor ouderen in een verpleeghuis of woonzorgcentrum in Rotterdam.',
+                image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&q=80'
               },
               {
                 titel: 'Wijkverpleegkundige Utrecht',
                 locatie: 'Utrecht',
                 type: 'Parttime',
                 uren: '20-32 uur p/w',
-                beschrijving: 'Begeleid cliënten in hun thuissituatie als wijkverpleegkundige in Utrecht.'
+                beschrijving: 'Begeleid cliënten in hun thuissituatie als wijkverpleegkundige in Utrecht.',
+                image: 'https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=400&q=80'
               },
             ].map((vacature, idx) => (
               <ScaleIn key={vacature.titel} delay={idx * 0.1}>
@@ -301,8 +335,8 @@ export default function ZorgprofessionalsPage() {
                   <div className="bg-white rounded-2xl p-8 h-full border border-gray-100 hover:border-[#F37325] transition-all duration-300 hover:shadow-xl">
                     <div className="space-y-4">
                       <div className="flex items-start justify-between">
-                        <div className="w-12 h-12 bg-gradient-to-br from-[#F37325] to-[#ff8c42] rounded-xl flex items-center justify-center">
-                          <Briefcase className="h-6 w-6 text-white" />
+                        <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#1C3364]/5">
+                          <Briefcase className="h-6 w-6 text-[#1C3364]" />
                         </div>
                         <span className="px-3 py-1 bg-[#F37325]/10 text-[#F37325] text-xs font-semibold rounded-full">
                           {vacature.type}

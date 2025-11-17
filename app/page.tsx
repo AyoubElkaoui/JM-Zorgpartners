@@ -170,42 +170,48 @@ export default function HomePage() {
                 icon: Zap,
                 title: 'Snelle plaatsing',
                 desc: 'Binnen 24 uur gekwalificeerde kandidaten beschikbaar voor jouw zorginstelling',
-                color: 'from-[#F37325] to-[#ff8c4d]'
+                color: 'from-[#F37325] to-[#ff8c4d]',
+                image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80'
               },
               {
                 icon: Shield,
                 title: '100% Gescreend',
                 desc: 'Alle professionals zijn volledig gescreend op kwalificaties, ervaring en betrouwbaarheid',
-                color: 'from-[#1C3364] to-[#2a4a7c]'
+                color: 'from-[#1C3364] to-[#2a4a7c]',
+                image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&q=80'
               },
               {
                 icon: HeartHandshake,
                 title: 'Persoonlijke match',
                 desc: 'Wij kijken verder dan het CV en zorgen voor een match die bij jouw organisatie past',
-                color: 'from-[#F37325] to-[#ff8c4d]'
+                color: 'from-[#F37325] to-[#ff8c4d]',
+                image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80'
               },
               {
                 icon: Users,
                 title: 'Groot netwerk',
                 desc: 'Toegang tot 500+ gekwalificeerde zorgprofessionals door heel Nederland',
-                color: 'from-[#1C3364] to-[#2a4a7c]'
+                color: 'from-[#1C3364] to-[#2a4a7c]',
+                image: 'https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=400&q=80'
               },
               {
                 icon: Clock,
                 title: '24/7 Bereikbaar',
                 desc: 'Bij spoedvragen zijn wij altijd bereikbaar om snel te kunnen schakelen',
-                color: 'from-[#F37325] to-[#ff8c4d]'
+                color: 'from-[#F37325] to-[#ff8c4d]',
+                image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80'
               },
               {
                 icon: Target,
                 title: 'Transparante tarieven',
                 desc: 'Heldere afspraken over tarieven en voorwaarden. Geen verborgen kosten',
-                color: 'from-[#1C3364] to-[#2a4a7c]'
+                color: 'from-[#1C3364] to-[#2a4a7c]',
+                image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&q=80'
               }
             ].map((item, index) => (
               <FadeContent key={index} blur delay={index * 100} duration={1000}>
                 <CardSpotlight className="group h-full bg-white rounded-3xl p-8 border border-gray-100 hover:border-[#F37325]/30 transition-all duration-500 hover:shadow-2xl">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg`}>
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#F37325] to-[#ff8c4d] flex items-center justify-center mb-6">
                     <item.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-black text-[#1C3364] mb-4 group-hover:text-[#F37325] transition-colors">
@@ -218,6 +224,42 @@ export default function HomePage() {
               </FadeContent>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Video Section - Over JM Zorgpartners */}
+      <section className="py-32 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <AnimatedTitle>
+              <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-6">
+                Ontdek <GradientText>JM Zorgpartners</GradientText>
+              </h2>
+            </AnimatedTitle>
+            <FadeContent blur duration={800}>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Meer dan alleen bemiddeling — wij zijn uw partner in zorgpersoneel
+              </p>
+            </FadeContent>
+          </div>
+
+          <FadeContent blur delay={200} duration={1000}>
+            <div className="max-w-4xl mx-auto">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-black">
+                <video
+                  controls
+                  className="w-full h-auto"
+                  poster="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800"
+                >
+                  <source src="/videos/JM Zorgpartners algemene promotie video .mp4" type="video/mp4" />
+                  Uw browser ondersteunt deze video niet.
+                </video>
+              </div>
+              <p className="text-center text-gray-600 mt-4 text-sm">
+                Leer meer over onze visie, aanpak en waarom zorginstellingen voor ons kiezen
+              </p>
+            </div>
+          </FadeContent>
         </div>
       </section>
 
@@ -272,6 +314,14 @@ export default function HomePage() {
 
       {/* Stats Section - Met zorg image */}
       <section className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03]">
+          <Image
+            src="/images/values-image.png"
+            alt=""
+            fill
+            className="object-cover"
+          />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Image */}
@@ -360,20 +410,9 @@ export default function HomePage() {
               <TiltCard containerClassName="h-full">
                 <Link href="/zorgprofessionals">
                   <CardSpotlight className="group h-full bg-white rounded-3xl overflow-hidden border border-gray-100 hover:border-[#F37325] transition-all duration-500 hover:shadow-2xl">
-                  <div className="relative h-80 overflow-hidden">
-                    <Image
-                      src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80"
-                      alt="Voor Zorgprofessionals"
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1C3364]/80 to-transparent"></div>
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <h3 className="text-3xl font-black text-white mb-2">Voor Zorgprofessionals</h3>
-                      <p className="text-white/90 text-sm">Ben je op zoek naar een nieuwe uitdaging?</p>
-                    </div>
-                  </div>
                   <div className="p-8">
+                    <h3 className="text-3xl font-black text-[#1C3364] mb-2">Voor Zorgprofessionals</h3>
+                    <p className="text-white/90 text-sm mb-6">Ben je op zoek naar een nieuwe uitdaging?</p>
                     <p className="text-gray-600 mb-6 leading-relaxed">
                       Vind de baan die bij je past. Wij bieden flexibele opdrachten bij mooie zorginstellingen door heel Nederland.
                     </p>
@@ -401,25 +440,14 @@ export default function HomePage() {
               </TiltCard>
             </FadeContent>
 
-            {/* Voor Werkgevers */}
+            {/* Voor Opdrachtgevers */}
             <FadeContent blur delay={200} duration={1000}>
               <TiltCard containerClassName="h-full">
-                <Link href="/werkgevers">
+                <Link href="/opdrachtgevers">
                   <CardSpotlight className="group h-full bg-white rounded-3xl overflow-hidden border border-gray-100 hover:border-[#F37325] transition-all duration-500 hover:shadow-2xl">
-                  <div className="relative h-80 overflow-hidden">
-                    <Image
-                      src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
-                      alt="Voor Werkgevers"
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1C3364]/80 to-transparent"></div>
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <h3 className="text-3xl font-black text-white mb-2">Voor Werkgevers</h3>
-                      <p className="text-white/90 text-sm">Zoek je gekwalificeerd zorgpersoneel?</p>
-                    </div>
-                  </div>
                   <div className="p-8">
+                    <h3 className="text-3xl font-black text-[#1C3364] mb-2">Voor Opdrachtgevers</h3>
+                    <p className="text-white/90 text-sm mb-6">Zoek je gekwalificeerd zorgpersoneel?</p>
                     <p className="text-gray-600 mb-6 leading-relaxed">
                       Binnen 24 uur de juiste professionals voor jouw zorgorganisatie. Volledig gescreend en klaar om te starten.
                     </p>
@@ -567,7 +595,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
             <FadeContent blur delay={50} duration={800}>
-              <CardSpotlight className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-[#F37325] hover:shadow-lg transition-all duration-300">
+              <CardSpotlight className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-[#F37325] hover:shadow-lg transition-all duration-300 group">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-[#1C3364]/5 mb-4">
                   <Brain className="w-8 h-8 text-[#1C3364]" />
                 </div>
@@ -576,7 +604,7 @@ export default function HomePage() {
             </FadeContent>
 
             <FadeContent blur delay={100} duration={800}>
-              <CardSpotlight className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-[#F37325] hover:shadow-lg transition-all duration-300">
+              <CardSpotlight className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-[#F37325] hover:shadow-lg transition-all duration-300 group">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-[#1C3364]/5 mb-4">
                   <Accessibility className="w-8 h-8 text-[#1C3364]" />
                 </div>
@@ -585,7 +613,7 @@ export default function HomePage() {
             </FadeContent>
 
             <FadeContent blur delay={150} duration={800}>
-              <CardSpotlight className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-[#F37325] hover:shadow-lg transition-all duration-300">
+              <CardSpotlight className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-[#F37325] hover:shadow-lg transition-all duration-300 group">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-[#1C3364]/5 mb-4">
                   <Baby className="w-8 h-8 text-[#1C3364]" />
                 </div>
@@ -594,7 +622,7 @@ export default function HomePage() {
             </FadeContent>
 
             <FadeContent blur delay={200} duration={800}>
-              <CardSpotlight className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-[#F37325] hover:shadow-lg transition-all duration-300">
+              <CardSpotlight className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-[#F37325] hover:shadow-lg transition-all duration-300 group">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-[#1C3364]/5 mb-4">
                   <Heart className="w-8 h-8 text-[#1C3364]" />
                 </div>
@@ -603,7 +631,7 @@ export default function HomePage() {
             </FadeContent>
 
             <FadeContent blur delay={250} duration={800}>
-              <div className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-[#F37325] hover:shadow-lg transition-all duration-300">
+              <div className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-[#F37325] hover:shadow-lg transition-all duration-300 group">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-[#1C3364]/5 mb-4">
                   <Globe className="w-8 h-8 text-[#1C3364]" />
                 </div>
@@ -612,7 +640,7 @@ export default function HomePage() {
             </FadeContent>
 
             <FadeContent blur delay={300} duration={800}>
-              <div className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-[#F37325] hover:shadow-lg transition-all duration-300">
+              <div className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-[#F37325] hover:shadow-lg transition-all duration-300 group">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-[#1C3364]/5 mb-4">
                   <Baby className="w-8 h-8 text-[#1C3364]" />
                 </div>
@@ -621,7 +649,7 @@ export default function HomePage() {
             </FadeContent>
 
             <FadeContent blur delay={350} duration={800}>
-              <div className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-[#F37325] hover:shadow-lg transition-all duration-300">
+              <div className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-[#F37325] hover:shadow-lg transition-all duration-300 group">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-[#1C3364]/5 mb-4">
                   <School className="w-8 h-8 text-[#1C3364]" />
                 </div>
@@ -632,6 +660,11 @@ export default function HomePage() {
             <FadeContent blur delay={400} duration={800}>
               <Link href="/contact">
                 <div className="bg-gradient-to-br from-[#F37325] to-[#F37325]/80 rounded-2xl p-6 text-center border border-[#F37325] hover:shadow-xl transition-all duration-300 cursor-pointer group">
+                  <div className="relative h-24 mb-4 rounded-xl overflow-hidden bg-white/20">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <ArrowRight className="w-12 h-12 text-white group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-white/20 mb-4">
                     <ArrowRight className="w-8 h-8 text-white group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -692,19 +725,6 @@ export default function HomePage() {
             <FadeContent blur delay={100} duration={1000}>
               <Link href="/vacatures">
                 <div className="group relative bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-[#F37325] hover:shadow-xl transition-all duration-500">
-                  <div className="relative h-56 overflow-hidden">
-                    <Image
-                      src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80"
-                      alt="Vacature"
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <span className="px-4 py-2 rounded-full bg-[#F37325] text-white text-sm font-bold">
-                        Nieuw
-                      </span>
-                    </div>
-                  </div>
                   <div className="p-6">
                     <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
                       <MapPin className="w-4 h-4" />
@@ -728,19 +748,6 @@ export default function HomePage() {
             <FadeContent blur delay={200} duration={1000}>
               <Link href="/blog">
                 <div className="group relative bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-[#F37325] hover:shadow-xl transition-all duration-500">
-                  <div className="relative h-56 overflow-hidden">
-                    <Image
-                      src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80"
-                      alt="Blog"
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <span className="px-4 py-2 rounded-full bg-[#1C3364] text-white text-sm font-bold">
-                        Tips
-                      </span>
-                    </div>
-                  </div>
                   <div className="p-6">
                     <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
                       <Clock className="w-4 h-4" />
@@ -764,19 +771,6 @@ export default function HomePage() {
             <FadeContent blur delay={300} duration={1000}>
               <Link href="/blog">
                 <div className="group relative bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-[#F37325] hover:shadow-xl transition-all duration-500">
-                  <div className="relative h-56 overflow-hidden">
-                    <Image
-                      src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&q=80"
-                      alt="Blog"
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <span className="px-4 py-2 rounded-full bg-[#1C3364] text-white text-sm font-bold">
-                        Blog
-                      </span>
-                    </div>
-                  </div>
                   <div className="p-6">
                     <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
                       <Clock className="w-4 h-4" />
@@ -814,7 +808,7 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 gap-8">
             <FadeContent blur delay={100} duration={1000}>
-              <div className="bg-gradient-to-br from-orange-50 to-white rounded-3xl p-10 border border-gray-100">
+              <div className="bg-gradient-to-br from-orange-50 to-white rounded-3xl p-10 border border-gray-100 relative overflow-hidden">
                 <div className="flex gap-1 mb-6">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-6 h-6 fill-[#F37325] text-[#F37325]" />
@@ -836,7 +830,7 @@ export default function HomePage() {
             </FadeContent>
 
             <FadeContent blur delay={200} duration={1000}>
-              <div className="bg-gradient-to-br from-orange-50 to-white rounded-3xl p-10 border border-gray-100">
+              <div className="bg-gradient-to-br from-orange-50 to-white rounded-3xl p-10 border border-gray-100 relative overflow-hidden">
                 <div className="flex gap-1 mb-6">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-6 h-6 fill-[#F37325] text-[#F37325]" />
@@ -887,20 +881,9 @@ export default function HomePage() {
             <FadeContent blur delay={100} duration={1000}>
               <Link href="/over-ons">
                 <GlareCard className="group h-full bg-white rounded-3xl overflow-hidden border border-gray-100 hover:border-[#F37325] transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
-                  <div className="relative h-80 overflow-hidden">
-                    <Image
-                      src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80"
-                      alt="Over Ons"
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1C3364]/80 to-transparent"></div>
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <h3 className="text-3xl font-black text-white mb-2">Ons Verhaal</h3>
-                      <p className="text-white/90 text-sm">Leer JM Zorgpartners kennen</p>
-                    </div>
-                  </div>
                   <div className="p-8">
+                    <h3 className="text-3xl font-black text-[#1C3364] mb-2">Ons Verhaal</h3>
+                    <p className="text-white/90 text-sm mb-6">Leer JM Zorgpartners kennen</p>
                     <p className="text-gray-600 mb-6 leading-relaxed">
                       Al jaren zijn wij het vertrouwde gezicht in de zorgsector. Onze persoonlijke aanpak en oog voor detail maken het verschil.
                     </p>
@@ -931,20 +914,9 @@ export default function HomePage() {
             <FadeContent blur delay={200} duration={1000}>
               <Link href="/contact">
                 <GlareCard className="group h-full bg-white rounded-3xl overflow-hidden border border-gray-100 hover:border-[#F37325] transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
-                  <div className="relative h-80 overflow-hidden">
-                    <Image
-                      src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?w=800&q=80"
-                      alt="Contact"
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1C3364]/80 to-transparent"></div>
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <h3 className="text-3xl font-black text-white mb-2">Kom in Contact</h3>
-                      <p className="text-white/90 text-sm">We helpen je graag verder</p>
-                    </div>
-                  </div>
                   <div className="p-8">
+                    <h3 className="text-3xl font-black text-[#1C3364] mb-2">Kom in Contact</h3>
+                    <p className="text-white/90 text-sm mb-6">We helpen je graag verder</p>
                     <p className="text-gray-600 mb-6 leading-relaxed">
                       Heb je vragen of wil je vrijblijvend kennismaken? Neem direct contact op en ontdek hoe wij jou kunnen helpen.
                     </p>

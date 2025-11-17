@@ -113,18 +113,18 @@ export default function ZorginstellingenPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: Users, titel: 'Zorgprofessionals voor verschillende functies en niveaus', beschrijving: 'Van helpende tot specialist, wij hebben de juiste professional voor uw zorgvraag.' },
-              { icon: Clock, titel: 'Inzetbaar op korte én langdurige opdrachten', beschrijving: 'Van enkele dagen tot maandenlang, flexibel inzetbaar naar uw behoefte.' },
-              { icon: TrendingUp, titel: 'Dag-, nacht- of weekenddiensten', beschrijving: '24/7 beschikbaarheid voor alle diensten die uw organisatie nodig heeft.' },
-              { icon: Shield, titel: 'Oplossingen bij ziekte, piekdrukte of verlof', beschrijving: 'Directe vervanging bij onverwachte situaties of geplande afwezigheid.' },
-              { icon: FileText, titel: 'Inzetbaar via payroll of als zzp\'er', beschrijving: 'Keuze uit verschillende contractvormen die passen bij uw organisatie.' },
-              { icon: CheckCircle2, titel: 'Snel inzetbaar, zorgvuldig geselecteerd', beschrijving: 'Professionele screening en snelle plaatsing voor optimale zorgcontinuïteit.' },
+              { icon: Users, titel: 'Zorgprofessionals voor verschillende functies en niveaus', beschrijving: 'Van helpende tot specialist, wij hebben de juiste professional voor uw zorgvraag.', image: 'https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=400&q=80' },
+              { icon: Clock, titel: 'Inzetbaar op korte én langdurige opdrachten', beschrijving: 'Van enkele dagen tot maandenlang, flexibel inzetbaar naar uw behoefte.', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80' },
+              { icon: TrendingUp, titel: 'Dag-, nacht- of weekenddiensten', beschrijving: '24/7 beschikbaarheid voor alle diensten die uw organisatie nodig heeft.', image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&q=80' },
+              { icon: Shield, titel: 'Oplossingen bij ziekte, piekdrukte of verlof', beschrijving: 'Directe vervanging bij onverwachte situaties of geplande afwezigheid.', image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&q=80' },
+              { icon: FileText, titel: 'Inzetbaar via payroll of als zzp\'er', beschrijving: 'Keuze uit verschillende contractvormen die passen bij uw organisatie.', image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&q=80' },
+              { icon: CheckCircle2, titel: 'Snel inzetbaar, zorgvuldig geselecteerd', beschrijving: 'Professionele screening en snelle plaatsing voor optimale zorgcontinuïteit.', image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&q=80' },
             ].map((dienst, idx) => (
               <ScaleIn key={dienst.titel} delay={idx * 0.1}>
                 <CardSpotlight>
                   <div className="bg-white rounded-2xl p-8 h-full border border-gray-100 hover:border-[#F37325] transition-all duration-300 hover:shadow-xl">
-                    <div className="w-14 h-14 bg-gradient-to-br from-[#F37325] to-[#ff8c42] rounded-xl flex items-center justify-center mb-6">
-                      <dienst.icon className="h-7 w-7 text-white" />
+                    <div className="w-12 h-12 bg-[#F37325]/10 rounded-lg flex items-center justify-center mb-6">
+                      <dienst.icon className="h-6 w-6 text-[#F37325]" />
                     </div>
                     <h3 className="text-xl font-bold text-[#1C3364] mb-3">{dienst.titel}</h3>
                     <p className="text-gray-600 leading-relaxed">{dienst.beschrijving}</p>
@@ -143,7 +143,7 @@ export default function ZorginstellingenPage() {
         </div>
       </section>
 
-      {/* Werkwijze Section */}
+      {/* Werkwijze Section met Video */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
@@ -153,6 +153,27 @@ export default function ZorginstellingenPage() {
             <p className="text-xl text-gray-600 mt-4">
               In vier eenvoudige stappen naar de juiste zorgprofessional
             </p>
+          </div>
+
+          {/* Video Section */}
+          <div className="mb-16">
+            <FadeContent>
+              <div className="max-w-4xl mx-auto">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-black">
+                  <video
+                    controls
+                    className="w-full h-auto"
+                    poster="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800"
+                  >
+                    <source src="/videos/JM Zorgpartner klant video.mp4" type="video/mp4" />
+                    Uw browser ondersteunt deze video niet.
+                  </video>
+                </div>
+                <p className="text-center text-gray-600 mt-4 text-sm">
+                  Bekijk hoe onze klanten de samenwerking ervaren
+                </p>
+              </div>
+            </FadeContent>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -195,7 +216,15 @@ export default function ZorginstellingenPage() {
       </section>
 
       {/* Waarom Kiezen Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.02]">
+          <Image
+            src="/images/zorg-team.png"
+            alt=""
+            fill
+            className="object-cover"
+          />
+        </div>
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <FadeContent>

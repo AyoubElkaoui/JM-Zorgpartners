@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Heart, Target, Zap, Users, CheckCircle2, Phone, Mail, Award, ArrowRight, Clock, HeartHandshake } from 'lucide-react'
+import { Heart, Target, Zap, Users, CheckCircle2, Phone, Award, ArrowRight, HeartHandshake } from 'lucide-react'
 import FadeContent from '@/components/react-bits/FadeContent'
 import ScaleIn from '@/components/react-bits/ScaleIn'
 import { AnimatedTitle, GradientText } from '@/components/aceternity/animated-title'
@@ -94,11 +94,9 @@ export default function OverOnsPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
-            <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-4">
-             <AnimatedTitle>
+            <AnimatedTitle>
               De kracht van de <GradientText>juiste match</GradientText>
             </AnimatedTitle>
-            </h2>
             <p className="text-xl text-gray-600 mt-4 max-w-3xl mx-auto">
               Goede zorg vraagt om de juiste mensen op de juiste plek.
             </p>
@@ -189,8 +187,16 @@ export default function OverOnsPage() {
       </section>
 
       {/* Our Values */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03]">
+          <Image
+            src="/images/values-image.png"
+            alt=""
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
             <AnimatedTitle>
               Waar wij voor <GradientText>staan</GradientText>
@@ -264,7 +270,7 @@ export default function OverOnsPage() {
                     Betrouwbare partners die meedenken over uw personeelsbehoeften. Van tijdelijke ondersteuning tot structurele oplossingen.
                   </p>
                   <div className="mt-6">
-                    <Link href="/werkgevers">
+                    <Link href="/opdrachtgevers">
                       <ScaleIn delay={600} duration={700}>
                         <MovingBorder
                           duration={8000}

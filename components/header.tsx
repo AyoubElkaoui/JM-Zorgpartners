@@ -16,7 +16,7 @@ import { useState } from "react";
 const navItems = [
   { name: "Home", link: "/" },
   { name: "Zorgprofessionals", link: "/zorgprofessionals" },
-  { name: "Zorginstellingen", link: "/werkgevers" },
+  { name: "Zorginstellingen", link: "/opdrachtgevers" },
   { name: "Over Ons", link: "/over-ons" },
   { name: "Blog", link: "/blog" },
   { name: "Contact", link: "/contact" },
@@ -25,7 +25,7 @@ const navItems = [
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
-    <Navbar className="!h-24">
+    <Navbar className="!h-20 xl:!h-24">
       <NavBody className="!h-24">
         {/* Custom Logo */}
         <Link href="/" className="flex items-center mr-6 select-none">
@@ -34,7 +34,7 @@ export default function Header() {
             alt="JM Zorgpartners"
             width={80}
             height={80}
-            className="h-20 w-auto"
+            className="h-16 xl:h-20 w-auto"
             priority
           />
         </Link>
@@ -56,7 +56,7 @@ export default function Header() {
               alt="JM Zorgpartners"
               width={60}
               height={60}
-              className="h-14 w-auto"
+              className="h-12 xl:h-14 w-auto"
               priority
             />
           </Link>

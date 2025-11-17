@@ -19,8 +19,14 @@ export const metadata: Metadata = {
   keywords: "zorg, uitzendbureau, verpleging, verzorging, vacatures, zorgpersoneel, healthcare",
   icons: {
     icon: '/favicon.png',
-    apple: '/favicon.png',
+    apple: '/apple-touch-icon.png',
   },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({
@@ -33,7 +39,7 @@ export default function RootLayout({
       <body className={poppins.variable}>
         <ScrollToTop />
         <Header />
-        <main className="pt-24">
+        <main className="pt-20 xl:pt-24">
           {children}
         </main>
         <Footer />

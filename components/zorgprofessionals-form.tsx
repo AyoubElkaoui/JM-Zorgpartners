@@ -293,14 +293,13 @@ export default function ZorgprofessionalsForm() {
                   duration={8000}
                   className="bg-[#F37325] hover:bg-[#d96420] text-white px-2 py-1 font-bold"
                   containerClassName="w-full sm:w-auto"
+                  as="button"
+                  type="submit"
                 >
-                  <button
-                    type="submit"
-                    className="w-full px-8 py-4 bg-[#F37325] text-white rounded-xl font-bold text-lg hover:bg-[#d96420] transition-all flex items-center justify-center gap-2"
-                  >
+                  <div className="flex items-center justify-center gap-2">
                     <Send className="h-5 w-5" />
                     Verstuur Aanmelding
-                  </button>
+                  </div>
                 </MovingBorder>
 
                 <p className="text-center text-sm text-gray-500">
