@@ -4,20 +4,20 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { 
   Briefcase, Brain, Users, Baby, Heart, GraduationCap, Globe, 
-  Clock, CheckCircle2, FileText, Phone, MapPin, Shield, ArrowRight, HeartHandshake, Stethoscope, Send
+  Clock, CheckCircle2, FileText, Phone, MapPin, Shield, ArrowRight, Stethoscope, Send
 } from 'lucide-react'
 import FadeContent from '@/components/react-bits/FadeContent'
 import ScaleIn from '@/components/react-bits/ScaleIn'
 import { CardSpotlight } from '@/components/aceternity/card-spotlight'
-import { AnimatedTitle, GradientText } from '@/components/aceternity/animated-title'
+import { GradientText } from '@/components/aceternity/animated-title'
 import { MovingBorder } from '@/components/aceternity/moving-border'
 import CTASection from '@/components/cta-section'
 
-const vereisten = [
-  { icon: GraduationCap, titel: 'Een relevante diploma', tekst: 'Relevante diploma voor de zorgsector' },
-  { icon: Shield, titel: 'Een geldige VOG', tekst: 'Verklaring Omtrent Gedrag' },
-  { icon: Clock, titel: 'Minimaal 3 jaar werkervaring in de zorg', tekst: 'Ruime ervaring in de zorg' },
-  { icon: Heart, titel: 'Een professionele, betrokken houding', tekst: 'Betrokken en professioneel' },
+const verwachtingen = [
+  { icon: CheckCircle2, titel: 'Eerlijke en transparante voorwaarden', tekst: 'We waarderen jouw inzet en zorgen voor duidelijke, correcte en professionele arbeidsvoorwaarden.' },
+  { icon: Users, titel: 'Persoonlijk contact', tekst: 'Je hebt altijd een aanspreekpunt dat bereikbaar is op de momenten dat je ons nodig hebt.' },
+  { icon: Heart, titel: 'Opdrachten die bij jou passen', tekst: 'Wij luisteren naar jouw voorkeuren en koppelen je aan opdrachten die passen bij jouw kwaliteiten en persoonlijkheid.' },
+  { icon: Clock, titel: 'Snelle en betrouwbare planning', tekst: 'We schakelen mee met jouw beschikbaarheid en zorgen voor duidelijke afspraken.' },
 ]
 
 export default function ZorgprofessionalsPage() {
@@ -37,22 +37,18 @@ export default function ZorgprofessionalsPage() {
                 </div>
                 
                 <h1 className="text-5xl lg:text-6xl font-black text-[#1C3364] leading-tight">
-                  Werken via <GradientText>JM Zorgpartners</GradientText>
+                  Werken in de zorg op jouw <GradientText>manier</GradientText>
                 </h1>
                 
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Ben jij een zorgprofessional met ervaring, betrokkenheid en een groot hart voor de zorg? 
-                  Dan zijn wij op zoek naar jou.
+                  Ben jij een zorgprofessional met ervaring en een groot hart voor de zorg?
+                  Bij JM Zorgpartners koppelen wij je aan opdrachten die passen bij jouw manier van werken.
                 </p>
                 
                 <p className="text-base text-gray-600">
-                  Bij JM Zorgpartners <span className="font-semibold text-[#1C3364]">bepaal jij hoe je wilt werken</span> – 
-                  losse diensten of vaste opdrachten, overdag, &apos;s nachts of in het weekend. 
-                  Wij luisteren naar jouw voorkeuren en zoeken werk dat écht bij je past – professioneel én persoonlijk.
-                </p>
-                
-                <p className="text-base text-gray-600">
-                  Samen zorgen we voor de juiste match.
+                  Of je nu kiest voor korte diensten of langere inzet, jij bepaalt wat bij jou past.
+                  Wij luisteren naar jouw voorkeuren en zorgen voor werk dat aansluit bij jouw professionaliteit en persoonlijkheid.
+                  Samen vinden we de juiste match.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 mb-10">
@@ -104,7 +100,7 @@ export default function ZorgprofessionalsPage() {
 
       {/* Sectoren Section */}
       <section id="sectoren" className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.02]">
+        <div className="absolute inset-0 opacity-[0.05]">
           <Image
             src="/images/hero-zorg.png"
             alt=""
@@ -115,23 +111,23 @@ export default function ZorgprofessionalsPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
             <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-4">
-              In welke <span className="text-[#F37325]">sectoren</span> kun je aan de slag?
+              Onze <span className="text-[#F37325]">zorgsectoren</span>
             </h2>
             <p className="text-base text-gray-600 mt-4 max-w-3xl mx-auto">
-              Via JM Zorgpartners kun je aan de slag in uiteenlopende zorgsectoren. 
-              Of je nu korte opdrachten zoekt of langere trajecten – wij zorgen voor een plek die bij jou past.
+              Bij JM Zorgpartners kun je werken binnen diverse zorgsectoren.
+              Overal waar jouw expertise het verschil maakt.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {[
-              { icon: Brain, naam: 'GGZ', beschrijving: 'Geestelijke gezondheidszorg', image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=300&q=80' },
-              { icon: Users, naam: 'Gehandicaptenzorg', beschrijving: 'Begeleiding en ondersteuning', image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=300&q=80' },
-              { icon: Baby, naam: 'Jeugdzorg', beschrijving: 'Zorg voor kinderen en jongeren', image: 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=300&q=80' },
-              { icon: Heart, naam: 'Ouderenzorg', beschrijving: 'Woon- en thuiszorg', image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=300&q=80' },
-              { icon: Globe, naam: 'Vluchtelingenopvang', beschrijving: 'Begeleiding en opvang', image: 'https://images.unsplash.com/photo-1593113598332-cd288d649433?w=300&q=80' },
-              { icon: Baby, naam: 'Kinderopvang', beschrijving: 'Dagopvang en BSO', image: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=300&q=80' },
-              { icon: GraduationCap, naam: 'Speciaal onderwijs', beschrijving: 'Onderwijsondersteuning', image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=300&q=80' },
+              { icon: Heart, naam: 'Ouderenzorg', beschrijving: 'Zorg in woon en verpleeghuizen', image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=300&q=80' },
+              { icon: Users, naam: 'Gehandicaptenzorg', beschrijving: 'Begeleiding met aandacht en structuur', image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=300&q=80' },
+              { icon: Brain, naam: 'GGZ', beschrijving: 'Specialistische zorg binnen diverse settings', image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=300&q=80' },
+              { icon: Baby, naam: 'Jeugdzorg', beschrijving: 'Hulp voor jongeren en gezinnen', image: 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=300&q=80' },
+              { icon: Shield, naam: 'Verslavingszorg', beschrijving: 'Professionele begeleiding en behandeling', image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=300&q=80' },
+              { icon: GraduationCap, naam: 'Speciaal onderwijs', beschrijving: 'Ondersteuning voor leerlingen met zorgbehoefte', image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=300&q=80' },
+              { icon: Globe, naam: 'Vluchtelingenwerk', beschrijving: 'Begeleiding binnen opvang en integratie', image: 'https://images.unsplash.com/photo-1593113598332-cd288d649433?w=300&q=80' },
             ].map((sector, idx) => (
               <ScaleIn key={sector.naam} delay={idx * 0.1}>
                 <CardSpotlight className="h-full">
@@ -156,16 +152,22 @@ export default function ZorgprofessionalsPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
             <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-4">
-              Wat <span className="text-[#F37325]">vragen</span> wij van jou?
+              Dit kun je van ons <span className="text-[#F37325]">verwachten</span>
             </h2>
             <p className="text-base text-gray-600 mt-4 max-w-3xl mx-auto">
-              Wij staan voor kwaliteit en betrouwbaarheid – dat verwachten wij van onze zorgprofessionals, 
-              en dat mag jij ook van ons verwachten. We zorgen dat alles goed geregeld is, zodat jij kunt doen waar je goed in bent.
+              Eerlijke en transparante voorwaarden
+              We waarderen jouw inzet en zorgen voor duidelijke, correcte en professionele arbeidsvoorwaarden.
+              Persoonlijk contact
+              Je hebt altijd een aanspreekpunt dat bereikbaar is op de momenten dat je ons nodig hebt.
+              Opdrachten die bij jou passen
+              Wij luisteren naar jouw voorkeuren en koppelen je aan opdrachten die passen bij jouw kwaliteiten en persoonlijkheid.
+              Snelle en betrouwbare planning
+              We schakelen mee met jouw beschikbaarheid en zorgen voor duidelijke afspraken.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {vereisten.map((item, idx) => (
+            {verwachtingen.map((item, idx) => (
               <FadeContent key={item.titel} delay={idx * 0.1}>
                 <div className="bg-white rounded-2xl p-6 border border-gray-200 hover:border-[#F37325] transition-all duration-300 hover:shadow-lg text-center">
                   <div className="w-14 h-14 bg-[#1C3364] rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -254,28 +256,23 @@ export default function ZorgprofessionalsPage() {
             <FadeContent delay={0.2}>
               <div className="space-y-6">
                 <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364]">
-                  Waarom werken via <span className="text-[#F37325]">JM Zorgpartners?</span>
+                  Waarom kiezen voor <span className="text-[#F37325]">JM Zorgpartners?</span>
                 </h2>
                 
                 <p className="text-base text-gray-600">
-                  Bij JM Zorgpartners werk je niet alleen voor ons — je werkt <span className="font-semibold text-[#1C3364]">mét ons</span>.
+                  Goede zorg begint bij zorgprofessionals die zich gewaardeerd voelen.
+                  Daarom werken we met duidelijke afspraken en persoonlijk contact.
                 </p>
 
                 <div className="space-y-3">
-                  {[
-                    'Jij bepaalt wanneer en waar je werkt',
-                    'Eerlijke en snelle uitbetaling',
-                    'Persoonlijke begeleiding – altijd bereikbaar',
-                    'Duurzame samenwerking waarin je gehoord wordt',
-                  ].map((voordeel, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-start gap-3 p-3 bg-white rounded-lg border border-gray-200 hover:border-[#F37325] transition-all duration-300 hover:shadow-md"
-                    >
-                      <CheckCircle2 className="h-5 w-5 text-[#F37325] flex-shrink-0 mt-0.5" />
-                      <p className="text-sm text-gray-700">{voordeel}</p>
-                    </div>
-                  ))}
+                  <p className="text-base text-gray-600">
+                    Bij JM Zorgpartners krijg je de ruimte om te werken op een manier die echt bij jou past.
+                    Flexibiliteit wanneer je dat wilt en stabiliteit wanneer het gewenst is.
+                  </p>
+                  <p className="text-base text-gray-600">
+                    Je hebt altijd een aanspreekpunt dat bereikbaar is op de momenten dat je ons nodig hebt.
+                    Zo ontstaat een samenwerking die aansluit bij jouw wensen en jouw kwaliteiten.
+                  </p>
                 </div>
               </div>
             </FadeContent>
@@ -285,7 +282,7 @@ export default function ZorgprofessionalsPage() {
 
       {/* Vacatures Section */}
       <section className="py-20 bg-gray-50 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.02]">
+        <div className="absolute inset-0 opacity-[0.05]">
           <Image
             src="/images/zorg-professional.png"
             alt=""
@@ -394,10 +391,12 @@ export default function ZorgprofessionalsPage() {
                 <span className="text-lg font-semibold text-[#1C3364]">Direct Aanmelden</span>
               </div>
               <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] mb-4">
-                Meld je <span className="text-[#F37325]">Aan</span>
+                Klaar voor de Juiste <span className="text-[#F37325]">Match?</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Vul het formulier in en upload je documenten. We nemen binnen 24 uur contact met je op!
+                Meld je hieronder eenvoudig online aan.
+                Wij nemen snel persoonlijk contact met je op.
+                Online aanmeldingsformulier
               </p>
             </div>
           </FadeContent>
@@ -668,8 +667,9 @@ export default function ZorgprofessionalsPage() {
                   <MovingBorder 
                     duration={8000}   
                     className="bg-[#F37325] hover:bg-[#d96420] text-white px-2 py-1 font-bold"
-                      containerClassName="w-full sm:w-auto"
-                      >
+                    containerClassName="w-full sm:w-auto"
+                    as="div"
+                  >
                     <button
                       type="submit"
                       className="w-full px-8 py-4 bg-[#F37325] text-white rounded-xl font-bold text-lg hover:bg-[#d96420] transition-all flex items-center justify-center gap-2"

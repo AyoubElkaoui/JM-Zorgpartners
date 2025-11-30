@@ -11,13 +11,22 @@ type AnimatedTitleProps = {
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 }
 
+const MotionComponents = {
+  h1: motion.h1,
+  h2: motion.h2,
+  h3: motion.h3,
+  h4: motion.h4,
+  h5: motion.h5,
+  h6: motion.h6,
+} as const
+
 export const AnimatedTitle = ({
   children,
   className = '',
   delay = 0,
   as = 'h2'
 }: AnimatedTitleProps) => {
-  const Component = motion[as] as any
+  const Component = MotionComponents[as]
   
   return (
     <Component

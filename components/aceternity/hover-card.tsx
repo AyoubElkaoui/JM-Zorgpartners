@@ -15,7 +15,6 @@ export const HoverCard = ({
   className = '',
   containerClassName = ''
 }: HoverCardProps) => {
-  const [hovering, setHovering] = React.useState(false)
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
 
@@ -43,14 +42,13 @@ export const HoverCard = ({
     mouseY.set(0)
     rotateX.set(0)
     rotateY.set(0)
-    setHovering(false)
   }
 
   return (
     <motion.div
       className={cn('relative group', containerClassName)}
       onMouseMove={handleMouseMove}
-      onMouseEnter={() => setHovering(true)}
+      onMouseEnter={() => {}}
       onMouseLeave={handleMouseLeave}
       style={{
         rotateX,

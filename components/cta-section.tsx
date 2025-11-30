@@ -43,7 +43,7 @@ export default function CTASection() {
                   containerClassName="w-full sm:w-auto"
                 >
                   <div className="flex items-center justify-center gap-3">
-                    <span>Stuur een bericht</span>
+                    <span>Spoed</span>
                     <Mail className="w-5 h-5" />
                   </div>
                 </MovingBorder>

@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Phone, Mail, MapPin, Send, Loader2, CheckCircle, Clock, FileText, ArrowRight, HeartHandshake, CheckCircle2, MessageSquare } from 'lucide-react'
-import { AnimatedTitle, GradientText } from '@/components/aceternity/animated-title'
+import { GradientText } from '@/components/aceternity/animated-title'
 import { CardSpotlight } from '@/components/aceternity/card-spotlight'
 import { MovingBorder } from '@/components/aceternity/moving-border'
 import FadeContent from '@/components/react-bits/FadeContent'
@@ -40,7 +40,7 @@ export default function ContactPage() {
         setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
         setTimeout(() => setSubmitted(false), 5000)
       }
-    } catch (error) {
+    } catch {
       alert('Er ging iets mis. Probeer het opnieuw.')
     } finally {
       setIsSubmitting(false)
@@ -63,17 +63,37 @@ export default function ContactPage() {
                 </div>
                 
                 <h1 className="text-5xl lg:text-6xl font-black text-[#1C3364] leading-tight">
-                  Neem <GradientText>Contact</GradientText> Op
+                  Neem contact met <GradientText>ons op</GradientText>
                 </h1>
                 
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Heb je vragen over onze diensten? Of wil je direct starten met jouw nieuwe uitdaging in de zorg? 
-                  Ons team staat voor je klaar!
+                  Heeft u vragen of wilt u weten wat wij voor u kunnen betekenen?
+                  Bij JM Zorgpartners staan we klaar om mee te denken, te ondersteunen en snel te schakelen.
+                </p>
+                <p className="text-xl text-gray-600 leading-relaxed">
+                  Of u nu zorgprofessionals zoekt voor uw organisatie óf als zorgprofessional wilt werken via JM Zorgpartners, wij helpen u graag verder.
+                  Neem contact op via het formulier hieronder.
+                  Wij reageren snel en persoonlijk.
                 </p>
                 
                 <div className="bg-white rounded-2xl p-6 border-2 border-[#F37325]/20 shadow-lg">
+                  <p className="text-lg text-gray-700 leading-relaxed font-semibold">
+                    Contactformulier
+                  </p>
+                  <p className="text-lg text-gray-700 leading-relaxed mt-4">
+                    Bellen of mailen kan natuurlijk ook:
+                  </p>
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    Bel ons direct of vul het formulier in. We reageren binnen <span className="font-bold text-[#1C3364]">24 uur</span> op je bericht!
+                    T. 033 303 30 42
+                  </p>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    E. info@jmzorgpartners.nl
+                  </p>
+                  <p className="text-lg text-gray-700 leading-relaxed mt-4">
+                    Heeft u een urgente zorgvraag?
+                  </p>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Bel dan onze Spoedlijn: 06 53 474 474
                   </p>
                 </div>
               </div>

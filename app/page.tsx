@@ -140,7 +140,7 @@ export default function HomePage() {
       {/* USP Section - Met subtiele achtergrond */}
       <section className="py-32 relative overflow-hidden">
         {/* Subtiele achtergrond image */}
-        <div className="absolute inset-0 opacity-[0.03]">
+        <div className="absolute inset-0 opacity-[0.05]">
           <Image
             src="/images/zorg-team.png"
             alt=""
@@ -314,7 +314,7 @@ export default function HomePage() {
 
       {/* Stats Section - Met zorg image */}
       <section className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03]">
+        <div className="absolute inset-0 opacity-[0.05]">
           <Image
             src="/images/values-image.png"
             alt=""
@@ -377,7 +377,7 @@ export default function HomePage() {
       {/* Voor wie wij werken - Preview secties */}
       <section className="py-32 bg-gradient-to-b from-white via-orange-50/20 to-white relative overflow-hidden">
         {/* Subtiele achtergrond met gradient */}
-        <div className="absolute inset-0 opacity-[0.02]">
+        <div className="absolute inset-0 opacity-[0.05]">
           <Image
             src="/images/hero-zorg.png"
             alt=""
@@ -570,7 +570,7 @@ export default function HomePage() {
 
       {/* Zorgsectoren - Icon Grid */}
       <section className="py-32 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.02]">
+        <div className="absolute inset-0 opacity-[0.05]">
           <Image
             src="/images/zorg-team.png"
             alt=""
@@ -857,7 +857,7 @@ export default function HomePage() {
       {/* Over Ons Preview - Licht thema zoals "Ontdek" sectie */}
       <section className="py-32 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
         {/* Subtiele achtergrond */}
-        <div className="absolute inset-0 opacity-[0.02]">
+        <div className="absolute inset-0 opacity-[0.05]">
           <Image
             src="/images/zorg-professional.png"
             alt=""

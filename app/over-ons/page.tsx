@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Heart, Target, Zap, Users, CheckCircle2, Phone, Award, ArrowRight, HeartHandshake } from 'lucide-react'
+import { Heart, Target, Zap, Users, Phone, Award, ArrowRight, HeartHandshake } from 'lucide-react'
 import FadeContent from '@/components/react-bits/FadeContent'
 import ScaleIn from '@/components/react-bits/ScaleIn'
 import { AnimatedTitle, GradientText } from '@/components/aceternity/animated-title'
@@ -26,20 +26,23 @@ export default function OverOnsPage() {
                 </div>
                 
                 <h1 className="text-5xl lg:text-6xl font-black text-[#1C3364] leading-tight">
-                  Zorg die <GradientText>werkt</GradientText>
+                  Wie wij <GradientText>zijn</GradientText>
                 </h1>
                 
                 <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
                   <p>
-                    Wij geloven in zorg die werkt. Dat begint met snelheid en betrouwbaarheid — maar het gaat verder dan dat.
+                    JM Zorgpartners is een gespecialiseerd zorguitzendbureau dat gediplomeerde en ervaren zorgprofessionals koppelt aan zorgorganisaties die behoefte hebben aan continuïteit en kwaliteit.
                   </p>
                   
                   <p>
-                    Wij willen dat zorginstellingen voelen: er wordt met ons meegedacht. En dat zorgprofessionals denken: hier kan ik iets betekenen.
+                    Wij geloven dat goede zorg begint bij de juiste mensen, op de juiste plek, op het juiste moment.
+                    De naam JM staat voor meer dan alleen onze initialen.
+                    Het weerspiegelt waar wij elke dag naar streven, de Juiste Match.
                   </p>
                   
                   <p>
-                    Ons doel: mensen bij elkaar brengen die elkaar versterken. Zodat de zorg vooruit kan — ook als het even tegenzit.
+                    Wij kennen onze zorgprofessionals, luisteren naar onze opdrachtgevers en werken met aandacht, betrokkenheid en professionaliteit.
+                    Zo creëren we duurzame samenwerkingen waarin iedereen zich gehoord en gewaardeerd voelt.
                   </p>
                 </div>
 
@@ -95,29 +98,31 @@ export default function OverOnsPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
             <AnimatedTitle>
-              De kracht van de <GradientText>juiste match</GradientText>
+              Onze <GradientText>missie</GradientText>
             </AnimatedTitle>
             <p className="text-xl text-gray-600 mt-4 max-w-3xl mx-auto">
-              Goede zorg vraagt om de juiste mensen op de juiste plek.
+              Onze missie is helder.
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
               <p>
-                Bij JM Zorgpartners draait het om één ding: <span className="font-bold text-[#1C3364]">de juiste match</span>.
+                Wij verbinden zorgprofessionals en zorgorganisaties op een manier die de kwaliteit versterkt, de continuïteit waarborgt en het werk in de zorg beter en menselijker maakt.
               </p>
               
               <p>
-                Een goede match is meer dan een vinkje achter diploma&apos;s of ervaring. Het gaat om mensen die passen bij de organisatie, het team en de zorgsituatie.
+                Wij zetten ons in om:
               </p>
               
-              <p>
-                Daarom luisteren we, schakelen we snel en denken we actief mee. We vullen geen gaten, we versterken.
-              </p>
+              <ul className="list-disc list-inside space-y-2">
+                <li>Zorgprofessionals te ondersteunen in hun loopbaan op een manier die past bij hun wensen en expertise</li>
+                <li>Zorgorganisaties te voorzien van betrouwbare, betrokken en direct inzetbare medewerkers</li>
+                <li>Iedere samenwerking te bouwen op vertrouwen, duidelijkheid en professionaliteit</li>
+              </ul>
               
               <p>
-                Met de juiste match ontstaat rust, vertrouwen en ruimte voor betere zorg.
+                Door aandacht te hebben voor beide kanten van de zorg, creëren wij oplossingen die echt werken.
               </p>
             </div>
           </div>
@@ -142,42 +147,32 @@ export default function OverOnsPage() {
             <FadeContent delay={0.2}>
               <div className="space-y-6">
                 <AnimatedTitle>
-                  Wat ons <GradientText>onderscheidt</GradientText>
+                  Onze <GradientText>visie</GradientText>
                 </AnimatedTitle>
                 
                 <div className="space-y-4">
-                  {[
-                    {
-                      titel: 'We begrijpen wat er speelt – aan beide kanten van de lijn',
-                      tekst: 'We kennen de uitdagingen van zorginstellingen én de wensen van zorgprofessionals. Deze dubbele expertise maakt ons uniek.'
-                    },
-                    {
-                      titel: 'We schakelen snel zonder in te leveren op kwaliteit',
-                      tekst: 'Snelheid is belangrijk, maar nooit ten koste van zorgvuldigheid. We combineren efficiëntie met grondige screening.'
-                    },
-                    {
-                      titel: 'We leveren alleen mensen waar we zelf volledig achter staan',
-                      tekst: 'Elke professional die we voorstellen is door ons persoonlijk gescreend. We staan garant voor kwaliteit en betrouwbaarheid.'
-                    },
-                    {
-                      titel: 'We zoeken versterking, niet alleen opvulling',
-                      tekst: 'We kijken verder dan alleen het invullen van een vacature. We versterken teams met mensen die écht bijdragen aan betere zorg.'
-                    },
-                  ].map((punt, idx) => (
-                    <div
-                      key={idx}
-                      className="bg-white rounded-xl p-6 border-2 border-gray-100 hover:border-[#F37325] transition-all duration-300 hover:shadow-lg"
-                    >
-                      <h4 className="text-lg font-bold text-[#1C3364] mb-2">{punt.titel}</h4>
-                      <p className="text-gray-600">{punt.tekst}</p>
-                    </div>
-                  ))}
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Wij geloven in een zorgsector waarin professionals kunnen doen waar zij goed in zijn en waarin organisaties kunnen rekenen op kwaliteit, stabiliteit en een warme samenwerking.
+                  </p>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Onze visie is een zorgwereld waarin:
+                  </p>
+                  <ul className="list-disc list-inside space-y-2 text-lg text-gray-700">
+                    <li>De Juiste Match leidt tot betere zorgresultaten</li>
+                    <li>Zorgprofessionals zich gewaardeerd en ondersteund voelen</li>
+                    <li>Zorgorganisaties nooit zonder deskundige inzet komen te zitten</li>
+                    <li>Samenwerking gebaseerd is op duidelijkheid, menselijkheid en respect</li>
+                  </ul>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Wij streven ernaar om de verbindende schakel te zijn tussen zorgprofessionals en zorgorganisaties.
+                    Met aandacht, snelheid en betrouwbaarheid zorgen wij ervoor dat beide partijen krijgen wat zij nodig hebben.
+                  </p>
                 </div>
                 
                 <div className="mt-8 p-6 bg-gradient-to-r from-[#1C3364]/5 to-[#F37325]/5 rounded-2xl border-l-4 border-[#F37325]">
                   <p className="text-gray-700 leading-relaxed">
-                    <span className="font-bold text-[#1C3364]">Zorginstellingen</span> waarderen onze betrokkenheid en de mensen die écht passen.<br />
-                    <span className="font-bold text-[#1C3364]">Zorgprofessionals</span> waarderen onze duidelijke communicatie, eerlijke aanpak en het gevoel dat we er ook voor hen zijn.
+                    Wij streven ernaar om de verbindende schakel te zijn tussen zorgprofessionals en zorgorganisaties.
+                    Met aandacht, snelheid en betrouwbaarheid zorgen wij ervoor dat beide partijen krijgen wat zij nodig hebben.
                   </p>
                 </div>
               </div>
@@ -188,7 +183,7 @@ export default function OverOnsPage() {
 
       {/* Our Values */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03]">
+        <div className="absolute inset-0 opacity-[0.05]">
           <Image
             src="/images/values-image.png"
             alt=""
@@ -210,18 +205,23 @@ export default function OverOnsPage() {
             {[
               {
                 icon: Award,
-                titel: 'Betrouwbaarheid',
-                tekst: 'Wij komen onze afspraken na — helder, eerlijk en op tijd. Wat we beloven, maken we waar.'
+                titel: 'Betrouwbaar',
+                tekst: 'We doen wat we zeggen en zeggen wat we doen.'
+              },
+              {
+                icon: Users,
+                titel: 'Betrokken',
+                tekst: 'We luisteren, denken mee en blijven dichtbij.'
               },
               {
                 icon: Zap,
-                titel: 'Snelheid',
-                tekst: 'Een aanvraag vandaag? Dan schakelen wij vandaag. We begrijpen dat tijd cruciaal is in de zorg.'
+                titel: 'Bereikbaar',
+                tekst: 'Wanneer ondersteuning nodig is, staan wij klaar.'
               },
               {
-                icon: CheckCircle2,
-                titel: 'Kwaliteit',
-                tekst: 'We selecteren zorgvuldig en leveren uitsluitend professionals die voldoen aan onze hoge kwaliteitsnormen.'
+                icon: Heart,
+                titel: 'De Juiste Match',
+                tekst: 'Elke plaatsing is zorgvuldig, doordacht en afgestemd op mens én organisatie.'
               },
             ].map((waarde, idx) => (
               <ScaleIn key={waarde.titel} delay={idx * 0.1}>
@@ -249,18 +249,24 @@ export default function OverOnsPage() {
               </div>
               
               <h2 className="text-5xl lg:text-6xl font-black text-[#1C3364] leading-tight">
-                Of u nu opdrachtgever bent of <GradientText>zorgprofessional</GradientText>
+                Ons <GradientText>team</GradientText>
               </h2>
               
               <p className="text-xl text-gray-700 leading-relaxed">
-                wij geloven in duurzame samenwerking, duidelijke communicatie en echte betrokkenheid.
+                Achter JM Zorgpartners staat een professioneel en hecht team met ervaring in de zorg, planning en uitzenddienstverlening.
+                We zijn persoonlijk betrokken, schakelen snel en blijven beschikbaar voor overleg en ondersteuning.
               </p>
               
               <p className="text-xl text-gray-700 leading-relaxed">
-                We denken mee, kijken vooruit en doen wat we beloven. Zo bouwen we samen aan iets wat werkt — voor iedereen.
+                Samen bouwen aan betere zorg
               </p>
               
-              <div className="mt-12 grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <p className="text-xl text-gray-700 leading-relaxed">
+                Of u nu zorgprofessional bent of zorgorganisatie, bij JM Zorgpartners bent u verzekerd van een samenwerking die gericht is op kwaliteit, stabiliteit en vertrouwen.
+                Want bij ons draait het altijd om één ding, de Juiste Match.
+              </p>
+              
+              <div className="mt-12 flex gap-4 justify-center">
                 <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-lg">
                   <div className="w-16 h-16 bg-gradient-to-br from-[#1C3364] to-[#2a4a8f] rounded-2xl flex items-center justify-center mb-6 mx-auto">
                     <Heart className="h-8 w-8 text-white" />

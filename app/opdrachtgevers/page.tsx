@@ -48,39 +48,49 @@ export default function ZorginstellingenPage() {
                 </div>
                 
                 <h1 className="text-5xl lg:text-6xl font-black text-[#1C3364] leading-tight">
-                  Flexibel en betrouwbaar <GradientText>zorgpersoneel</GradientText> – afgestemd op uw vraag
+                  Continuïteit in uw zorgorganisatie begint bij de juiste <GradientText>mensen</GradientText>
                 </h1>
                 
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Bij JM Zorgpartners begrijpen we hoe belangrijk het is om snel te kunnen schakelen in de zorg.
-                  Iedere dag brengt nieuwe uitdagingen — wij zorgen voor de juiste mensen op het juiste moment.
+                  Wij leveren zorgprofessionals die passen bij uw organisatie en werkwijze.
+                  Professioneel, betrokken en altijd betrouwbaar wanneer u ons nodig heeft
                 </p>
                 
                 <div className="bg-white rounded-2xl p-6 border-2 border-[#F37325]/20 shadow-lg">
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    Onze professionals zijn <span className="font-bold text-[#1C3364]">gekwalificeerd, ervaren en zorgvuldig geselecteerd</span>.
-                    Van functie en beschikbaarheid tot persoonlijkheid en teamaansluiting: de juiste match.
+                    Professioneel, betrokken en altijd betrouwbaar wanneer u ons nodig heeft
                   </p>
                 </div>
                 
-                <div className="flex flex-wrap gap-4 pt-4">
-                  <MovingBorder duration={8000}>
-                    <Link
-                      href="#contact"
-                      className="px-8 py-4 bg-[#F37325] text-white rounded-xl font-semibold hover:bg-[#d96420] transition-all inline-flex items-center gap-2"
-                    >
-                      <FileText className="h-5 w-5" />
-                      Neem contact op
-                    </Link>
-                  </MovingBorder>
-                  
-                  <a
-                    href="tel:033303304200"
-                    className="px-8 py-4 border-2 border-[#1C3364] text-[#1C3364] rounded-xl font-semibold hover:bg-[#1C3364] hover:text-white transition-all inline-flex items-center gap-2"
-                  >
-                    <Phone className="h-5 w-5" />
-                    033 303 30 42
-                  </a>
+                <div className="flex flex-col sm:flex-row gap-4 mb-10">
+                  <Link href="tel:033303304200">
+                    <ScaleIn delay={400} duration={700}>
+                      <MovingBorder
+                        duration={8000}
+                        className="bg-[#F37325] hover:bg-[#d96420] text-white px-8 py-4 font-bold"
+                        containerClassName="w-full sm:w-auto"
+                      >
+                        <div className="flex items-center justify-center gap-2">
+                          <Phone className="w-5 h-5" />
+                          <span>Bel 033 303 30 42</span>
+                        </div>
+                      </MovingBorder>
+                    </ScaleIn>
+                  </Link>
+                  <Link href="/contact">
+                    <ScaleIn delay={500} duration={700}>
+                      <MovingBorder
+                        duration={10000}
+                        className="bg-white hover:bg-orange-50 text-[#1C3364] px-8 py-4 font-bold"
+                        containerClassName="w-full sm:w-auto"
+                      >
+                        <div className="flex items-center justify-center gap-2">
+                          <span>Contact</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </div>
+                      </MovingBorder>
+                    </ScaleIn>
+                  </Link>
                 </div>
               </div>
             </FadeContent>
@@ -217,7 +227,7 @@ export default function ZorginstellingenPage() {
 
       {/* Waarom Kiezen Section */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.02]">
+        <div className="absolute inset-0 opacity-[0.05]">
           <Image
             src="/images/zorg-team.png"
             alt=""
@@ -234,28 +244,25 @@ export default function ZorginstellingenPage() {
                 </AnimatedTitle>
                 
                 <div className="space-y-4">
-                  {[
-                    'Gekwalificeerd personeel met diploma\'s, ervaring en VOG',
-                    'Snelle inzet, óók bij spoed',
-                    'Heldere communicatie – één vast aanspreekpunt',
-                    'Zowel payroll als zzp mogelijk',
-                  ].map((punt, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-start gap-4 p-4 bg-white rounded-xl border border-gray-100 hover:border-[#F37325] transition-all duration-300 hover:shadow-lg"
-                    >
-                      <CheckCircle2 className="h-6 w-6 text-[#F37325] flex-shrink-0 mt-0.5" />
-                      <p className="text-gray-700 font-medium">{punt}</p>
-                    </div>
-                  ))}
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Goede zorg vraagt om zorgprofessionals die passen bij uw organisatie.
+                    Daarom selecteren wij onze medewerkers zorgvuldig en kijken wij verder dan alleen beschikbaarheid.
+                  </p>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Wij leveren zorgprofessionals op basis van zowel payroll als zelfstandige inzet.
+                    Met duidelijke afspraken, persoonlijk contact en een efficiënte planning zorgen wij voor continuïteit binnen uw organisatie.
+                  </p>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Onze professionals zijn gediplomeerd, ervaren en inzetbaar wanneer uw organisatie ondersteuning nodig heeft, zowel bij reguliere aanvragen als bij spoedsituaties.
+                  </p>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Met JM Zorgpartners kiest u voor een betrouwbare samenwerkingspartner die meedenkt, snel schakelt en altijd streeft naar de Juiste Match.
+                  </p>
                 </div>
 
                 <div className="mt-8 p-6 bg-gradient-to-r from-[#F37325]/10 to-[#1C3364]/10 rounded-2xl border border-[#F37325]/20">
                   <p className="text-lg text-[#1C3364] font-semibold text-center">
-                    Transparantie en betrokkenheid
-                  </p>
-                  <p className="text-center text-gray-600 mt-2">
-                    Wij stellen alleen professionals voor waar we volledig achter staan.
+                    Met JM Zorgpartners kiest u voor een betrouwbare samenwerkingspartner die meedenkt, snel schakelt en altijd streeft naar de Juiste Match.
                   </p>
                 </div>
               </div>
@@ -287,20 +294,32 @@ export default function ZorginstellingenPage() {
           <div className="space-y-4">
             {[
               {
-                vraag: 'Hoe snel kunnen jullie leveren?',
-                antwoord: 'Vaak al binnen 24 uur, afhankelijk van de aanvraag.'
+                vraag: 'Hoe snel kunnen jullie een zorgprofessional inzetten?',
+                antwoord: 'In veel gevallen kunnen wij dezelfde dag nog ondersteunen. Bij spoedsituaties zijn wij direct bereikbaar via onze Spoedlijn op 06 53 474 474'
               },
               {
-                vraag: 'Werken jullie alleen met personeel in loondienst?',
-                antwoord: 'Nee, wij leveren zowel payroll-krachten als zelfstandigen.'
+                vraag: 'Werken jullie met zowel payroll als zelfstandigen?',
+                antwoord: 'Ja. Wij leveren zorgprofessionals in loondienst én zelfstandigen. Samen bepalen we welke constructie het beste aansluit op uw organisatie.'
               },
               {
-                vraag: 'Kan ik zelf iemand kiezen uit meerdere profielen?',
-                antwoord: 'Ja, u ontvangt altijd een voorstel met één of meerdere passende profielen.'
+                vraag: 'Hoe zorgen jullie voor kwaliteit en betrouwbaarheid?',
+                antwoord: 'Al onze zorgprofessionals zijn gediplomeerd, ervaren en zorgvuldig gescreend. Wij controleren bevoegdheden, referenties en relevante werkervaring.'
               },
               {
-                vraag: 'Hoe weten we of iemand geschikt is?',
-                antwoord: 'Wij werken uitsluitend met gekwalificeerde zorgprofessionals — mét ervaring, diploma\'s en VOG.'
+                vraag: 'Kunnen jullie ondersteuning bieden bij complexe zorgvragen?',
+                antwoord: 'Ja. Wij leveren zorgprofessionals die stevig in hun schoenen staan en ervaring hebben met complexe doelgroepen, waaronder GGZ, jeugdzorg en intensieve begeleiding.'
+              },
+              {
+                vraag: 'Hoe werkt jullie planning?',
+                antwoord: 'Wij stemmen de inzet af op uw behoefte. Duidelijke afspraken, heldere communicatie en snel schakelen staan altijd centraal.'
+              },
+              {
+                vraag: 'Kunnen jullie helpen bij zowel korte als langere opdrachten?',
+                antwoord: 'Ja. Wij bieden ondersteuning voor korte diensten, tijdelijke vervanging en langdurige inzet.'
+              },
+              {
+                vraag: 'Hoe verloopt het contact tijdens een opdracht?',
+                antwoord: 'U heeft altijd een duidelijk aanspreekpunt. Wij blijven beschikbaar voor afstemming, evaluatie en eventuele bijsturing.'
               },
             ].map((faq, idx) => (
               <FadeContent key={idx} delay={idx * 0.1}>
@@ -322,15 +341,23 @@ export default function ZorginstellingenPage() {
         <div className="max-w-4xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-12">
             <AnimatedTitle>
-              Klaar om <GradientText>kennis</GradientText> te maken?
+              Klaar voor de juiste <GradientText>match?</GradientText>
             </AnimatedTitle>
             <p className="text-xl text-gray-600 mt-4 max-w-2xl mx-auto">
-              Heeft u een personele zorgvraag of wilt u kennismaken met JM Zorgpartners?
-              Laat uw gegevens achter via ons contactformulier — wij nemen snel contact met u op.
+              Wilt u meer informatie of direct zorgprofessionals aanvragen?
+              Gebruik het onderstaande online contactformulier.
+              Wij nemen snel contact met u op.
+              Bellen of mailen kan natuurlijk ook
             </p>
             <div className="mt-6 p-4 bg-[#F37325]/10 rounded-xl border border-[#F37325]/20">
               <p className="text-lg text-[#1C3364] font-semibold">
-                📌 Bij spoed kunt u ons ook direct bellen: 06 53 474 474
+                T. 06 53 474 474 E. info@jmzorgpartners.nl
+              </p>
+              <p className="text-lg text-[#1C3364] font-semibold">
+                Heeft u een urgente zorgvraag? Neem dan contact op met onze Spoedlijn 06 53 474 474
+              </p>
+              <p className="text-lg text-[#1C3364] font-semibold">
+                Wij denken graag met u mee. Online aanmeldingsformulier
               </p>
             </div>
           </div>

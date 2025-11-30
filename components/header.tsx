@@ -4,7 +4,6 @@ import {
   NavBody,
   NavItems,
   MobileNav,
-  NavbarButton,
   MobileNavHeader,
   MobileNavToggle,
   MobileNavMenu,
@@ -12,6 +11,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { AlertTriangle } from "lucide-react";
 
 const navItems = [
   { name: "Home", link: "/" },
@@ -19,6 +19,7 @@ const navItems = [
   { name: "Zorginstellingen", link: "/opdrachtgevers" },
   { name: "Over Ons", link: "/over-ons" },
   { name: "Blog", link: "/blog" },
+  { name: "Vacatures", link: "/vacatures" },
   { name: "Contact", link: "/contact" },
 ];
 
@@ -32,20 +33,21 @@ export default function Header() {
           <Image
             src="/logo/logo-color.png"
             alt="JM Zorgpartners"
-            width={80}
-            height={80}
+            width={140}
+            height={140}
             className="h-16 xl:h-20 w-auto"
             priority
           />
         </Link>
         <NavItems items={navItems} />
         <div className="flex items-center gap-4">
-          <NavbarButton
+          <Link
             href="/contact"
-            className="!bg-gradient-to-r !from-[#F37325] !to-[#ff8c42] !text-white !px-8 !py-4 !rounded-xl !text-lg !shadow-lg hover:scale-105 transition"
+            className="flex items-center gap-2 bg-[#F37325] hover:bg-[#d96420] text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors shadow-sm"
           >
-            Contact
-          </NavbarButton>
+            <AlertTriangle className="h-4 w-4" />
+            <span>Spoed</span>
+          </Link>
         </div>
       </NavBody>
       <MobileNav>
@@ -54,8 +56,8 @@ export default function Header() {
             <Image
               src="/logo/logo-color.png"
               alt="JM Zorgpartners"
-              width={60}
-              height={60}
+              width={80}
+              height={80}
               className="h-12 xl:h-14 w-auto"
               priority
             />
